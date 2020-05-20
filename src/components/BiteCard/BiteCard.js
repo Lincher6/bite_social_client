@@ -8,10 +8,12 @@ import CardMedia from '@material-ui/core/CardMedia';
 import Typography from "@material-ui/core/Typography";
 import {NavLink} from "react-router-dom";
 import dayjs from 'dayjs'
+import 'dayjs/locale/ru'
 import relativeTime from 'dayjs/plugin/relativeTime'
 
 export const BiteCard = props => {
     const classes = useStyles()
+    dayjs.locale('ru')
     dayjs.extend(relativeTime)
 
     return (

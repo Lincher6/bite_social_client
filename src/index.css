@@ -5,6 +5,9 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+
+  --primary: #33c9dc;
+  --secondary: #00838f;
 }
 
 code {
@@ -15,10 +18,15 @@ code {
 .contentContainer {
   margin: 80px auto 0 auto;
   max-width: 1200px;
+  padding: 5px;
 }
 
 .nav-container {
   margin: 0 auto;
+}
+
+.paper {
+  padding: 20px;
 }
 
 a {

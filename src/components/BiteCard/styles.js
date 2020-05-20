@@ -6,8 +6,8 @@ export const useStyles = makeStyles({
         marginBottom: 20,
     },
     image: {
-        minWidth: 200,
-        minHeight: 200,
+        minWidth: 150,
+        minHeight: 150,
         objectFit: 'contain'
     },
     content: {
