@@ -3,6 +3,8 @@ import { uiActions } from '../ui'
 import { authApi } from '../../api/authApi'
 import { userApi } from '../../api/userApi'
 import axios from 'axios'
+import imageCompression from 'browser-image-compression'
+import {tokenChecker} from "../../hooks/useInitialization";
 
 const setAuthenticated_AC = payload => ({
     type: SET_AUTHENTICATED,
@@ -26,17 +28,50 @@ export const signUp = (credentials, history) => async dispatch => {
     await authFlow(credentials, history, dispatch, 'signUp')
 }
 
-export const logout = (history) => async dispatch => {
+export const logout = () => async dispatch => {
     localStorage.removeItem('idToken')
     delete axios.defaults.headers.common['Authorization']
     dispatch(setAuthenticated_AC(false))
-    history.push('/login')
 }
 
 export const autoLogin = (token) => async dispatch => {
     dispatch(setAuthenticated_AC(true))
     axios.defaults.headers.common['Authorization'] = `Bearer ${token}`
     await dispatch(getUserData())
+}
+
+export const uploadImage = (imageFile) => async dispatch => {
+    if (imageFile) {
+        dispatch(loadingUser_AC())
+
+        const options = {
+            maxSizeMB: 0.4,
+            maxWidthOrHeight: 700,
+            useWebWorker: true
+        }
+        const compressedImageFile = await imageCompression(imageFile, options);
+
+        const formData = new FormData()
+        formData.append('image', compressedImageFile, imageFile.name)
+        const imageData = await userApi.uploadImage(formData)
+        if (imageData.resultCode === 0) {
+            dispatch(getUserData())
+        } else {
+            dispatch(uiActions.setErrors_AC({ error: imageData.error }))
+            throw new Error(imageData.error)
+        }
+    }
+}
+
+export const editUserData = (userData) => async dispatch => {
+    dispatch(loadingUser_AC())
+    const result = await userApi.editUserData(userData)
+    if (result.resultCode === 0) {
+        dispatch(getUserData())
+    } else {
+        dispatch(uiActions.setErrors_AC({ error: result.error }))
+        throw new Error(result.error)
+    }
 }
 
 const getUserData = () => async dispatch => {
@@ -58,6 +93,7 @@ const authFlow = async (credentials, history, dispatch, type) => {
         axios.defaults.headers.common['Authorization'] = `Bearer ${tokenData.data.token}`
         await dispatch(getUserData())
         dispatch(uiActions.clearErrors_AC())
+        tokenChecker(dispatch)
         history.push('/')
     } else {
         dispatch(uiActions.setErrors_AC({ error: tokenData.error }))

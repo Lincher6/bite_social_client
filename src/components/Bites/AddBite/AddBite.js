@@ -1,0 +1,49 @@
+import React, {useCallback, useState} from 'react'
+import {useStyles} from "../styles";
+import {useDispatch, useSelector} from "react-redux";
+import Add from "@material-ui/icons/Add";
+import Close from "@material-ui/icons/Close";
+import {EditButton} from "../../common/EditButton";
+import Dialog from "@material-ui/core/Dialog";
+import DialogTitle from "@material-ui/core/DialogTitle";
+import DialogContent from "@material-ui/core/DialogContent";
+import {bitesActions} from "../../../model/bites";
+import {AddBiteForm} from "./AddBiteForm";
+import {uiSelectors} from "../../../model/ui";
+
+export const AddBite = () => {
+    const [open, setOpen] = useState(false)
+    const { loading, errors } = useSelector(uiSelectors.ui)
+    const dispatch = useDispatch()
+    const classes = useStyles()
+
+    const addBite = useCallback(async (bite) => {
+        await dispatch(bitesActions.addBite(bite))
+        setOpen(false)
+    }, [])
+
+    return (
+        <React.Fragment>
+            <EditButton tip={'Добавить пост'} onClick={() => setOpen(true)}>
+                <Add />
+            </EditButton>
+            <Dialog
+                open={open}
+                maxWidth={'sm'}
+                fullWidth
+                className={classes.addBite}
+                onBackdropClick={() => setOpen(false)}
+            >
+                <EditButton tip={'закрыть'} className={classes.close} onClick={() => setOpen(false)}>
+                    <Close opacity={.5}/>
+                </EditButton>
+                <DialogTitle>
+                    Добавить новый байт
+                </DialogTitle>
+                <DialogContent>
+                    <AddBiteForm addBite={addBite} loading={loading} fetchError={errors.error}/>
+                </DialogContent>
+            </Dialog>
+        </React.Fragment>
+    )
+}

@@ -1,4 +1,5 @@
 import { SET_AUTHENTICATED, SET_USER, LOADING_USER } from './types'
+import {LIKE_BITE, UNLIKE_BITE} from "../bites/types";
 
 const initialState = {
     authenticated: false,
@@ -21,6 +22,23 @@ export const reducer = (state = initialState, action) => {
             loadingUser: false,
             ...action.payload
         }
+
+        case LIKE_BITE:
+            const like = {
+                biteId: action.payload.biteId,
+                userHandle: state.credentials.handle
+            }
+
+            return {
+            ...state,
+                likes: [...state.likes, like]
+        }
+
+        case UNLIKE_BITE:
+            return {
+                ...state,
+                likes: state.likes.filter(like => like.biteId !== action.payload.biteId)
+            }
 
         case LOADING_USER: return {
             ...state,

@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="bdc8e3cf-867b-4776-9ec2-b86e04468685" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/assets/imageEdit.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/Authentication/Login/LoginForm.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/Authentication/Login/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/Authentication/Logout/Logout.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/Authentication/Logout/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/Authentication/SignUp/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/Authentication/SignUp/styles.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/Bites/AddBite/AddBite.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/Bites/AddBite/AddBiteForm.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/Bites/AddBite/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/Bites/Bite/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/Bites/BiteList/BiteList.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/Bites/BiteList/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/Bites/CommentBite/CommentBite.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/Bites/CommentBite/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/Bites/DeleteBite/DeleteBite.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/Bites/LikeBite/LikeBite.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/Bites/LikeBite/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/Bites/styles.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/NavBar/AuthenticatedNavigation/AuthenticatedNavigation.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/NavBar/AuthenticatedNavigation/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/NavBar/UnauthenticatedNavigation/UnauthenticatedNavigation.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/NavBar/UnauthenticatedNavigation/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/NavBar/styles.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/Profile/EditProfile/EditProfile.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/Profile/EditProfile/EditProfileForm.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/Profile/EditProfile/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/Profile/NoProfile/NoProfile.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/Profile/NoProfile/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/Profile/ProfileInfo/ProfileInfo.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/Profile/ProfileInfo/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/Profile/ProfilePicture/ProfilePicture.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/Profile/ProfilePicture/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/Profile/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/common/AuthRoute/AuthRoute.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/common/AuthRoute/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/common/EditButton/EditButton.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/common/EditButton/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/common/ReadMore/ReadMore.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/common/ReadMore/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/common/ReadMore/styles.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/../package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../package.json" beforeDir="false" afterPath="$PROJECT_DIR$/../package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/App.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AppContent.js" beforeDir="false" afterPath="$PROJECT_DIR$/AppContent.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/_settings/constants.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/_settings/theme.js" beforeDir="false" afterPath="$PROJECT_DIR$/theme.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/dataApi.js" beforeDir="false" afterPath="$PROJECT_DIR$/api/bitesApi.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/userApi.js" beforeDir="false" afterPath="$PROJECT_DIR$/api/userApi.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/AuthRoute/AuthRoute.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/AuthRoute/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/BiteCard/BiteCard.js" beforeDir="false" afterPath="$PROJECT_DIR$/components/Bites/Bite/Bite.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/BiteCard/styles.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/NavBar/NavBar.js" beforeDir="false" afterPath="$PROJECT_DIR$/components/NavBar/NavBar.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/Profile/Profile.js" beforeDir="false" afterPath="$PROJECT_DIR$/components/Profile/Profile.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/Profile/styles.js" beforeDir="false" afterPath="$PROJECT_DIR$/components/Profile/styles.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hooks/useAxios.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/hooks/useInitialization.js" beforeDir="false" afterPath="$PROJECT_DIR$/hooks/useInitialization.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/index.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/model/data/actions.js" beforeDir="false" afterPath="$PROJECT_DIR$/model/bites/actions.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/model/data/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/model/bites/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/model/data/reducer.js" beforeDir="false" afterPath="$PROJECT_DIR$/model/bites/reducer.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/model/data/selectors.js" beforeDir="false" afterPath="$PROJECT_DIR$/model/bites/selectors.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/model/data/types.js" beforeDir="false" afterPath="$PROJECT_DIR$/model/bites/types.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/model/store.js" beforeDir="false" afterPath="$PROJECT_DIR$/model/store.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/model/user/actions.js" beforeDir="false" afterPath="$PROJECT_DIR$/model/user/actions.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/model/user/reducer.js" beforeDir="false" afterPath="$PROJECT_DIR$/model/user/reducer.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/model/user/selectors.js" beforeDir="false" afterPath="$PROJECT_DIR$/model/user/selectors.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/globalStyles.js" beforeDir="false" afterPath="$PROJECT_DIR$/components/Authentication/Login/styles.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/home/Home.js" beforeDir="false" afterPath="$PROJECT_DIR$/pages/home/Home.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/login/Login.js" beforeDir="false" afterPath="$PROJECT_DIR$/pages/login/Login.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/login/components/LoginForm.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/signUp/components/SignUpForm.js" beforeDir="false" afterPath="$PROJECT_DIR$/components/Authentication/SignUp/SignUpForm.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/signUp/signUp.js" beforeDir="false" afterPath="$PROJECT_DIR$/pages/signUp/signUp.js" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="ProjectId" id="1cRKEjZLb6qS1mLFcYpzZ0yvMlq" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="bdc8e3cf-867b-4776-9ec2-b86e04468685" name="Default Changelist" comment="" />
+      <created>1590485855787</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1590485855787</updated>
+      <workItem from="1590485857036" duration="51000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="2" />
+  </component>
+</project>

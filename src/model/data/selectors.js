@@ -1,1 +1,0 @@
-export const bites = state => state.data.bites

@@ -21,12 +21,21 @@ code {
   padding: 5px;
 }
 
-.nav-container {
-  margin: 0 auto;
+.form  {
+  text-align: center
+}
+
+
+.textField {
+  margin: 10px auto !important
 }
 
 .paper {
   padding: 20px;
+}
+
+.button {
+  margin: 10px !important
 }
 
 a {

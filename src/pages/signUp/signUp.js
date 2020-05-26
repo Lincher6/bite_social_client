@@ -1,6 +1,6 @@
 import React, { useState, useCallback, useEffect } from 'react'
 import Grid from '@material-ui/core/Grid';
-import { SignUpForm } from "./components/SignUpForm";
+import { SignUpForm } from "../../components/Authentication/SignUp";
 import { useHistory } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
 import { uiSelectors, uiActions } from '../../model/ui';

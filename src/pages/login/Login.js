@@ -1,6 +1,6 @@
 import React, { useCallback, useEffect } from 'react'
 import Grid from '@material-ui/core/Grid';
-import { LoginForm } from "./components/LoginForm";
+import { LoginForm } from "../../components/Authentication/Login";
 import { useHistory } from 'react-router-dom';
 import { userActions } from '../../model/user'
 import { uiSelectors, uiActions } from '../../model/ui'

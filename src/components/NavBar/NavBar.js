@@ -1,21 +1,23 @@
 import React from 'react'
 import AppBar from "@material-ui/core/AppBar";
+import { useStyles } from './styles'
 import Toolbar from "@material-ui/core/Toolbar";
-import { NavLink } from "react-router-dom";
-import Button from "@material-ui/core/Button";
+import {UnauthenticatedNavigation} from "./UnauthenticatedNavigation";
+import {useSelector} from "react-redux";
+import {userSelectors} from "../../model/user";
+import {AuthenticatedNavigation} from "./AuthenticatedNavigation";
 
-export const NavBar = props => (
-    <AppBar position="fixed">
-        <Toolbar className='nav-container'>
-            <Button color='inherit' component={NavLink} to={'/'}>
-                Home
-            </Button>
-            <Button color='inherit' component={NavLink} to={'/login'}>
-                Login
-            </Button>
-            <Button color='inherit' component={NavLink} to={'/signUp'}>
-                SignUp
-            </Button>
-        </Toolbar>
-    </AppBar>
-)
+export const NavBar = props => {
+    const classes = useStyles()
+    const { authenticated } = useSelector(userSelectors.user)
+
+    return (
+        <AppBar position="fixed">
+            <Toolbar className={classes.navContainer}>
+                {authenticated
+                    ? <AuthenticatedNavigation/>
+                    : <UnauthenticatedNavigation/>}
+            </Toolbar>
+        </AppBar>
+    )
+}

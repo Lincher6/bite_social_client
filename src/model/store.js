@@ -1,7 +1,7 @@
 import { createStore, combineReducers, applyMiddleware, compose } from 'redux'
 import thunk from 'redux-thunk'
 import { userReducer } from './user'
-import { dataReducer } from './data'
+import { bitesReducer } from './bites'
 import { uiReducer } from './ui'
 
 const initialState = {}
@@ -9,7 +9,7 @@ const middleware = [thunk]
 
 const reducers = combineReducers({
     user: userReducer,
-    data: dataReducer,
+    bites: bitesReducer,
     ui: uiReducer
 })
 
