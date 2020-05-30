@@ -1,14 +1,24 @@
-import {ADD_BITE, DELETE_BITE, LIKE_BITE, LOADING_BITES, SET_BITES, UNLIKE_BITE} from "./types"
+import { ADD_BITE, DELETE_BITE, LIKE_BITE, LOADING_BITES, SET_BITES, UNLIKE_BITE, SET_BITE, ADD_COMMENT, LOADING_COMMENT } from "./types"
 import { uiActions } from '../ui'
 import { bitesApi } from '../../api/bitesApi'
 
-const serBites_AC = payload => ({
+const setBites_AC = payload => ({
     type: SET_BITES,
+    payload
+})
+
+const setBite_AC = payload => ({
+    type: SET_BITE,
     payload
 })
 
 const addBite_AC = payload => ({
     type: ADD_BITE,
+    payload
+})
+
+const addComment_AC = payload => ({
+    type: ADD_COMMENT,
     payload
 })
 
@@ -26,19 +36,34 @@ const loadingBites_AC = () => ({
     type: LOADING_BITES,
 })
 
+const loadingComment_AC = () => ({
+    type: LOADING_COMMENT,
+})
+
 const deleteBite_AC = (payload) => ({
     type: DELETE_BITE,
-        payload
+    payload
 })
 
 export const getBites = () => async dispatch => {
     dispatch(loadingBites_AC())
     const bitesData = await bitesApi.getBites()
     if (bitesData.resultCode === 0) {
-        dispatch(serBites_AC(bitesData.data))
+        dispatch(setBites_AC(bitesData.data))
         dispatch(uiActions.clearErrors_AC())
     } else {
         dispatch(uiActions.setErrors_AC({ error: bitesData.error }))
+    }
+}
+
+export const getBite = (biteId) => async dispatch => {
+    dispatch(uiActions.loadingUI_AC())
+    const biteData = await bitesApi.getBite(biteId)
+    if (biteData.resultCode === 0) {
+        dispatch(setBite_AC(biteData.data))
+        dispatch(uiActions.clearErrors_AC())
+    } else {
+        dispatch(uiActions.setErrors_AC({ error: biteData.error }))
     }
 }
 
@@ -50,6 +75,17 @@ export const addBite = (bite) => async dispatch => {
         dispatch(uiActions.clearErrors_AC())
     } else {
         dispatch(uiActions.setErrors_AC({ error: biteData.error }))
+    }
+}
+
+export const addComment = (biteId, comment) => async dispatch => {
+    dispatch(loadingComment_AC())
+    const commentData = await bitesApi.addComment(biteId, comment)
+    if (commentData.resultCode === 0) {
+        dispatch(addComment_AC(commentData.data))
+        dispatch(uiActions.clearErrors_AC())
+    } else {
+        dispatch(uiActions.setErrors_AC({ error: commentData.error }))
     }
 }
 

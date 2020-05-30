@@ -1,8 +1,8 @@
 import React from 'react'
-import {Bite} from "../Bite";
+import { Bite } from "../Bite";
 import { useStyles } from "../styles";
-import {useSelector} from "react-redux";
-import {bitesSelectors} from "../../../model/bites";
+import { useSelector } from "react-redux";
+import { bitesSelectors } from "../../../model/bites";
 import CircularProgress from "@material-ui/core/CircularProgress";
 
 export const BiteList = ({ bites }) => {
@@ -11,8 +11,8 @@ export const BiteList = ({ bites }) => {
 
     return (
         <div className={classes.list}>
-            {loadingBites ? <CircularProgress size={80}/> : null}
-            { bites.map( bite => {
+            {loadingBites ? <CircularProgress size={80} /> : null}
+            {bites.map(bite => {
                 return (
                     <Bite
                         key={bite.biteId}

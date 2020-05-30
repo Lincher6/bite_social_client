@@ -6,12 +6,11 @@ import MuLink from '@material-ui/core/Link'
 import LocationOn from '@material-ui/icons/LocationOn';
 import LinkIcon from '@material-ui/icons/Link';
 import CalendarToday from '@material-ui/icons/CalendarToday';
-import dayjs from 'dayjs'
-import 'dayjs/locale/ru'
+import { useDayjs } from '../../../hooks/useDayjs';
 
 export const ProfileInfo = ({ handle, bio, location, website, createdAt, }) => {
     const classes = useStyles()
-    dayjs.locale('ru')
+    const { dayjs, options } = useDayjs()
 
     return (
         <div className={classes.profileInfo}>
@@ -31,7 +30,7 @@ export const ProfileInfo = ({ handle, bio, location, website, createdAt, }) => {
             {
                 location &&
                 <>
-                    <LocationOn color='primary' />&nbsp;
+                    <LocationOn color='primary' className='icon' />&nbsp;
                     <span>{location}</span>
                     <hr />
                 </>
@@ -39,7 +38,7 @@ export const ProfileInfo = ({ handle, bio, location, website, createdAt, }) => {
             {
                 website &&
                 <>
-                    <LinkIcon color='primary' />&nbsp;
+                    <LinkIcon color='primary' className='icon' />&nbsp;
                     <a href={website} target='_blanck' type='noreferer noopener'>{website}</a>
                     <hr />
                 </>
@@ -47,8 +46,8 @@ export const ProfileInfo = ({ handle, bio, location, website, createdAt, }) => {
             {
                 createdAt &&
                 <>
-                    <CalendarToday color='primary' />&nbsp;
-                    <span>Дата регистрации: {dayjs(createdAt).format('MMM YYYY')}</span>
+                    <CalendarToday color='primary' className='icon' />&nbsp;
+                    <span>Дата регистрации: {dayjs(createdAt).format(options.short)}</span>
                     <hr />
                 </>
             }

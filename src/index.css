@@ -6,8 +6,14 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 
-  --primary: #33c9dc;
-  --secondary: #00838f;
+  --primary: #00e5ff;
+  --secondary: #ff3d00;
+  --darkBackground: #0b1119;
+  --darkNav: #20465e;
+  --paper: #17212b;
+  --orange: #e55600;
+  --red: #e90000;
+  --yellow: #e3dd00;
 }
 
 code {
@@ -34,10 +40,10 @@ code {
   padding: 20px;
 }
 
-.button {
-  margin: 10px !important
-}
-
 a {
   text-decoration: none;
+}
+
+.icon {
+  filter: drop-shadow( 0 0 1px var(--primary));
 }

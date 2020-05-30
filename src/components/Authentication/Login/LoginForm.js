@@ -1,13 +1,12 @@
 import { useFormik } from "formik";
 import React from "react";
 import * as yup from 'yup'
-import { useStyles } from "./styles";
+import { useStyles } from "../styles";
 import logo from '../../../assets/titleLogo.png'
-import Typography from "@material-ui/core/Typography";
 import TextField from "@material-ui/core/TextField";
-import Button from '@material-ui/core/Button'
 import CircularProgress from '@material-ui/core/CircularProgress';
 import { NavLink } from 'react-router-dom'
+import { Button, Typography } from "../../common/styled-components";
 
 
 export const LoginForm = ({ login, loginError, loading }) => {
@@ -54,17 +53,17 @@ export const LoginForm = ({ login, loginError, loading }) => {
             <Button
                 type='submit'
                 variant='contained'
-                color='primary'
                 className={classes.button}
+                color='primary'
                 disabled={loading}
             >
                 Войти
                 {loading
-                    ? <CircularProgress className={classes.loader} size={30}/>
+                    ? <CircularProgress className={classes.loader} size={30} />
                     : null}
             </Button>
             <p>
-                Нет аккаунта? <NavLink to='/signUp' className={classes.link}><strong>Создать</strong></NavLink> 
+                Нет аккаунта? <NavLink to='/signUp' className={classes.link}><strong>Создать</strong></NavLink>
             </p>
         </form>
     )

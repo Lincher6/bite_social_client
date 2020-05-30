@@ -1,10 +1,10 @@
-import React, {useCallback} from 'react'
-import {userActions} from "../../../model/user";
+import React, { useCallback } from 'react'
+import { userActions } from "../../../model/user";
 import ExitToApp from "@material-ui/icons/ExitToApp";
-import {EditButton} from "../../common/EditButton";
-import {useDispatch} from "react-redux";
+import { EditButton } from "../../common/EditButton";
+import { useDispatch } from "react-redux";
 
-export const Logout = ({className, color}) => {
+export const Logout = ({ className, color }) => {
     const dispatch = useDispatch()
 
     const logout = useCallback(() => {
@@ -13,7 +13,7 @@ export const Logout = ({className, color}) => {
 
     return (
         <EditButton className={className} tip='Выйти' onClick={logout} >
-            <ExitToApp color={color} />
+            <ExitToApp color={color} className='icon' />
         </EditButton>
     )
 }

@@ -1,17 +1,17 @@
 import React from 'react'
 import Button from "@material-ui/core/Button";
-import {NavLink} from "react-router-dom";
+import { NavLink } from "react-router-dom";
 
 export const UnauthenticatedNavigation = props => (
     <React.Fragment>
-        <Button color='inherit' component={NavLink} to={'/'}>
-            Home
+        <Button component={NavLink} to={'/'}>
+            Главная
         </Button>
-        <Button color='inherit' component={NavLink} to={'/login'}>
-            Login
+        <Button component={NavLink} to={'/login'}>
+            Войти
         </Button>
-        <Button color='inherit' component={NavLink} to={'/signUp'}>
-            SignUp
+        <Button component={NavLink} to={'/signUp'}>
+            Регистрация
         </Button>
     </React.Fragment>
 )

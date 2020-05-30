@@ -16,7 +16,7 @@ export const useStyles = makeStyles({
             verticalAlign: 'middle'
         },
         '& a': {
-            color: '#00bcd4'
+            color: 'var(--primary)'
         },
         '& hr': {
             border: 'none',

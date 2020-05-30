@@ -1,13 +1,11 @@
 import { useFormik } from "formik";
 import React from "react";
 import * as yup from 'yup'
-import { useStyles } from "../styles";
 import TextField from "@material-ui/core/TextField";
-import Button from '@material-ui/core/Button'
+import { Button } from '../../common/styled-components'
 
 
 export const EditProfileForm = ({ bio, location, website, editUserData, setOpen }) => {
-    const classes = useStyles()
     const { handleSubmit, handleChange, handleBlur, values, errors, touched } = useFormik({
         initialValues: {
             bio: bio || '',
@@ -64,7 +62,7 @@ export const EditProfileForm = ({ bio, location, website, editUserData, setOpen 
             </Button>
             <Button
                 className='button'
-                color='primary'
+
                 variant='outlined'
                 onClick={() => setOpen(false)}
             >

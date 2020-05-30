@@ -1,17 +1,17 @@
-import React, {useState} from 'react'
+import React, { useState } from 'react'
 import Typography from "@material-ui/core/Typography";
-import {useStyles} from "./styles";
+import { useStyles } from "./styles";
 
 
-export const ReadMore = ({text, maxCharacters = 200}) => {
+export const ReadMore = ({ text, maxCharacters = 200 }) => {
     const classes = useStyles()
     const [collapsed, setCollapsed] = useState(true)
 
     if (text.length < maxCharacters) {
-        return  <Typography style={{whiteSpace: 'pre-line'}} variant='body1'> {text} </Typography>
+        return <Typography style={{ whiteSpace: 'pre-line' }} variant='body1'> {text} </Typography>
     }
 
-    const helperText = collapsed ? ' дальше...' : ' назад...'
+    const helperText = collapsed ? ' дальше...' : ' назад'
     if (collapsed) {
         text = text.slice(0, maxCharacters)
     }
@@ -21,7 +21,7 @@ export const ReadMore = ({text, maxCharacters = 200}) => {
     }
 
     return (
-        <Typography style={{whiteSpace: 'pre-line'}} variant='body1'>
+        <Typography style={{ whiteSpace: 'pre-line' }} variant='body1'>
             {text}
             <span
                 onClick={toggleCollapsed}

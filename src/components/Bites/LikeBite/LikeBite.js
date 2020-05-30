@@ -1,14 +1,14 @@
-import React, {useCallback} from 'react'
-import {EditButton} from "../../common/EditButton";
+import React, { useCallback } from 'react'
+import { EditButton } from "../../common/EditButton";
 import FavoriteBorder from "@material-ui/icons/FavoriteBorder";
 import Favorite from "@material-ui/icons/Favorite";
-import {useDispatch, useSelector} from "react-redux";
-import {userSelectors} from "../../../model/user";
-import {bitesActions} from "../../../model/bites";
+import { useDispatch, useSelector } from "react-redux";
+import { userSelectors } from "../../../model/user";
+import { bitesActions } from "../../../model/bites";
 import IconButton from "@material-ui/core/IconButton";
 
-export const LikeBite = ({likesCount, biteId}) => {
-    const {authenticated, likes} = useSelector(userSelectors.user)
+export const LikeBite = ({ likesCount, biteId }) => {
+    const { authenticated, likes } = useSelector(userSelectors.user)
     const liked = likes && likes.find(like => like.biteId === biteId)
     const dispatch = useDispatch()
 
@@ -24,7 +24,7 @@ export const LikeBite = ({likesCount, biteId}) => {
         return (
             <React.Fragment>
                 <EditButton tip={'нравится'} onClick={() => alert('нужно авторизироваться')}>
-                    <FavoriteBorder color='primary'/>
+                    <FavoriteBorder color='primary' className='icon' />
                 </EditButton>
                 {likesCount}
             </React.Fragment>
@@ -35,7 +35,7 @@ export const LikeBite = ({likesCount, biteId}) => {
         return (
             <React.Fragment>
                 <IconButton onClick={unlike}>
-                    <Favorite color='primary'/>
+                    <Favorite color='primary' className='icon' />
                 </IconButton>
                 {likesCount}
             </React.Fragment>
@@ -45,7 +45,7 @@ export const LikeBite = ({likesCount, biteId}) => {
     return (
         <React.Fragment>
             <EditButton tip={'нравится'} onClick={like}>
-                <FavoriteBorder color='primary'/>
+                <FavoriteBorder color='primary' className='icon' />
             </EditButton>
             {likesCount}
         </React.Fragment>

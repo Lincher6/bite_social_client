@@ -3,7 +3,7 @@ import {EditButton} from "../../common/EditButton";
 import {useDispatch, useSelector} from "react-redux";
 import {bitesActions} from "../../../model/bites";
 import {userSelectors} from "../../../model/user";
-import Delete from '@material-ui/icons/DeleteOutline'
+import Delete from '@material-ui/icons/DeleteForeverOutlined'
 import Dialog from "@material-ui/core/Dialog";
 import DialogTitle from "@material-ui/core/DialogTitle";
 import DialogActions from "@material-ui/core/DialogActions";

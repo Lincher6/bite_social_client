@@ -1,4 +1,4 @@
-import {makeStyles} from "@material-ui/core/styles";
+import { makeStyles } from "@material-ui/core/styles";
 
 export const useStyles = makeStyles({
     title: {
@@ -6,12 +6,13 @@ export const useStyles = makeStyles({
     },
 
     form: {
-        textAlign: 'center'
+        textAlign: 'center',
+        padding: 10
     },
 
     logo: {
-        width: 70,
-        height: 70
+        width: 300,
+        height: 100
     },
 
     textField: {

@@ -1,22 +1,22 @@
 import React from 'react'
-import {EditButton} from "../../common/EditButton";
-import { Add, Home, Notifications } from "@material-ui/icons";
-import {NavLink} from "react-router-dom";
+import { EditButton } from "../../common/EditButton";
+import { Home, Notifications } from "@material-ui/icons";
+import { NavLink } from "react-router-dom";
 import { Logout } from "../../Authentication/Logout";
-import {AddBite} from "../../Bites/AddBite";
+import { AddBite } from "../../Bites/AddBite";
 
 export const AuthenticatedNavigation = props => (
     <React.Fragment>
-        <AddBite/>
+        <AddBite />
         <NavLink to={''}>
             <EditButton tip={'Главная'}>
-                <Home/>
+                <Home />
             </EditButton>
         </NavLink>
         <EditButton tip={'Уведомления'}>
-            <Notifications/>
+            <Notifications />
         </EditButton>
-        <Logout/>
+        <Logout />
 
     </React.Fragment>
 )
