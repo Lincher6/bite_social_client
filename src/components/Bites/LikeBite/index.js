@@ -1,1 +1,0 @@
-export { LikeBite } from './LikeBite'

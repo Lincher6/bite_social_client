@@ -1,1 +1,0 @@
-export { ProfilePicture } from './ProfilePicture'

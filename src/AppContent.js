@@ -1,11 +1,11 @@
 import React from 'react';
 import { Switch, Route } from 'react-router-dom'
-import { AuthRoute } from './components/common/AuthRoute'
-import { Login } from "./pages/login/Login";
-import { SignUp } from "./pages/signUp/SignUp";
-import { Home } from "./pages/home/Home";
-import { NavBar } from "./components/NavBar/NavBar";
-import { useInitialization } from './hooks/useInitialization'
+import { LoginPage } from "./pages/login";
+import { SignUpPage } from "./pages/signUp";
+import { HomePage } from "./pages/home";
+import { ProfilePage } from './pages/profile'
+import { NavBar } from "./features/Navigation";
+import { useInitialization } from './lib/hooks/useInitialization';
 
 export const AppContent = () => {
     useInitialization()
@@ -13,11 +13,12 @@ export const AppContent = () => {
     return (
         <React.Fragment>
             <NavBar />
-            <div className='contentContainer'>
+            <div className="contentContainer">
                 <Switch>
-                    <Route exact path={'/login'} component={Login} />
-                    <Route exact path={'/signUp'} component={SignUp} />
-                    <Route path={'/'} component={Home} />
+                    <Route exact path={'/login'} component={LoginPage} />
+                    <Route exact path={'/signUp'} component={SignUpPage} />
+                    <Route path={'/profile'} component={ProfilePage} />
+                    <Route path={'/'} component={HomePage} />
                 </Switch>
             </div>
         </React.Fragment>

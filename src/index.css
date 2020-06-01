@@ -6,6 +6,8 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 
+  overflow-x: hidden;
+
   --primary: #00e5ff;
   --secondary: #ff3d00;
   --darkBackground: #0b1119;
@@ -44,6 +46,23 @@ a {
   text-decoration: none;
 }
 
+hr {
+  opacity: .6;
+  box-shadow: 0 0 2px 0 var(--primary);
+}
+
 .icon {
   filter: drop-shadow( 0 0 1px var(--primary));
+}
+
+/* ScrillBar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  border-radius: 10px;
+}
+::-webkit-scrollbar-thumb {
+  background: darkcyan;
+  border-radius: 3px;
 }

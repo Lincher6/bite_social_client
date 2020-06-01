@@ -67,10 +67,12 @@ export const darkTheme = createMuiTheme({
     },
 
     typography: {
+        fontFamily: `"Roboto", "Helvetica", "Arial", sans-serif`,
         useNextVariants: true,
         button: {
             fontWeight: 600,
-        }
+        },
+
     },
 
     overrides: {
@@ -102,7 +104,7 @@ darkTheme.typography.body1 = {
     [darkTheme.breakpoints.down('xs')]: {
         fontSize: '0.8rem',
     },
-};
+}
 
 darkTheme.typography.body2 = {
     fontSize: '0.9rem',
@@ -112,7 +114,7 @@ darkTheme.typography.body2 = {
     [darkTheme.breakpoints.down('xs')]: {
         fontSize: '0.7rem',
     },
-};
+}
 
 darkTheme.typography.h5 = {
     fontSize: '1.5rem',
@@ -121,4 +123,4 @@ darkTheme.typography.h5 = {
         fontSize: '1.2rem',
         fontWeight: 400,
     },
-};
+}
