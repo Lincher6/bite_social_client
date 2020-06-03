@@ -8,4 +8,7 @@ export const COMMENT_BITE = 'COMMENT_BITE'
 export const DELETE_BITE = 'DELETE_BITE'
 export const LOADING_BITES = 'LOADING_BITES'
 export const LOADING_COMMENT = 'LOADING_COMMENT'
+export const CLEAR_BITES = 'CLEAR_BITES'
+
+export const PAGE_SIZE = 10
 

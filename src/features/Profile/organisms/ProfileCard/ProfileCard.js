@@ -30,7 +30,7 @@ export const ProfileCard = props => {
     }
 
     return (
-        <Paper className={classes.profile}>
+        <Paper className={classes.profileCard}>
             <Picture imageUrl={credentials.imageUrl} />
             <Info {...credentials} />
             <Edit />

@@ -66,3 +66,5 @@ hr {
   background: darkcyan;
   border-radius: 3px;
 }
+
+@import "~react-image-gallery/styles/css/image-gallery.css";

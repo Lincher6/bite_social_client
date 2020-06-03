@@ -1,9 +1,9 @@
 import axios from 'axios'
 
 export const bitesApi = {
-    getBites: async () => {
+    getBites: async (offset, userHandle) => {
         try {
-            let response = await axios.get('/bites')
+            let response = await axios.get(`/bites`, { params: { offset, userHandle } })
             return { data: response.data, resultCode: 0 }
         } catch (e) {
             return { error: e.response.data.error, resultCode: 1 }

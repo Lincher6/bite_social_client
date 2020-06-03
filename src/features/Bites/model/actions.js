@@ -1,4 +1,4 @@
-import { ADD_BITE, DELETE_BITE, LIKE_BITE, LOADING_BITES, SET_BITES, UNLIKE_BITE, SET_BITE, ADD_COMMENT, LOADING_COMMENT } from "./types"
+import { ADD_BITE, DELETE_BITE, LIKE_BITE, LOADING_BITES, SET_BITES, UNLIKE_BITE, SET_BITE, ADD_COMMENT, LOADING_COMMENT, CLEAR_BITES } from "./types"
 import { uiActions } from '../../Navigation'
 import { bitesApi } from '../../../api/bitesApi'
 
@@ -45,11 +45,14 @@ const deleteBite_AC = (payload) => ({
     payload
 })
 
-export const getBites = () => async dispatch => {
+export const clearBites_AC = () => ({
+    type: CLEAR_BITES
+})
+
+export const getBites = (offset = 0, userHandle = '') => async dispatch => {
     dispatch(loadingBites_AC())
-    const bitesData = await bitesApi.getBites()
+    const bitesData = await bitesApi.getBites(offset, userHandle)
     if (bitesData.resultCode === 0) {
-        console.log(bitesData.data)
         dispatch(setBites_AC(bitesData.data))
         dispatch(uiActions.clearErrors_AC())
     } else {
