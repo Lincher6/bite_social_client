@@ -1,9 +1,6 @@
 import React from 'react';
 import { Switch, Route } from 'react-router-dom'
-import { LoginPage } from "./pages/login";
-import { SignUpPage } from "./pages/signUp";
-import { HomePage } from "./pages/home";
-import { ProfilePage } from './pages/profile'
+import { LoginPage, SignUpPage, HomePage, ProfilePage, UserPage, UsersPage } from "./pages";
 import { NavBar } from "./features/Navigation";
 import { useInitialization } from './lib/hooks/useInitialization';
 
@@ -17,7 +14,9 @@ export const AppContent = () => {
                 <Switch>
                     <Route exact path={'/login'} component={LoginPage} />
                     <Route exact path={'/signUp'} component={SignUpPage} />
-                    <Route path={'/profile'} component={ProfilePage} />
+                    <Route exact path={'/profile'} component={ProfilePage} />
+                    <Route path={'/users/:userHandle'} component={UserPage} />
+                    <Route path={'/users'} component={UsersPage} />
                     <Route path={'/'} component={HomePage} />
                 </Switch>
             </div>

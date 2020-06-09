@@ -5,12 +5,9 @@ import LocationOn from '@material-ui/icons/LocationOn';
 import LinkIcon from '@material-ui/icons/Link';
 import CalendarToday from '@material-ui/icons/CalendarToday';
 import { useDayjs } from '../../../../lib/hooks/useDayjs';
-import { useSelector } from 'react-redux';
-import { profileSelectors } from '../../model';
 
-export const Info = () => {
+export const Info = ({ handle, bio, location, website, createdAt }) => {
     const classes = useStyles()
-    const { handle, bio, location, website, createdAt, } = useSelector(profileSelectors.credentials)
     const { dayjs, options } = useDayjs()
 
     return (

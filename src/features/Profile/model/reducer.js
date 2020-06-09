@@ -1,4 +1,4 @@
-import { SET_AUTHENTICATED, SET_PROFILE, LOADING_PROFILE } from './types'
+import { SET_AUTHENTICATED, SET_AUTHENTICATED_PROFILE, LOADING_PROFILE, LOGOUT } from './types'
 import { LIKE_BITE, UNLIKE_BITE } from "../../Bites";
 
 const initialState = {
@@ -6,7 +6,8 @@ const initialState = {
     loadingProfile: false,
     credentials: {},
     likes: [],
-    notifications: []
+    notifications: [],
+    images: []
 }
 
 export const reducer = (state = initialState, action) => {
@@ -16,11 +17,17 @@ export const reducer = (state = initialState, action) => {
             authenticated: action.payload
         }
 
-        case SET_PROFILE: return {
+        case SET_AUTHENTICATED_PROFILE: return {
             ...state,
             authenticated: true,
             loadingProfile: false,
             ...action.payload
+        }
+
+        case LOGOUT: return {
+            ...state,
+            authenticated: false,
+            credentials: {},
         }
 
         case LIKE_BITE:

@@ -1,0 +1,6 @@
+export { HomePage } from './home/HomePage'
+export { LoginPage } from './login/LoginPage'
+export { SignUpPage } from './signUp/SignUpPage'
+export { ProfilePage } from './profile/ProfilePage'
+export { UserPage } from './user/UserPage'
+export { UsersPage } from './users/UsersPage'

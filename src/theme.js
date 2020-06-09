@@ -55,8 +55,8 @@ export const darkTheme = createMuiTheme({
         },
         secondary: {
             light: '#ff6333',
-            main: '#ee0092',
-            dark: '#ad1457',
+            main: '#ff6000',
+            dark: '#a74103',
             contrastText: '#fff'
         },
         background: {
@@ -93,6 +93,20 @@ export const darkTheme = createMuiTheme({
                 }
             }
         },
+        MuiButton: {
+            outlined: {
+                [theme.breakpoints.down('xs')]: {
+                    padding: '3px 8px',
+                    fontSize: `.7rem`,
+                },
+            },
+            contained: {
+                [theme.breakpoints.down('xs')]: {
+                    padding: '3px 8px',
+                    fontSize: `.7rem`,
+                },
+            }
+        }
     }
 })
 

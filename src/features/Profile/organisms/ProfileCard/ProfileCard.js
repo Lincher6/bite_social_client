@@ -31,7 +31,7 @@ export const ProfileCard = props => {
 
     return (
         <Paper className={classes.profileCard}>
-            <Picture imageUrl={credentials.imageUrl} />
+            <Picture imageUrl={credentials.imageUrl} authorized={true} />
             <Info {...credentials} />
             <Edit />
             <Logout className={classes.exitButton} color={'primary'} />

@@ -2,8 +2,8 @@ import { Button as rawButton, Typography as rawTypography } from '@material-ui/c
 import styled from 'styled-components'
 
 export const Button = styled(rawButton)`
-    box-shadow: 0 0 7px 0 var(--${props => props.color});
-    margin: 15px !important;
+    box-shadow: xxx0 0 7px 0 var(--${props => props.color});
+    margin: 10px !important;
     &: hover: focus: active {
         box - shadow: none;
     }

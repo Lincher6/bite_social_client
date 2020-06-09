@@ -1,4 +1,4 @@
-import React, { Fragment } from 'react'
+import React from 'react'
 import Paper from '@material-ui/core/Paper';
 import { useStyles } from "../../styles";
 import { Picture } from '../../molecules/Picture';
@@ -11,18 +11,27 @@ import { Album } from '../../molecules/Album';
 
 export const Profile = (props) => {
     const classes = useStyles()
-    const loadingProfile = useSelector(profileSelectors.loadingProfile)
+    const { loadingProfile, images } = useSelector(profileSelectors.profile)
+    const credentials = useSelector(profileSelectors.credentials)
 
     return (
         <Paper className={classes.profile}>
             {loadingProfile
                 ? <CircularProgress size={80} color='primary' />
-                : <Fragment>
-                    <Picture variant='Big' />
-                    <Info />
-                    <Edit />
-                    <Album />
-                </Fragment>
+                : <div className={classes.grid}>
+                    <div style={{ gridArea: 'a' }}>
+                        <Album profileImages={images} />
+                    </div>
+                    <div style={{ gridArea: 'b' }}>
+                        <Picture variant='Big' imageUrl={credentials.imageUrl} authorized={true} />
+                        <Info {...credentials} />
+                        <Edit />
+                    </div>
+                    <div style={{ gridArea: 'c' }}>
+                        <Album profileImages={images} />
+                    </div>
+
+                </div>
             }
 
         </Paper >

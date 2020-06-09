@@ -3,6 +3,7 @@ import thunk from 'redux-thunk'
 import { profileReducer } from '../../features/Profile'
 import { bitesReducer } from '../../features/Bites'
 import { uiReducer } from '../../features/Navigation'
+import { usersReducer } from '../../features/Users'
 
 const initialState = {}
 const middleware = [thunk]
@@ -10,7 +11,8 @@ const middleware = [thunk]
 const reducers = combineReducers({
     profile: profileReducer,
     bites: bitesReducer,
-    ui: uiReducer
+    ui: uiReducer,
+    users: usersReducer
 })
 
 export const store = createStore(

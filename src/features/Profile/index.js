@@ -1,3 +1,6 @@
 export { ProfileCard } from './organisms/ProfileCard'
 export { Profile } from './organisms/Profile'
+export { Picture } from './molecules/Picture'
+export { Info } from './molecules/Info'
+export { Album } from './molecules/Album'
 export { profileActions, profileSelectors, profileReducer } from './model'

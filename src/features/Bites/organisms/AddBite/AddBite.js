@@ -20,14 +20,18 @@ export const AddBite = () => {
     const history = useHistory()
 
     const addBite = useCallback(async (bite) => {
-        await dispatch(bitesActions.addBite(bite))
+        dispatch(bitesActions.addBite(bite))
         setOpen(false)
+    }, [dispatch])
+
+    const handleClick = () => {
+        setOpen(true)
         history.push('/')
-    }, [dispatch, history])
+    }
 
     return (
         <React.Fragment>
-            <EditButton tip={'Добавить пост'} onClick={() => setOpen(true)}>
+            <EditButton tip={'Добавить пост'} onClick={handleClick}>
                 <Add />
             </EditButton>
             <Dialog

@@ -15,15 +15,13 @@ export const useStyles = makeStyles({
             objectFit: 'contain',
             [theme.breakpoints.down('xs')]: {
                 margin: 10,
-                width: 100,
-                minWidth: 100,
-                height: 100,
+                width: 80,
+                minWidth: 80,
+                height: 80,
                 borderRadius: `50%`,
                 objectFit: 'contain',
                 border: `none`,
                 boxShadow: `none`,
-
-
             },
         },
         '& .content': {
@@ -91,7 +89,7 @@ export const useStyles = makeStyles({
     },
 
     list: {
-        textAlign: `center`
+        textAlign: `center`,
     },
 
     addBite: {

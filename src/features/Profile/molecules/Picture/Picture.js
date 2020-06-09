@@ -1,15 +1,13 @@
-import React, { useRef, useCallback } from 'react'
+import React, { useRef, useCallback, Fragment } from 'react'
 import { useStyles } from "../../styles";
 import { useDispatch, useSelector } from 'react-redux'
 import imageEdit from '../../../../assets/imageEdit.png'
 import Tooltip from "@material-ui/core/Tooltip"
 import { profileActions, profileSelectors } from '../../model'
-import Carousel from 'react-material-ui-carousel'
 
-export const Picture = ({ variant = '' }) => {
+export const Picture = ({ variant = '', imageUrl, authorized = false }) => {
     const classes = useStyles()
     let imageFile = useRef(null)
-    const { imageUrl } = useSelector(profileSelectors.credentials)
     const dispatch = useDispatch()
 
     const uploadImage = useCallback((event) => {
@@ -20,19 +18,24 @@ export const Picture = ({ variant = '' }) => {
         <div className={classes[`profilePicture${variant}`]}>
             <div className='image-wrapper'>
                 <img src={imageUrl} alt={'imageUrl'} className='profile-image' />
-                <input
-                    type='file'
-                    ref={imageFile}
-                    hidden='hidden'
-                    onChange={uploadImage}
-                />
-                <Tooltip placement='top' title={'Добавить фото'}>
-                    <img
-                        src={imageEdit}
-                        alt={'imageUrl'}
-                        className='image-edit'
-                        onClick={() => imageFile.current.click()} />
-                </Tooltip>
+                {authorized
+                    ? <Fragment>
+                        <input
+                            type='file'
+                            ref={imageFile}
+                            hidden='hidden'
+                            onChange={uploadImage}
+                        />
+                        <Tooltip placement='top' title={'Добавить фото'}>
+                            <img
+                                src={imageEdit}
+                                alt={'imageUrl'}
+                                className='image-edit'
+                                onClick={() => imageFile.current.click()} />
+                        </Tooltip>
+                    </Fragment>
+                    : null}
+
             </div>
         </div>
     )

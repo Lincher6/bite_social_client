@@ -1,0 +1,3 @@
+export const SET_USER_PROFILE = 'SET_USER_PROFILE'
+export const SET_USERS = 'SET_USERS'
+export const LOADING_USER = 'LOADING_USER'

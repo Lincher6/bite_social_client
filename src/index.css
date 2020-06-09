@@ -67,4 +67,9 @@ hr {
   border-radius: 3px;
 }
 
+@keyframes appear {
+    from { margin-top: 200px; opacity: 0}
+    to {margin-top: 130px; opacity: 1}
+}
+
 @import "~react-image-gallery/styles/css/image-gallery.css";

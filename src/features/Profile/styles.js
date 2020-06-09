@@ -1,4 +1,6 @@
 import { makeStyles } from "@material-ui/core/styles";
+import { theme } from '../../theme'
+import { keyframes } from "styled-components";
 
 export const useStyles = makeStyles({
     profile: {
@@ -7,6 +9,20 @@ export const useStyles = makeStyles({
         textAlign: `center`,
         padding: 20,
         position: `relative`,
+    },
+
+    grid: {
+        display: `grid`,
+        gridTemplateAreas: `
+            'a b b c'
+            `,
+        [theme.breakpoints.down('xs')]: {
+            gridTemplateAreas: `
+            'b b b b'
+            'a a c c'
+            `,
+        },
+
     },
 
     profileCard: {
@@ -78,6 +94,7 @@ export const useStyles = makeStyles({
             height: '200px',
             objectFit: 'cover',
             maxWidth: '100%',
+            boxShadow: `0 15px 30px 0 rgba(0, 0, 0, .5)`,
         },
         '& .image-edit:hover': {
             opacity: .4,
@@ -98,13 +115,11 @@ export const useStyles = makeStyles({
     },
 
     album: {
-        '& .album-image': {
+        margin: 10,
+    },
 
-            objectFit: `contain`
-        },
-        '& .carousel': {
-
-        }
+    carousel: {
+        color: `var(--primary)`
     },
 
     noProfile: {
@@ -119,7 +134,7 @@ export const useStyles = makeStyles({
     },
 
     exitButton: {
-        position: `absolute`,
+        position: `absolute !important`,
         top: 0,
         right: 0
     }

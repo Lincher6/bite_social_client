@@ -1,9 +1,11 @@
 import React from 'react'
 import { EditButton } from "../../../common/EditButton";
-import { Home, Notifications, Person } from "@material-ui/icons";
+import { Home, Notifications } from "@material-ui/icons";
 import { NavLink } from "react-router-dom";
 import { Logout } from "../../../Authentication/organisms/Logout";
 import { AddBite } from "../../../Bites";
+import AccountCircleIcon from '@material-ui/icons/AccountCircle';
+import PeopleAltIcon from '@material-ui/icons/PeopleAlt';
 
 export const AuthenticatedNavigation = props => (
     <React.Fragment>
@@ -15,7 +17,12 @@ export const AuthenticatedNavigation = props => (
         </NavLink>
         <NavLink to={'/profile'}>
             <EditButton tip={'Пользователь'}>
-                <Person />
+                <AccountCircleIcon />
+            </EditButton>
+        </NavLink>
+        <NavLink to={'/users'}>
+            <EditButton tip={'Пользователи'}>
+                <PeopleAltIcon />
             </EditButton>
         </NavLink>
         <EditButton tip={'Уведомления'}>

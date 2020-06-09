@@ -10,19 +10,15 @@ export const BiteList = ({ userHandle = '' }) => {
     const [offset, setOffset] = useState(0)
     const classes = useStyles()
     const dispatch = useDispatch()
-    const { bites, loadingBites } = useSelector(bitesSelectors.bitesData)
+    const { bites, loadingBites, haveMoreBites } = useSelector(bitesSelectors.bitesData)
 
     useEffect(() => {
         return () => { dispatch(bitesActions.clearBites_AC()) }
     }, [])
 
-    const getBites = useCallback(async () => {
+    useEffect(() => {
         dispatch(bitesActions.getBites(offset, userHandle))
     }, [dispatch, offset, userHandle])
-
-    useEffect(() => {
-        getBites()
-    }, [getBites])
 
     return (
         <div className={classes.list}>
@@ -34,9 +30,10 @@ export const BiteList = ({ userHandle = '' }) => {
                     />
                 )
             })}
+
             {loadingBites
                 ? <CircularProgress size={80} />
-                : <LoadMore offset={offset} setOffset={setOffset} />
+                : <LoadMore offset={offset} setOffset={setOffset} haveMore={haveMoreBites} />
             }
         </div>
     )

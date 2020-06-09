@@ -22,6 +22,8 @@ export const Bite = ({ imageUrl, userHandle, createdAt, body, likesCount, commen
             <CardMedia
                 className='image'
                 image={imageUrl}
+                component={NavLink}
+                to={`/users/${userHandle}`}
                 title='User image'
             />
             <div>
