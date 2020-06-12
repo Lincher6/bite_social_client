@@ -13,12 +13,16 @@ export const BiteList = ({ userHandle = '' }) => {
     const { bites, loadingBites, haveMoreBites } = useSelector(bitesSelectors.bitesData)
 
     useEffect(() => {
-        return () => { dispatch(bitesActions.clearBites_AC()) }
-    }, [])
+        if (offset !== 0) {
+            dispatch(bitesActions.getBites(offset, userHandle))
+        }
+    }, [offset])
 
     useEffect(() => {
+        dispatch(bitesActions.clearBites_AC())
+        setOffset(0)
         dispatch(bitesActions.getBites(offset, userHandle))
-    }, [dispatch, offset, userHandle])
+    }, [userHandle])
 
     return (
         <div className={classes.list}>

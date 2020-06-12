@@ -1,5 +1,6 @@
 export const SET_BITES = 'SET_BITES'
 export const SET_BITE = 'SET_BITE'
+export const SET_BITE_FILTER = 'SET_BITE_FILTER'
 export const ADD_BITE = 'ADD_BITE'
 export const ADD_COMMENT = 'ADD_COMMENT'
 export const LIKE_BITE = 'LIKE_BITE'

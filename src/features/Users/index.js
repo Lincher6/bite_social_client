@@ -1,3 +1,5 @@
 export { usersReducer, usersActions, usersSelectors } from './model'
+export * from './model/types'
 export { UserProfile } from './organisms/UserProfile'
 export { UsersList } from './organisms/UsersList'
+export { SearchUsers } from './organisms/SearchUsers'

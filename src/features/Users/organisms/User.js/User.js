@@ -1,11 +1,12 @@
 import React from 'react'
-import { Card, CardMedia, CardContent, Typography, CardActions, Button, Grid } from '@material-ui/core'
+import { Card, CardMedia, Typography, Button, Grid } from '@material-ui/core'
 import LocationOn from '@material-ui/icons/LocationOn';
 import { useStyles } from '../../styles'
 import { NavLink } from 'react-router-dom'
 import { ReadMore } from '../../../common'
+import { Follow } from '../../molecules/Follow';
 
-export const User = ({ imageUrl, handle, bio, location }) => {
+export const User = ({ imageUrl, handle, bio, location, isMe }) => {
     const classes = useStyles()
 
     return (
@@ -46,10 +47,14 @@ export const User = ({ imageUrl, handle, bio, location }) => {
 
 
             </div>
-            <div className="actions">
-                <Button variant='outlined' color='primary'>Подписаться</Button>
-                <Button variant='outlined' color='secondary'>Написать</Button>
-            </div>
+            {
+                !isMe
+                    ? <div className="actions">
+                        <Follow userHandle={handle} />
+                        <Button variant='outlined' color='secondary'>Написать</Button>
+                    </div>
+                    : null
+            }
         </Card >
     )
 }

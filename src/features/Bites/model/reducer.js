@@ -1,9 +1,10 @@
-import { ADD_BITE, DELETE_BITE, LIKE_BITE, LOADING_BITES, LOADING_COMMENT, SET_BITES, SET_BITE, UNLIKE_BITE, ADD_COMMENT, CLEAR_BITES } from './types'
+import { ADD_BITE, DELETE_BITE, LIKE_BITE, LOADING_BITES, LOADING_COMMENT, SET_BITES, SET_BITE, UNLIKE_BITE, ADD_COMMENT, CLEAR_BITES, SET_BITE_FILTER } from './types'
 import { SET_ERRORS } from '../../Navigation'
 
 const initialState = {
     bites: [],
     bite: {},
+    biteFilter: 'desc',
     haveMoreBites: true,
     loadingBites: false,
     loadingComment: false
@@ -24,6 +25,10 @@ export const reducer = (state = initialState, action) => {
             loadingBites: false
         }
 
+        case SET_BITE_FILTER: return {
+            ...state,
+            biteFilter: action.payload,
+        }
 
         case ADD_BITE: return {
             ...state,

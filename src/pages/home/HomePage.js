@@ -1,7 +1,7 @@
 import React from 'react'
 import Grid from '@material-ui/core/Grid'
 import { ProfileCard } from '../../features/Profile';
-import { BiteList } from "../../features/Bites";
+import { BiteList, Filter } from "../../features/Bites";
 
 export const HomePage = () => {
     return (

@@ -9,6 +9,11 @@ export const Button = styled(rawButton)`
     }
 `
 
+export const ButtonSmall = styled(rawButton)`
+    padding: 3px 8px;
+    font-size: .7rem;
+`
+
 export const Typography = styled(rawTypography)`
     text-shadow: 0 0 4px var(--${props => props.color});
 `

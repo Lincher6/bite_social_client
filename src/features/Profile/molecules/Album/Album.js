@@ -31,8 +31,8 @@ export const Album = ({ profileImages = [] }) => {
                 ФОТО&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{images.length}&nbsp;<PhotoLibraryTwoToneIcon />
             </Button>
 
-            <Dialog open={open} onBackdropClick={() => setOpen(false)} className={classes.album}>
-                <Paper className="carousel">
+            <Dialog open={open} onBackdropClick={() => setOpen(false)} >
+                <Paper>
                     {loading
                         ? <CircularProgress size={80} color='primary' />
                         : <ImageGallery items={images} />}

@@ -1,6 +1,5 @@
 import { makeStyles } from "@material-ui/core/styles";
 import { theme } from '../../theme'
-import { keyframes } from "styled-components";
 
 export const useStyles = makeStyles({
     profile: {
@@ -118,8 +117,30 @@ export const useStyles = makeStyles({
         margin: 10,
     },
 
-    carousel: {
-        color: `var(--primary)`
+    friendsList: {
+        width: 300,
+        minHeight: 200,
+        textAlign: `center`,
+        padding: 20
+    },
+
+    friend: {
+        marginBottom: 10,
+        display: `flex`,
+        '& .friend-image': {
+            width: 80,
+            height: 80,
+            boxShadow: `-5px 5px 1px 0 rgba(0, 0, 0, .5)`,
+            objectFit: 'cover',
+            marginRight: 10
+        },
+        '& .friend-info': {
+            textAlign: 'left',
+            flexGrow: 1
+        },
+        '& .friend-handle': {
+            marginBottom: 15
+        }
     },
 
     noProfile: {

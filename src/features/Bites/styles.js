@@ -114,4 +114,13 @@ export const useStyles = makeStyles({
             position: `absolute`
         }
     },
+
+    formControl: {
+        marginBottom: theme.spacing(1),
+        minWidth: 220,
+    },
+
+    selectEmpty: {
+        marginTop: theme.spacing(2),
+    },
 })

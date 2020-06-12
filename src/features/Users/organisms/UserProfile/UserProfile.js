@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react'
 import Paper from '@material-ui/core/Paper';
 import { useStyles } from "../../../Profile/styles";
-import { Picture } from '../../../Profile';
+import { Picture, FriendsList } from '../../../Profile';
 import { Info } from '../../../Profile';
 import { Album } from '../../../Profile';
 import { useSelector, useDispatch } from 'react-redux';
@@ -17,7 +17,7 @@ export const UserProfile = ({ userHandle }) => {
 
     useEffect(() => {
         dispatch(usersActions.getUserProfile(userHandle))
-    }, [])
+    }, [userHandle])
 
     return (
         <Paper className={classes.profile}>
@@ -32,7 +32,7 @@ export const UserProfile = ({ userHandle }) => {
                         <Info {...userProfile} />
                     </div>
                     <div style={{ gridArea: 'c' }}>
-                        <Album profileImages={userProfile.images} />
+                        <FriendsList friends={userProfile.friends} />
                     </div>
                 </div>
             }

@@ -106,7 +106,7 @@ export const darkTheme = createMuiTheme({
                     fontSize: `.7rem`,
                 },
             }
-        }
+        },
     }
 })
 

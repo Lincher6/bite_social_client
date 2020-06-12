@@ -1,5 +1,6 @@
 import { SET_AUTHENTICATED, SET_AUTHENTICATED_PROFILE, LOADING_PROFILE, LOGOUT } from './types'
 import { LIKE_BITE, UNLIKE_BITE } from "../../Bites";
+import { FOLLOW, UNFOLLOW } from '../../Users';
 
 const initialState = {
     authenticated: false,
@@ -7,7 +8,8 @@ const initialState = {
     credentials: {},
     likes: [],
     notifications: [],
-    images: []
+    images: [],
+    friends: []
 }
 
 export const reducer = (state = initialState, action) => {
@@ -19,6 +21,7 @@ export const reducer = (state = initialState, action) => {
 
         case SET_AUTHENTICATED_PROFILE: return {
             ...state,
+            friends: action.payload.credentials.friends,
             authenticated: true,
             loadingProfile: false,
             ...action.payload
@@ -45,6 +48,18 @@ export const reducer = (state = initialState, action) => {
             return {
                 ...state,
                 likes: state.likes.filter(like => like.biteId !== action.payload.biteId)
+            }
+
+        case FOLLOW:
+            return {
+                ...state,
+                friends: [...state.friends, action.payload]
+            }
+
+        case UNFOLLOW:
+            return {
+                ...state,
+                friends: state.friends.filter(friend => friend !== action.payload)
             }
 
         case LOADING_PROFILE: return {

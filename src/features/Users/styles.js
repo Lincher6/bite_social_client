@@ -65,5 +65,17 @@ export const useStyles = makeStyles({
         position: `absolute`,
         top: 0,
         right: 0
-    }
+    },
+
+    searchUsers: {
+        margin: 20
+    },
+
+    form: {
+        textAlign: 'center',
+        padding: 20,
+        '& .field': {
+            marginBottom: 20
+        }
+    },
 })
