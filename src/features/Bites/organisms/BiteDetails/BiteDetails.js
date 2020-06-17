@@ -5,7 +5,7 @@ import Close from "@material-ui/icons/Close";
 import { bitesSelectors, bitesActions } from '../../model'
 import { useDispatch, useSelector } from 'react-redux'
 import { uiSelectors } from '../../../Navigation'
-import { EditButton } from '../../../common'
+import { EditButton, BiteDetailsSkeleton } from '../../../common'
 import { NavLink } from 'react-router-dom';
 import { Like } from '../../molecules/Like';
 import { useDayjs } from '../../../../lib/hooks/useDayjs';
@@ -17,21 +17,17 @@ export const BiteDetails = ({ biteId, setOpen, focus }) => {
     const classes = useStyles()
     const { dayjs, options } = useDayjs()
     const bite = useSelector(bitesSelectors.bite)
-    const { loading, errors } = useSelector(uiSelectors.ui)
+    const { loading } = useSelector(uiSelectors.ui)
     const dispatch = useDispatch()
 
-    const getBite = useCallback(async () => dispatch(bitesActions.getBite(biteId)), [dispatch, biteId])
-
     useEffect(() => {
-        getBite()
-    }, [biteId, getBite])
+        dispatch(bitesActions.getBite(biteId))
+    }, [biteId, dispatch])
 
     if (loading) {
         return (
             <DialogContent className={classes.biteDetails}>
-                <div className='loader'>
-                    <CircularProgress size={150} thickness={2} />
-                </div>
+                <BiteDetailsSkeleton />
             </DialogContent>
         )
     }

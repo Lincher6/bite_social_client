@@ -14,7 +14,7 @@ export const AppContent = () => {
                 <Switch>
                     <Route exact path={'/login'} component={LoginPage} />
                     <Route exact path={'/signUp'} component={SignUpPage} />
-                    <Route exact path={'/profile'} component={ProfilePage} />
+                    <Route path={'/profile'} component={ProfilePage} />
                     <Route path={'/users/:userHandle'} component={UserPage} />
                     <Route path={'/users'} component={UsersPage} />
                     <Route path={'/'} component={HomePage} />

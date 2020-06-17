@@ -9,6 +9,7 @@ import { CircularProgress } from '@material-ui/core';
 import { Edit } from '../../molecules/Edit';
 import { Album } from '../../molecules/Album';
 import { FriendsList } from '../../molecules/FriendsList';
+import { ProfileSkeleton } from '../../../common';
 
 export const Profile = (props) => {
     const classes = useStyles()
@@ -19,7 +20,7 @@ export const Profile = (props) => {
     return (
         <Paper className={classes.profile}>
             {loadingProfile
-                ? <CircularProgress size={80} color='primary' />
+                ? <ProfileSkeleton />
                 : <div className={classes.grid}>
                     <div style={{ gridArea: 'a' }}>
                         <Album profileImages={images} />

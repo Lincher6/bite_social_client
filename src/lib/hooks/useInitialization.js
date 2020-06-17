@@ -1,9 +1,11 @@
 import jwtDecode from 'jwt-decode'
 import { profileActions } from '../../features/Profile/model'
 import { useDispatch } from "react-redux";
+import Axios from 'axios';
 
 export const useInitialization = async () => {
     const dispatch = useDispatch()
+    Axios.defaults.baseURL = 'https://europe-west2-socialbug-6991e.cloudfunctions.net/api'
 
     const token = localStorage.idToken
     if (token) {

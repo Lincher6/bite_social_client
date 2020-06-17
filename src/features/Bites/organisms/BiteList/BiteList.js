@@ -5,6 +5,7 @@ import { useSelector, useDispatch } from "react-redux";
 import { bitesSelectors, bitesActions } from "../../model";
 import CircularProgress from "@material-ui/core/CircularProgress";
 import { LoadMore } from '../../molecules/LoadMore';
+import { BiteSkeleton } from '../../../common';
 
 export const BiteList = ({ userHandle = '' }) => {
     const [offset, setOffset] = useState(0)
@@ -36,7 +37,7 @@ export const BiteList = ({ userHandle = '' }) => {
             })}
 
             {loadingBites
-                ? <CircularProgress size={80} />
+                ? <BiteSkeleton />
                 : <LoadMore offset={offset} setOffset={setOffset} haveMore={haveMoreBites} />
             }
         </div>

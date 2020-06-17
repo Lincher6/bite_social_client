@@ -9,6 +9,7 @@ import { Edit } from '../../molecules/Edit';
 import { CircularProgress } from '@material-ui/core';
 import { Logout } from "../../../Authentication";
 import { profileSelectors } from '../../model';
+import { ProfileCardSkeleton } from '../../../common';
 
 
 export const ProfileCard = props => {
@@ -17,11 +18,7 @@ export const ProfileCard = props => {
 
     if (loadingProfile) {
         return (
-            <Paper className='paper'>
-                <div className={classes.loading}>
-                    <CircularProgress size={80} />
-                </div>
-            </Paper>
+            <ProfileCardSkeleton />
         )
     }
 

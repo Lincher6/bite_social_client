@@ -35,5 +35,14 @@ export const profileApi = {
         } catch (e) {
             return { error: e.response.data.error, resultCode: 1 }
         }
+    },
+
+    markNotifications: async (notificationsIds) => {
+        try {
+            let response = await axios.post('/notifications', notificationsIds)
+            return { data: response.data, resultCode: 0 }
+        } catch (e) {
+            return { error: e.response.data.error, resultCode: 1 }
+        }
     }
 }

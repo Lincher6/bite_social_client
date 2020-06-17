@@ -1,4 +1,4 @@
-import { SET_USER_PROFILE, LOADING_USER, SET_USERS, FOLLOWING_IN_PROGRESS, SET_FRIENDS_LIST, LOADING_FRIENDS, SET_SEARCH_PARAMETERS, CLEAR_USERS } from "./types"
+import { SET_USER_PROFILE, LOADING_USER, SET_USERS, FOLLOWING_IN_PROGRESS, SET_FRIENDS_LIST, LOADING_FRIENDS, SET_SEARCH_PARAMETERS, CLEAR_USERS, CLEAR_PARAMS } from "./types"
 
 
 const initialState = {
@@ -30,7 +30,12 @@ export const reducer = (state = initialState, action) => {
 
         case CLEAR_USERS: return {
             ...state,
-            users: []
+            users: [],
+        }
+
+        case CLEAR_PARAMS: return {
+            ...state,
+            searchParameters: {},
         }
 
         case SET_SEARCH_PARAMETERS: return {

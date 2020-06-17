@@ -6,6 +6,7 @@ import { CircularProgress } from '@material-ui/core'
 import { LoadMore } from '../../../Bites/molecules/LoadMore'
 import { User } from '../User.js/User'
 import { profileSelectors } from '../../../Profile'
+import { UserSkeleton } from '../../../common'
 
 export const UsersList = (props) => {
     const classes = useStyles()
@@ -19,6 +20,8 @@ export const UsersList = (props) => {
         if (offset !== 0) {
             dispatch(usersActions.getUsers(offset, searchParameters))
         }
+
+        return () => dispatch(usersActions.setSearchParams_AC({}))
     }, [dispatch, offset])
 
     useEffect(() => {
@@ -39,7 +42,7 @@ export const UsersList = (props) => {
                 )
             })}
             {loadingUser
-                ? <CircularProgress size={80} />
+                ? <UserSkeleton />
                 : <LoadMore offset={offset} setOffset={setOffset} haveMore={haveMoreUsers} />
             }
         </div>

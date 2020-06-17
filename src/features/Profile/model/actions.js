@@ -1,4 +1,4 @@
-import { SET_AUTHENTICATED, SET_AUTHENTICATED_PROFILE, LOADING_PROFILE, LOGOUT } from './types'
+import { SET_AUTHENTICATED, SET_AUTHENTICATED_PROFILE, LOADING_PROFILE, LOGOUT, MARK_NOTIFICATIONS } from './types'
 import { uiActions } from '../../Navigation'
 import { authApi } from '../../../api/authApi'
 import { profileApi } from '../../../api/profileApi'
@@ -18,6 +18,10 @@ const setAuthenticatedProfile_AC = payload => ({
 
 const loadingProfile_AC = () => ({
     type: LOADING_PROFILE,
+})
+
+const markNotifications_AC = () => ({
+    type: MARK_NOTIFICATIONS,
 })
 
 const logout_AC = () => ({
@@ -72,6 +76,16 @@ export const editProfileData = (profileData) => async dispatch => {
     const result = await profileApi.editProfileData(profileData)
     if (result.resultCode === 0) {
         dispatch(getAuthenticatedProfile())
+    } else {
+        dispatch(uiActions.setErrors_AC({ error: result.error }))
+        throw new Error(result.error)
+    }
+}
+
+export const markNotifications = (notificationIds) => async dispatch => {
+    const result = await profileApi.markNotifications(notificationIds)
+    if (result.resultCode === 0) {
+        dispatch(markNotifications_AC())
     } else {
         dispatch(uiActions.setErrors_AC({ error: result.error }))
         throw new Error(result.error)

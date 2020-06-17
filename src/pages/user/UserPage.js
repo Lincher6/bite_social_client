@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import Grid from '@material-ui/core/Grid'
 import { BiteList } from '../../features/Bites'
 import { useParams, Redirect } from 'react-router-dom'
@@ -10,6 +10,10 @@ export const UserPage = () => {
     const params = useParams()
     const userHandle = params.userHandle
     const { handle: profileHandle } = useSelector(profileSelectors.credentials)
+
+    useEffect(() => {
+        window.scrollTo(0, 0);
+    }, [])
 
     if (userHandle === profileHandle) {
         return <Redirect to='/profile' />

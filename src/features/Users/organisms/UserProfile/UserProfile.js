@@ -7,6 +7,7 @@ import { Album } from '../../../Profile';
 import { useSelector, useDispatch } from 'react-redux';
 import { usersSelectors, usersActions } from '../../model';
 import { CircularProgress } from '@material-ui/core';
+import { ProfileSkeleton } from '../../../common';
 
 export const UserProfile = ({ userHandle }) => {
     const classes = useStyles()
@@ -22,7 +23,7 @@ export const UserProfile = ({ userHandle }) => {
     return (
         <Paper className={classes.profile}>
             {loadingUser
-                ? <CircularProgress size={80} color='primary' />
+                ? <ProfileSkeleton />
                 : <div className={classes.grid}>
                     <div style={{ gridArea: 'a' }}>
                         <Album profileImages={userProfile.images} />

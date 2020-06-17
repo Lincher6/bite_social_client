@@ -1,4 +1,4 @@
-import { SET_USER_PROFILE, LOADING_USER, SET_USERS, FOLLOW, UNFOLLOW, FOLLOWING_IN_PROGRESS, SET_FRIENDS_LIST, LOADING_FRIENDS, SET_SEARCH_PARAMETERS, CLEAR_USERS } from "./types"
+import { SET_USER_PROFILE, LOADING_USER, SET_USERS, FOLLOW, UNFOLLOW, FOLLOWING_IN_PROGRESS, SET_FRIENDS_LIST, LOADING_FRIENDS, SET_SEARCH_PARAMETERS, CLEAR_USERS, CLEAR_PARAMS } from "./types"
 import { usersApi } from "../../../api/usersApi"
 import { uiActions } from "../../Navigation"
 
@@ -23,6 +23,10 @@ const setUsers_AC = (payload) => ({
 
 export const clearUsers_AC = () => ({
     type: CLEAR_USERS,
+})
+
+export const clearParams_AC = () => ({
+    type: CLEAR_PARAMS,
 })
 
 export const setSearchParams_AC = (payload) => ({

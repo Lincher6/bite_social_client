@@ -1,3 +1,8 @@
 export { EditButton } from './EditButton'
 export { ReadMore } from './ReadMore'
+export { BiteSkeleton } from './Skeletons/BiteSkeleton'
+export { BiteDetailsSkeleton } from './Skeletons/BiteDetailsSkeleton'
+export { ProfileCardSkeleton } from './Skeletons/ProfileCardSkeleton'
+export { ProfileSkeleton } from './Skeletons/ProfileSkeleton'
+export { UserSkeleton } from './Skeletons/UserSkeleton'
 export * from './styled-components'

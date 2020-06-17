@@ -1,4 +1,4 @@
-import { SET_AUTHENTICATED, SET_AUTHENTICATED_PROFILE, LOADING_PROFILE, LOGOUT } from './types'
+import { SET_AUTHENTICATED, SET_AUTHENTICATED_PROFILE, LOADING_PROFILE, LOGOUT, MARK_NOTIFICATIONS } from './types'
 import { LIKE_BITE, UNLIKE_BITE } from "../../Bites";
 import { FOLLOW, UNFOLLOW } from '../../Users';
 
@@ -60,6 +60,15 @@ export const reducer = (state = initialState, action) => {
             return {
                 ...state,
                 friends: state.friends.filter(friend => friend !== action.payload)
+            }
+
+        case MARK_NOTIFICATIONS:
+            return {
+                ...state,
+                notifications: state.notifications.map(element => {
+                    element.read = true
+                    return element
+                })
             }
 
         case LOADING_PROFILE: return {

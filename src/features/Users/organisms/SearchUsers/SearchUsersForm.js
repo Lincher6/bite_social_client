@@ -36,7 +36,7 @@ export const SearchUsersForm = ({ setSearchParams }) => {
                     onBlur={handleBlur}
                     className='field'
                 />
-                <TextField id='location' name='location' type='text' label='Место жительства'
+                <TextField id='location' name='location' type='text' label='Город'
                     fullWidth
                     value={values.location}
                     onChange={handleChange}

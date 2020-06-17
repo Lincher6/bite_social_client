@@ -34,7 +34,7 @@ export const EditForm = ({ bio, location, website, editUserData, setOpen }) => {
                 helperText={touched.bio && errors.bio}
                 error={errors.bio && touched.bio}
             />
-            <TextField id='location' name='location' type='text' label='Место жительства'
+            <TextField id='location' name='location' type='text' label='Город'
                 className='textField'
                 fullWidth
                 value={values.location}

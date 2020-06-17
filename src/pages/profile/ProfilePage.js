@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import Grid from '@material-ui/core/Grid'
 import { Profile } from '../../features/Profile'
 import { useSelector } from 'react-redux'
@@ -10,6 +10,10 @@ export const ProfilePage = () => {
     const authenticated = useSelector(profileSelectors.authenticated)
     const { handle } = useSelector(profileSelectors.credentials)
     const loadingProfile = useSelector(profileSelectors.loadingProfile)
+
+    useEffect(() => {
+        window.scrollTo(0, 0);
+    }, [])
 
     if (!authenticated) {
         return <Redirect to='/login' />
