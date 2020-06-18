@@ -18,8 +18,8 @@ export const Edit = () => {
             <Button color='primary' variant='outlined' onClick={() => setOpen(true)}>
                 Редактировать
             </Button>
-            <Dialog open={open}>
-                <DialogTitle>
+            <Dialog open={open} >
+                <DialogTitle style={{ textAlign: `center` }}>
                     Редактировать информацию
                 </DialogTitle>
                 <DialogContent>

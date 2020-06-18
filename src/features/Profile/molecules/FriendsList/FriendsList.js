@@ -17,8 +17,6 @@ export const FriendsList = ({ friends = [] }) => {
         if (friends.length > 0) {
             setOpen(true)
             dispatch(usersActions.getFriendsList(0, friends))
-        } else {
-            alert('Пока нет друзей')
         }
 
     }, [dispatch, friends])
@@ -35,6 +33,7 @@ export const FriendsList = ({ friends = [] }) => {
 
             <Dialog
                 open={open}
+                maxWidth='xs'
                 onBackdropClick={() => setOpen(false)}
             >
                 <div className={classes.friendsList}>

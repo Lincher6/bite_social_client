@@ -22,7 +22,7 @@ export const NotificationsList = ({ notifications, anchorEl, handleClose }) => {
                     </MenuItem>
                     : notifications.map(notification => {
                         return (
-                            <MenuItem key={notification.createdAt} onClick={handleClose}>
+                            <MenuItem key={notification.createdAt} >
                                 <Notification
                                     {...notification}
                                 />

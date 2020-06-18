@@ -10,7 +10,7 @@ export const HomePage = () => {
     }, [])
 
     return (
-        <Grid container spacing={4} direction='row-reverse'>
+        <Grid container spacing={2} direction='row-reverse'>
             <Grid item md={4} xs={12}>
                 <ProfileCard />
             </Grid>

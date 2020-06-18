@@ -15,7 +15,7 @@ export const useStyles = makeStyles({
     },
 
     user: {
-        margin: 20,
+        marginBottom: 20,
         padding: 20,
         '& .container': {
             display: `flex`,
@@ -67,15 +67,17 @@ export const useStyles = makeStyles({
         right: 0
     },
 
-    searchUsers: {
-        margin: 20
-    },
-
     form: {
         textAlign: 'center',
         padding: 20,
+        [theme.breakpoints.down('xs')]: {
+            padding: 10,
+        },
         '& .field': {
-            marginBottom: 20
+            marginBottom: 20,
+            [theme.breakpoints.down('xs')]: {
+                marginBottom: 10,
+            },
         }
     },
 })

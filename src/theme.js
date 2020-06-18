@@ -78,7 +78,7 @@ export const darkTheme = createMuiTheme({
     overrides: {
         MuiTooltip: {
             tooltip: {
-                fontSize: ".8em",
+                fontSize: ".9em",
                 color: "#ccc",
                 backgroundColor: "#131d28",
                 margin: `0px !important`
@@ -93,19 +93,12 @@ export const darkTheme = createMuiTheme({
                 }
             }
         },
-        MuiButton: {
-            outlined: {
-                [theme.breakpoints.down('xs')]: {
-                    padding: '3px 8px',
-                    fontSize: `.7rem`,
-                },
+
+        MuiDialog: {
+            paper: {
+                margin: 10,
+                width: 1000
             },
-            contained: {
-                [theme.breakpoints.down('xs')]: {
-                    padding: '3px 8px',
-                    fontSize: `.7rem`,
-                },
-            }
         },
     }
 })

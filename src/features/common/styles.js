@@ -269,7 +269,7 @@ export const useStyles = makeStyles({
 
     userSkeleton: {
         position: `relative`,
-        margin: 20,
+        marginBottom: 20,
         padding: 20,
         opacity: .5,
         '& .card': {

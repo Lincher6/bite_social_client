@@ -44,14 +44,7 @@ export const Notification = ({ sender, read, type, createdAt, biteId }) => {
                 </div>
             </div>
 
-            <Dialog
-                open={open}
-                fullWidth
-                scroll='body'
-                onBackdropClick={() => setOpen(false)}
-            >
-                <BiteDetails biteId={biteId} setOpen={setOpen} />
-            </Dialog>
+            {open && <BiteDetails biteId={biteId} open={open} setOpen={setOpen} />}
         </div >
     )
 }

@@ -9,7 +9,7 @@ export const UsersPage = (props) => {
     }, [])
 
     return (
-        <Grid container direction='row-reverse'>
+        <Grid container spacing={2} direction='row-reverse'>
             <Grid item sm={4} xs={12}>
                 <SearchUsers />
             </Grid>

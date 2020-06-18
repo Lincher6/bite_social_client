@@ -12,14 +12,8 @@ export const Open = ({ biteId }) => {
             <EditButton tip={'открыть'} onClick={() => setOpen(true)}>
                 <OpenInNew color='primary' className='icon' />
             </EditButton>
-            <Dialog
-                open={open}
-                fullWidth
-                scroll='body'
-                onBackdropClick={() => setOpen(false)}
-            >
-                <BiteDetails biteId={biteId} setOpen={setOpen} />
-            </Dialog>
+
+            {open && <BiteDetails biteId={biteId} open={open} setOpen={setOpen} />}
         </Fragment>
     )
 }

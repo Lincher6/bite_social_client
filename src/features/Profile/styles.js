@@ -62,6 +62,10 @@ export const useStyles = makeStyles({
             objectFit: 'cover',
             maxWidth: '100%',
             borderRadius: `50%`,
+            [theme.breakpoints.down('xs')]: {
+                width: '120px',
+                height: '120px',
+            },
         },
         '& .image-edit:hover': {
             opacity: .4,
@@ -73,6 +77,10 @@ export const useStyles = makeStyles({
             transition: `opacity .3s`,
             width: '200px',
             height: '200px',
+            [theme.breakpoints.down('xs')]: {
+                width: '120px',
+                height: '120px',
+            },
             objectFit: 'cover',
             maxWidth: '100%',
             borderRadius: `50%`,
@@ -118,6 +126,7 @@ export const useStyles = makeStyles({
     },
 
     friendsList: {
+        margin: `0 auto`,
         width: 300,
         minHeight: 200,
         textAlign: `center`,

@@ -1,4 +1,4 @@
-import React, { useCallback } from 'react'
+import React, { useCallback, useState } from 'react'
 import { EditButton } from "../../../common";
 import FavoriteBorder from "@material-ui/icons/FavoriteBorder";
 import Favorite from "@material-ui/icons/Favorite";
@@ -6,8 +6,10 @@ import { useDispatch, useSelector } from "react-redux";
 import { profileSelectors } from "../../../Profile";
 import { bitesActions } from "../../model";
 import IconButton from "@material-ui/core/IconButton";
+import { RedirectDialog } from '../../../common/RedirectDialog.js';
 
 export const Like = ({ likesCount, biteId }) => {
+    const [open, setOpen] = useState(false)
     const { authenticated, likes } = useSelector(profileSelectors.profile)
     const liked = likes && likes.find(like => like.biteId === biteId)
     const dispatch = useDispatch()
@@ -23,10 +25,15 @@ export const Like = ({ likesCount, biteId }) => {
     if (!authenticated) {
         return (
             <React.Fragment>
-                <EditButton tip={'нравится'} onClick={() => alert('нужно авторизироваться')}>
+                <EditButton tip={'нравится'} onClick={() => setOpen(true)}>
                     <FavoriteBorder color='primary' className='icon' />
                 </EditButton>
                 {likesCount}
+                {
+                    open
+                        ? <RedirectDialog open={open} setOpen={setOpen} />
+                        : null
+                }
             </React.Fragment>
         )
     }

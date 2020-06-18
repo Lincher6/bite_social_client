@@ -1,10 +1,12 @@
-import React, { Fragment, useCallback } from 'react'
+import React, { Fragment, useCallback, useState } from 'react'
 import { Button } from '@material-ui/core'
 import { useDispatch, useSelector } from 'react-redux'
 import { profileSelectors } from '../../../Profile'
 import { usersSelectors, usersActions } from '../../model'
+import { RedirectDialog } from '../../../common/RedirectDialog.js'
 
 export const Follow = ({ userHandle }) => {
+    const [open, setOpen] = useState(false)
     const dispatch = useDispatch()
     const friends = useSelector(profileSelectors.friends)
     const authenticated = useSelector(profileSelectors.authenticated)
@@ -15,7 +17,7 @@ export const Follow = ({ userHandle }) => {
 
     const handleClick = useCallback(() => {
         if (!authenticated) {
-            alert('Нужно войти')
+            setOpen(true)
         } else if (isFollowed) {
             dispatch(usersActions.follow(userHandle, false))
         } else {
@@ -29,6 +31,11 @@ export const Follow = ({ userHandle }) => {
                 isFollowed
                     ? <Button variant='outlined' onClick={handleClick} disabled={isInProgress}>Отписаться</Button>
                     : <Button variant='outlined' color='primary' onClick={handleClick} disabled={isInProgress}>Подписаться</Button>
+            }
+            {
+                open
+                    ? <RedirectDialog open={open} setOpen={setOpen} />
+                    : null
             }
         </Fragment>
 

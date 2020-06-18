@@ -7,7 +7,7 @@ import { theme, darkTheme } from "./theme";
 import { Provider } from 'react-redux'
 import { store } from './lib/store'
 
-console.log(darkTheme)
+console.log(darkTheme.overrides.MuiDialog)
 
 export const App = () => (
     <ThemeProvider theme={darkTheme}>
