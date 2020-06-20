@@ -1,9 +1,8 @@
-import React, { useCallback, useEffect, useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { Bite } from "../Bite";
 import { useStyles } from "../../styles";
 import { useSelector, useDispatch } from "react-redux";
 import { bitesSelectors, bitesActions } from "../../model";
-import CircularProgress from "@material-ui/core/CircularProgress";
 import { LoadMore } from '../../molecules/LoadMore';
 import { BiteSkeleton } from '../../../common';
 
@@ -25,6 +24,7 @@ export const BiteList = ({ userHandle = '' }) => {
         dispatch(bitesActions.getBites(offset, userHandle))
     }, [userHandle])
 
+    console.log(1)
     return (
         <div className={classes.list}>
             {bites.map(bite => {

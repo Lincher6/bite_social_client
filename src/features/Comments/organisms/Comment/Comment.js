@@ -9,9 +9,8 @@ export const Comment = ({ userHandle, userImage, body, createdAt }) => {
 
     return (
         <Fragment>
-            <hr />
-            <Grid container spacing={1} className={classes.comment}>
-                <Grid item sm={2}>
+            <Grid container className={classes.comment}>
+                <Grid item sm={2} >
                     <img src={userImage} alt='user' className='image' />
                 </Grid>
                 <Grid item sm={10}>

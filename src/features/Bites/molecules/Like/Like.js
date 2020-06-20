@@ -6,7 +6,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { profileSelectors } from "../../../Profile";
 import { bitesActions } from "../../model";
 import IconButton from "@material-ui/core/IconButton";
-import { RedirectDialog } from '../../../common/RedirectDialog.js';
+import { RedirectDialog } from '../../../common/RedirectDialog/index.js';
 
 export const Like = ({ likesCount, biteId }) => {
     const [open, setOpen] = useState(false)
@@ -29,11 +29,8 @@ export const Like = ({ likesCount, biteId }) => {
                     <FavoriteBorder color='primary' className='icon' />
                 </EditButton>
                 {likesCount}
-                {
-                    open
-                        ? <RedirectDialog open={open} setOpen={setOpen} />
-                        : null
-                }
+
+                {open && <RedirectDialog open={open} setOpen={setOpen} />}
             </React.Fragment>
         )
     }

@@ -48,6 +48,9 @@ export const useStyles = makeStyles({
 
     biteDetails: {
         padding: 20,
+        [theme.breakpoints.down('xs')]: {
+            padding: 10,
+        },
         wordWrap: "break-word",
         position: `relative`,
         '& .loader': {
@@ -63,6 +66,11 @@ export const useStyles = makeStyles({
                 height: 180,
                 borderRadius: `50%`,
                 objectFit: 'cover',
+                [theme.breakpoints.down('xs')]: {
+                    width: 120,
+                    minWidth: 120,
+                    height: 120,
+                },
             }
         },
         '& .userHandle': {

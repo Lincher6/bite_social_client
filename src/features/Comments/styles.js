@@ -3,16 +3,21 @@ import { theme } from '../../theme'
 
 export const useStyles = makeStyles({
     comment: {
-        padding: 5,
+        backgroundColor: `var(--darkBackground)`,
+        borderRadius: 5,
+        padding: 15,
+        borderBottom: `1px solid #263b57`,
+        borderRight: `1px solid #263b57`,
         marginBottom: 15,
         '& .image': {
-            width: 70,
-            height: 70,
+            width: 75,
+            height: 75,
             objectFit: 'cover',
             borderRadius: `50%`,
             [theme.breakpoints.down('xs')]: {
-                width: 50,
-                height: 50,
+                marginRight: 10,
+                width: 60,
+                height: 60,
             },
         },
         '& .header': {

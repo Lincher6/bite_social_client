@@ -3,7 +3,7 @@ import { Button } from '@material-ui/core'
 import { useDispatch, useSelector } from 'react-redux'
 import { profileSelectors } from '../../../Profile'
 import { usersSelectors, usersActions } from '../../model'
-import { RedirectDialog } from '../../../common/RedirectDialog.js'
+import { RedirectDialog } from '../../../common/RedirectDialog/index.js'
 
 export const Follow = ({ userHandle }) => {
     const [open, setOpen] = useState(false)

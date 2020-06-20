@@ -3,7 +3,7 @@ import { theme } from '../../theme'
 
 export const useStyles = makeStyles({
     profile: {
-        marginTop: 130,
+        marginTop: 110,
         marginBottom: 20,
         textAlign: `center`,
         padding: 20,
