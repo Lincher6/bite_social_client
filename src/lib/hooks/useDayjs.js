@@ -8,7 +8,8 @@ export const useDayjs = () => {
 
     const options = {
         short: 'MMM YYYY',
-        long: 'h:mm a, MMMM DD YYYY'
+        long: 'h:mm a, MMMM DD YYYY',
+        timer: 'm:ss'
     }
 
     return { dayjs, options }

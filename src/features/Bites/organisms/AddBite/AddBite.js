@@ -45,7 +45,7 @@ export const AddBite = () => {
                     <Close opacity={.5} />
                 </EditButton>
                 <DialogTitle>
-                    Добавить новый байт
+                    Добавить новый пост
                 </DialogTitle>
                 <DialogContent>
                     <AddBiteForm addBite={addBite} loading={loading} fetchError={errors.error} />

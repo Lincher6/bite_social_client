@@ -1,5 +1,5 @@
 import { makeStyles } from "@material-ui/core/styles";
-import { theme } from '../../theme'
+import { theme } from '../../ui/theme'
 
 export const useStyles = makeStyles({
     bite: {
@@ -7,6 +7,9 @@ export const useStyles = makeStyles({
         textAlign: `left`,
         display: 'flex',
         marginBottom: 20,
+        [theme.breakpoints.down('xs')]: {
+            marginBottom: 10,
+        },
         '& .image': {
             boxShadow: `3px 3px 4px 1px var(--darkBackground)`,
             width: 185,
@@ -47,10 +50,6 @@ export const useStyles = makeStyles({
     },
 
     biteDetails: {
-        padding: 20,
-        [theme.breakpoints.down('xs')]: {
-            padding: 10,
-        },
         wordWrap: "break-word",
         position: `relative`,
         '& .loader': {

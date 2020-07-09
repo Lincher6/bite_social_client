@@ -1,7 +1,8 @@
 import React, { useEffect } from 'react'
 import Grid from '@material-ui/core/Grid'
-import { ProfileCard } from '../../features/Profile';
-import { BiteList, Filter } from "../../features/Bites";
+import { ProfileCard } from '@features/Profile';
+import { BiteList, Filter } from "@features/Bites";
+import { MusicPlayer } from '../../features/Music';
 
 export const HomePage = () => {
 
@@ -12,7 +13,7 @@ export const HomePage = () => {
     return (
         <Grid container spacing={2} direction='row-reverse'>
             <Grid item md={4} xs={12}>
-                <ProfileCard />
+                <MusicPlayer />
             </Grid>
             <Grid item md={8} xs={12}>
                 <BiteList />

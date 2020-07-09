@@ -24,7 +24,7 @@ export const AddBiteForm = ({ addBite, fetchError, loading }) => {
 
     return (
         <form onSubmit={handleSubmit} className={classes.addBiteForm}>
-            <TextField id='biteText' name='biteText' type='text' label='Новый байт'
+            <TextField id='biteText' name='biteText' type='text' label='Новый пост'
                 className='textField'
                 fullWidth
                 multiline

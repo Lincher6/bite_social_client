@@ -1,5 +1,5 @@
 import { makeStyles } from "@material-ui/core/styles";
-import { theme } from '../../theme'
+import { theme } from '../../ui/theme'
 
 export const useStyles = makeStyles({
     profile: {
@@ -13,7 +13,7 @@ export const useStyles = makeStyles({
     grid: {
         display: `grid`,
         gridTemplateAreas: `
-            'a b b c'
+            'a b b b c'
             `,
         [theme.breakpoints.down('xs')]: {
             gridTemplateAreas: `
@@ -126,19 +126,17 @@ export const useStyles = makeStyles({
     },
 
     friendsList: {
-        margin: `0 auto`,
-        width: 300,
-        minHeight: 200,
-        textAlign: `center`,
-        padding: 20
+        textAlign: `left`,
+        maxHeight: 500
     },
 
     friend: {
-        marginBottom: 10,
+        width: 250,
         display: `flex`,
         '& .friend-image': {
-            width: 80,
-            height: 80,
+            width: 70,
+            height: 70,
+            borderRadius: `50%`,
             boxShadow: `-5px 5px 1px 0 rgba(0, 0, 0, .5)`,
             objectFit: 'cover',
             marginRight: 10
@@ -148,7 +146,7 @@ export const useStyles = makeStyles({
             flexGrow: 1
         },
         '& .friend-handle': {
-            marginBottom: 15
+            marginBottom: 5
         }
     },
 

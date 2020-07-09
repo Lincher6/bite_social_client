@@ -1,1 +1,0 @@
-export { SignUpForm as SignUp } from './SignUpForm'

@@ -1,0 +1,10 @@
+export const music = state => state.music
+export const tracks = state => state.music.tracks
+export const track = state => state.music.track
+export const trackIndex = state => state.music.trackIndex
+export const audio = state => state.music.audio
+export const playing = state => state.music.playing
+export const looped = state => state.music.looped
+export const random = state => state.music.listOpen
+export const listOpen = state => state.music.listOpen
+export const loadingTracks = state => state.music.loadingTracks

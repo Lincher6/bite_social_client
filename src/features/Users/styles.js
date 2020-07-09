@@ -1,5 +1,5 @@
 import { makeStyles } from "@material-ui/core/styles";
-import { theme } from '../../theme'
+import { theme } from '../../ui/theme'
 
 export const useStyles = makeStyles({
     userProfile: {
@@ -10,22 +10,30 @@ export const useStyles = makeStyles({
         position: `relative`,
     },
 
-    list: {
-        textAlign: `center`
+    userList: {
+        textAlign: `center`,
+        display: `flex`,
+        justifyContent: `space-evenly`,
+        flexWrap: `wrap`
     },
 
     user: {
-        marginBottom: 20,
-        padding: 20,
-        '& .container': {
-            display: `flex`,
+        padding: 10,
+        width: 230,
+        [theme.breakpoints.down('xs')]: {
+            width: 300,
+        },
+        margin: 5,
+        textAlign: `center`,
+        '& svg, span': {
+            verticalAlign: 'middle'
         },
         '& .image': {
             borderRadius: `50% `,
-            width: 140,
-            minWidth: 140,
-            height: 140,
-            marginRight: 20,
+            width: 100,
+            minWidth: 100,
+            height: 100,
+            margin: `0 auto`,
             objectFit: 'cover',
             [theme.breakpoints.down('sm')]: {
                 width: 100,
@@ -33,28 +41,15 @@ export const useStyles = makeStyles({
                 height: 100,
             },
         },
-        '& .content': {
-            flexGrow: 1
-        },
-        '& .title': {
-            display: `flex`,
-            justifyContent: 'space-between',
-            alignItems: `center`,
-            flexGrow: 1,
-            flexWrap: `wrap`,
-            '& svg, span': {
-                verticalAlign: 'middle'
-            },
-        },
-        '& .body': {
-            textAlign: `left`,
+        '& .info': {
+            verticalAlign: 'middle',
+            overflow: `hidden`
         },
         '& .actions': {
             display: `flex`,
-            justifyContent: 'space-between',
+            justifyContent: 'center',
             alignItems: `center`,
             width: `100%`,
-            marginTop: 20
         },
     },
     loading: {
@@ -67,17 +62,21 @@ export const useStyles = makeStyles({
         right: 0
     },
 
-    form: {
+    saerchForm: {
+        width: 350,
         textAlign: 'center',
         padding: 20,
-        [theme.breakpoints.down('xs')]: {
-            padding: 10,
-        },
         '& .field': {
             marginBottom: 20,
+            position: `relative`,
             [theme.breakpoints.down('xs')]: {
                 marginBottom: 10,
             },
+        },
+        '& .icon': {
+            position: `absolute`,
+            right: 0,
+            bottom: `10%`
         }
     },
 })

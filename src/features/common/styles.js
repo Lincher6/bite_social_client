@@ -1,5 +1,5 @@
 import { makeStyles } from "@material-ui/core/styles";
-import { theme } from '../../theme'
+import { theme } from '../../ui/theme'
 
 export const useStyles = makeStyles({
     helperText: {
@@ -200,16 +200,16 @@ export const useStyles = makeStyles({
             `,
         },
         '& .album': {
-            margin: `0 auto`,
-            width: 100,
-            height: 30,
+            margin: `10px auto`,
+            width: 130,
+            height: 35,
             backgroundColor: `var(--primary)`,
             gridArea: `a`
         },
         '& .friends': {
-            margin: `0 auto`,
-            width: 100,
-            height: 30,
+            margin: `10px auto`,
+            width: 130,
+            height: 35,
             backgroundColor: `var(--primary)`,
             gridArea: `c`
         },
@@ -269,76 +269,107 @@ export const useStyles = makeStyles({
 
     userSkeleton: {
         position: `relative`,
-        marginBottom: 20,
-        padding: 20,
         opacity: .5,
-        '& .card': {
-            display: `flex`,
-            textAlign: `left`,
-            '& .image': {
-                borderRadius: `50% `,
-                width: 140,
-                minWidth: 140,
-                height: 140,
-                marginRight: 20,
-                objectFit: 'cover',
-                [theme.breakpoints.down('sm')]: {
-                    width: 100,
-                    minWidth: 100,
-                    height: 100,
-                },
+        padding: 10,
+        width: 230,
+        [theme.breakpoints.down('xs')]: {
+            width: 300,
+        },
+        margin: 5,
+        textAlign: `center`,
+        '& svg, span': {
+            verticalAlign: 'middle'
+        },
+        '& .handle': {
+            width: 100,
+            height: 20,
+            backgroundColor: `var(--secondary)`,
+            margin: `5px auto`,
+        },
+        '& .image': {
+            borderRadius: `50% `,
+            width: 100,
+            minWidth: 100,
+            height: 100,
+            margin: `0 auto`,
+            objectFit: 'cover',
+            [theme.breakpoints.down('sm')]: {
+                width: 100,
+                minWidth: 100,
+                height: 100,
             },
-            '& .content': {
-                flexGrow: 1,
-                '& .title': {
-                    display: `flex`,
-                    justifyContent: 'space-between',
-                    alignItems: `center`,
-                    flexGrow: 1,
-                    flexWrap: `wrap`,
-                    '& .handle': {
-                        backgroundColor: `var(--orange)`,
-                        width: 100,
-                        height: 20,
-                        marginBottom: 15
-                    },
-                    '& .location': {
-                        backgroundColor: `grey`,
-                        width: 100,
-                        height: 13
-                    },
-                },
-                '& .body': {
-                    textAlign: `left`,
-                    backgroundColor: `grey`,
-                    width: `90%`,
-                    height: 15,
-                    marginBottom: 15
-                },
-            },
+        },
+        '& .location': {
+            width: 120,
+            height: 20,
+            backgroundColor: `grey`,
+            margin: `5px auto`,
         },
         '& .actions': {
             display: `flex`,
-            justifyContent: 'space-between',
+            justifyContent: 'center',
             alignItems: `center`,
             width: `100%`,
-            marginTop: 20,
             '& .follow': {
-                width: 150,
-                height: 30,
+                margin: 5,
+                width: 100,
+                height: 20,
                 backgroundColor: `var(--primary)`
             },
             '& .send': {
-                width: 100,
-                height: 30,
+                margin: 5,
+                width: 30,
+                height: 20,
                 backgroundColor: `var(--secondary)`
             },
         },
         '& .preloader': {
             position: `absolute`,
             right: `50% `,
-            marginRight: -40,
+            marginRight: -30,
             top: `45%`
+        }
+    },
+
+    playerSkeleton: {
+        position: 'relative',
+        opacity: .5,
+        '& .image': {
+            boxShadow: `0 30px 30px rgba(0, 0, 0, .5)`,
+            width: 300,
+            height: 300
         },
+        '& .progress': {
+            width: 250,
+            margin: `30px auto`,
+            height: 5,
+            borderRadius: 3,
+            background: `var(--darkNav)`,
+        },
+        '& .controls': {
+            marginBottom: 20,
+            fontSize: 60,
+            display: `flex`,
+            justifyContent: `space-evenly`,
+            alignItems: `center`
+        },
+        '& .playBtn': {
+            borderRadius: `50%`,
+            cursor: `pointer`,
+            transition: `opacity 0.3s ease-out`,
+            width: 60,
+            height: 60,
+        },
+        '& .playlistOptions': {
+            display: `flex`,
+            justifyContent: `space-evenly`,
+            marginBottom: 20,
+        },
+        '& .preloader': {
+            position: `absolute`,
+            right: `50% `,
+            marginRight: -40,
+            top: `20%`
+        }
     }
 })

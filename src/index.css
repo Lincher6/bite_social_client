@@ -29,6 +29,12 @@ code {
   padding: 5px;
 }
 
+@media (max-width: 600px) {
+  .contentContainer {
+  margin: 60px auto 0 auto;
+}
+}
+
 .form  {
   text-align: center
 }

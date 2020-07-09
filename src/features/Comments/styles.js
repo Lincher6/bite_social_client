@@ -1,11 +1,12 @@
 import { makeStyles } from "@material-ui/core/styles";
-import { theme } from '../../theme'
+import { theme } from '../../ui/theme'
 
 export const useStyles = makeStyles({
     comment: {
+        flexWrap: 'nowrap !important',
         backgroundColor: `var(--darkBackground)`,
         borderRadius: 5,
-        padding: 15,
+        padding: 10,
         borderBottom: `1px solid #263b57`,
         borderRight: `1px solid #263b57`,
         marginBottom: 15,
