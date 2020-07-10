@@ -2,8 +2,8 @@ import React, { useEffect, useCallback } from 'react';
 import { useStyles } from '../styles'
 import SkipNextOutlinedIcon from '@material-ui/icons/SkipNextOutlined';
 import SkipPreviousOutlinedIcon from '@material-ui/icons/SkipPreviousOutlined';
-import playBtn from '../../../ui/assets/playBtn.png'
-import pauseBtn from '../../../ui/assets/stopBtn.png'
+import playBtn from 'ui/assets/playBtn.png'
+import pauseBtn from 'ui/assets/stopBtn.png'
 import { IconButton } from '@material-ui/core';
 import { useSelector, useDispatch } from 'react-redux';
 import { musicSelectors, musicActions } from '../model';

@@ -1,6 +1,6 @@
 import React, { useCallback } from 'react'
-import { Button } from '../../../ui/styled-components'
-import { PAGE_SIZE } from '../../Bites/model/types'
+import { Button } from 'ui/styled-components'
+import { PAGE_SIZE } from 'features/Bites/model/types'
 
 export const LoadMore = ({ offset, setOffset, haveMore }) => {
 
@@ -15,7 +15,7 @@ export const LoadMore = ({ offset, setOffset, haveMore }) => {
             onClick={incrementOffset}
             disabled={!haveMore}
         >
-            Загрузть ещё
+            Загрузить ещё
         </Button>
     )
 }

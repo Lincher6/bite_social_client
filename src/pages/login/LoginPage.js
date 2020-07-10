@@ -1,9 +1,9 @@
 import React, { useCallback, useEffect } from 'react'
 import Grid from '@material-ui/core/Grid';
-import { Login } from "../../features/Authentication";
+import { Login } from "features/Authentication";
+import { profileActions } from 'features/Profile'
+import { uiSelectors, uiActions } from 'features/Navigation'
 import { useHistory } from 'react-router-dom';
-import { profileActions } from '../../features/Profile'
-import { uiSelectors, uiActions } from '../../features/Navigation'
 import { useDispatch, useSelector } from 'react-redux'
 
 export const LoginPage = props => {

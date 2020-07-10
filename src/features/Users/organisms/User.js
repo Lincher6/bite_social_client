@@ -1,9 +1,9 @@
 import React from 'react'
-import { Card, CardMedia, Typography, Button, Grid, CardActions, CardContent } from '@material-ui/core'
+import { Card, CardMedia, Typography } from '@material-ui/core'
 import LocationOn from '@material-ui/icons/LocationOn';
 import { useStyles } from '../styles'
 import { NavLink } from 'react-router-dom'
-import { ReadMore, EditButton } from '../../common'
+import { EditButton } from 'features/common'
 import { Follow } from '../molecules/Follow';
 import { EmailOutlined } from '@material-ui/icons';
 

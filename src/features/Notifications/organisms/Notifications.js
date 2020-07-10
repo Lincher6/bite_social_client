@@ -2,7 +2,7 @@ import React, { useState, Fragment, useCallback } from 'react'
 import { Badge, IconButton, Tooltip } from '@material-ui/core'
 import { Notifications as NotificationsIcon } from "@material-ui/icons";
 import { useSelector, useDispatch } from 'react-redux';
-import { profileSelectors, profileActions } from '../../Profile';
+import { profileSelectors, profileActions } from 'features/Profile';
 import { NotificationsList } from '../molecules/NotificationsList';
 
 export const Notifications = (props) => {

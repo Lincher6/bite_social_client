@@ -1,5 +1,5 @@
 import React, { useState, Fragment } from 'react'
-import { EditButton } from '../../common'
+import { EditButton } from 'features/common'
 import { BiteDetails } from '../organisms/BiteDetails'
 import OpenInNew from '@material-ui/icons/OpenInNew'
 

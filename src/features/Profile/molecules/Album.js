@@ -5,8 +5,8 @@ import PhotoLibraryTwoToneIcon from '@material-ui/icons/PhotoLibraryTwoTone';
 import { useStyles } from '../styles'
 import ImageGallery from 'react-image-gallery';
 import { useSelector } from 'react-redux';
-import { uiSelectors } from '../../Navigation';
-import noAvatar from '../../../ui/assets/no-avatar.png'
+import { uiSelectors } from 'features/Navigation';
+import noAvatar from 'ui/assets/no-avatar.png'
 
 export const Album = ({ profileImages = [] }) => {
     const classes = useStyles()

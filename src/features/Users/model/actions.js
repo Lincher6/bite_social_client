@@ -1,6 +1,6 @@
 import { SET_USER_PROFILE, LOADING_USER, SET_USERS, FOLLOW, UNFOLLOW, FOLLOWING_IN_PROGRESS, SET_FRIENDS_LIST, LOADING_FRIENDS, SET_SEARCH_PARAMETERS, CLEAR_USERS, CLEAR_PARAMS } from "./types"
-import { usersApi } from "../../../api/usersApi"
-import { uiActions } from "../../Navigation"
+import { usersApi } from "api/usersApi"
+import { uiActions } from "features/Navigation"
 
 
 const setUserProfile_AC = payload => ({

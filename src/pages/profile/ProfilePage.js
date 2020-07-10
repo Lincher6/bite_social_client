@@ -1,10 +1,9 @@
 import React, { useEffect } from 'react'
 import Grid from '@material-ui/core/Grid'
-import { Profile } from '../../features/Profile'
+import { Profile, profileSelectors } from 'features/Profile'
+import { BiteList } from 'features/Bites'
 import { useSelector } from 'react-redux'
-import { profileSelectors } from '../../features/Profile'
 import { Redirect } from 'react-router-dom'
-import { BiteList } from '../../features/Bites'
 
 export const ProfilePage = () => {
     const authenticated = useSelector(profileSelectors.authenticated)

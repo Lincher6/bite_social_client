@@ -3,7 +3,7 @@ import React from "react";
 import * as yup from 'yup'
 import Typography from "@material-ui/core/Typography";
 import TextField from "@material-ui/core/TextField";
-import { Button } from '../../../common'
+import { Button } from 'features/common'
 import CircularProgress from '@material-ui/core/CircularProgress';
 import { useStyles } from "../../styles";
 

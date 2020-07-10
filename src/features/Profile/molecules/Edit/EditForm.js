@@ -2,7 +2,7 @@ import { useFormik } from "formik";
 import React from "react";
 import * as yup from 'yup'
 import TextField from "@material-ui/core/TextField";
-import { Button } from '../../../common'
+import { Button } from 'features/common'
 
 
 export const EditForm = ({ bio, location, website, editUserData, setOpen }) => {

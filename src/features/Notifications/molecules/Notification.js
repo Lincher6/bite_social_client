@@ -1,9 +1,9 @@
-import React, { Fragment, useState } from 'react'
+import React, { useState } from 'react'
 import { useStyles } from '../styles'
 import { Favorite, Comment } from '@material-ui/icons'
-import { Typography, Dialog } from '@material-ui/core'
-import { useDayjs } from '../../../lib/hooks/useDayjs'
-import { BiteDetails } from '../../Bites'
+import { Typography } from '@material-ui/core'
+import { useDayjs } from 'lib/hooks/useDayjs'
+import { BiteDetails } from 'features/Bites'
 
 export const Notification = ({ sender, read, type, createdAt, biteId }) => {
     const classes = useStyles()

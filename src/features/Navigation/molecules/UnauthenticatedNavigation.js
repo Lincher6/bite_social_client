@@ -1,7 +1,7 @@
 import React from 'react'
 import { NavLink } from "react-router-dom";
 import { Home, Lock, LibraryBooks } from "@material-ui/icons";
-import { EditButton } from "../../common/EditButton";
+import { EditButton } from "features/common/EditButton";
 import PeopleAltIcon from '@material-ui/icons/PeopleAlt';
 
 export const UnauthenticatedNavigation = props => (

@@ -1,7 +1,7 @@
 import React, { useRef, useCallback, Fragment } from 'react'
 import { useStyles } from "../styles";
 import { useDispatch } from 'react-redux'
-import imageEdit from '../../../ui/assets/imageEdit.png'
+import imageEdit from 'ui/assets/imageEdit.png'
 import Tooltip from "@material-ui/core/Tooltip"
 import { profileActions } from '../model'
 

@@ -1,5 +1,5 @@
 import jwtDecode from 'jwt-decode'
-import { profileActions } from '../../features/Profile/model'
+import { profileActions } from 'features/Profile/model'
 import { useDispatch } from "react-redux";
 import Axios from 'axios';
 

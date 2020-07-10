@@ -4,14 +4,14 @@ import { DialogContent, Typography, Dialog } from '@material-ui/core'
 import Close from "@material-ui/icons/Close";
 import { bitesSelectors, bitesActions } from '../model'
 import { useDispatch, useSelector } from 'react-redux'
-import { uiSelectors } from '../../Navigation'
-import { EditButton, BiteDetailsSkeleton } from '../../common'
+import { uiSelectors } from 'features/Navigation'
+import { EditButton, BiteDetailsSkeleton } from 'features/common'
 import { NavLink } from 'react-router-dom';
 import { Like } from '../molecules/Like';
-import { useDayjs } from '../../../lib/hooks/useDayjs';
-import { AddComment } from '../../Comments';
+import { useDayjs } from 'lib/hooks/useDayjs';
+import { AddComment } from 'features/Comments';
 import CommentIcon from "@material-ui/icons/Comment";
-import { CommentList } from '../../Comments';
+import { CommentList } from 'features/Comments';
 
 export const BiteDetails = ({ biteId, open, setOpen, focus }) => {
     const classes = useStyles()

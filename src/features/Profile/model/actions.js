@@ -1,10 +1,10 @@
 import { SET_AUTHENTICATED, SET_AUTHENTICATED_PROFILE, LOADING_PROFILE, LOGOUT, MARK_NOTIFICATIONS } from './types'
-import { uiActions } from '../../Navigation'
-import { authApi } from '../../../api/authApi'
-import { profileApi } from '../../../api/profileApi'
+import { uiActions } from 'features/Navigation'
+import { authApi } from 'api/authApi'
+import { profileApi } from 'api/profileApi'
 import axios from 'axios'
 import imageCompression from 'browser-image-compression'
-import { tokenChecker } from "../../../lib/hooks/useInitialization";
+import { tokenChecker } from "lib/hooks/useInitialization";
 
 const setAuthenticated_AC = payload => ({
     type: SET_AUTHENTICATED,

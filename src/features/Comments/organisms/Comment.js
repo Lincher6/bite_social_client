@@ -1,7 +1,7 @@
 import React, { Fragment } from 'react'
 import { Grid, Typography } from '@material-ui/core'
 import { useStyles } from '../styles'
-import { useDayjs } from '../../../lib/hooks/useDayjs'
+import { useDayjs } from 'lib/hooks/useDayjs'
 
 export const Comment = ({ userHandle, userImage, body, createdAt }) => {
     const classes = useStyles()

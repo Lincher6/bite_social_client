@@ -1,6 +1,6 @@
 import React from 'react'
 import { Paper } from '@material-ui/core'
-import noImg from '../../../ui/assets/no-avatar.png'
+import noImg from 'ui/assets/no-avatar.png'
 import { useStyles } from '../styles';
 import { CircularProgress } from '@material-ui/core';
 

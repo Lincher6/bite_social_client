@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { EditButton } from "../../common";
+import { EditButton } from "features/common";
 import CommentIcon from "@material-ui/icons/Comment";
 import { BiteDetails } from '../organisms/BiteDetails'
 

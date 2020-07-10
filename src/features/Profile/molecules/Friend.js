@@ -2,8 +2,8 @@ import React, { Fragment } from 'react'
 import { useStyles } from '../styles'
 import { Typography } from '@material-ui/core'
 import { NavLink } from 'react-router-dom'
-import { ButtonSmall, EditButton } from '../../common'
-import { Follow } from '../../Users/molecules/Follow'
+import { EditButton } from 'features/common'
+import { Follow } from 'features/Users/molecules/Follow'
 import EmailOutlinedIcon from '@material-ui/icons/EmailOutlined';
 
 export const Friend = ({ handle, imageUrl }) => {

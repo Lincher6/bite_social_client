@@ -1,6 +1,6 @@
 import { ADD_BITE, DELETE_BITE, LIKE_BITE, LOADING_BITES, SET_BITES, UNLIKE_BITE, SET_BITE, ADD_COMMENT, LOADING_COMMENT, CLEAR_BITES, SET_BITE_FILTER } from "./types"
-import { uiActions } from '../../Navigation'
-import { bitesApi } from '../../../api/bitesApi'
+import { uiActions } from 'features/Navigation'
+import { bitesApi } from 'api/bitesApi'
 
 const setBites_AC = payload => ({
     type: SET_BITES,

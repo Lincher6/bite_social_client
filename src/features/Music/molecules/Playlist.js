@@ -6,7 +6,6 @@ import ShuffleSharpIcon from '@material-ui/icons/ShuffleSharp';
 import { PlayerButton } from '../atoms/PlayerButton'
 import { useSelector, useDispatch } from 'react-redux';
 import { musicSelectors, musicActions } from '../model';
-import { TrackList } from './TrackList';
 
 export const Playlist = () => {
     const classes = useStyles()

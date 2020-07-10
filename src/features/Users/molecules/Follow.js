@@ -1,10 +1,8 @@
 import React, { Fragment, useCallback, useState } from 'react'
-import { Button } from '@material-ui/core'
 import { useDispatch, useSelector } from 'react-redux'
-import { profileSelectors } from '../../Profile'
+import { profileSelectors } from 'features/Profile'
 import { usersSelectors, usersActions } from '../model'
-import { RedirectDialog } from '../../common/RedirectDialog/index.js'
-import { ButtonSmall } from '../../common'
+import { ButtonSmall, RedirectDialog } from 'features/common'
 
 export const Follow = ({ userHandle }) => {
     const [open, setOpen] = useState(false)

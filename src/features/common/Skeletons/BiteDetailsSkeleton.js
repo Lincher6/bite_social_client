@@ -1,5 +1,5 @@
 import React, { Fragment } from 'react'
-import noImg from '../../../ui/assets/no-avatar.png'
+import noImg from 'ui/assets/no-avatar.png'
 import { useStyles } from '../styles'
 import { Typography, CircularProgress } from '@material-ui/core'
 

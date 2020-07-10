@@ -1,10 +1,10 @@
 import React, { useCallback, useEffect } from 'react'
 import Grid from '@material-ui/core/Grid';
-import { SignUp } from "../../features/Authentication";
+import { SignUp } from "features/Authentication";
+import { uiSelectors, uiActions } from 'features/Navigation';
+import { profileActions } from 'features/Profile';
 import { useHistory } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
-import { uiSelectors, uiActions } from '../../features/Navigation';
-import { profileActions } from '../../features/Profile';
 
 export const SignUpPage = props => {
     const history = useHistory()

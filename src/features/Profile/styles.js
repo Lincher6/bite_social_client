@@ -1,5 +1,5 @@
 import { makeStyles } from "@material-ui/core/styles";
-import { theme } from '../../ui/theme'
+import { theme } from 'ui/theme'
 
 export const useStyles = makeStyles({
     profile: {

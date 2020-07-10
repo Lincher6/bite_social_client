@@ -3,8 +3,8 @@ import { Bite } from "./Bite";
 import { useStyles } from "../styles";
 import { useSelector, useDispatch } from "react-redux";
 import { bitesSelectors, bitesActions } from "../model";
-import { LoadMore } from '../../common/LoadMore';
-import { BiteSkeleton } from '../../common';
+import { LoadMore } from 'features/common/LoadMore';
+import { BiteSkeleton } from 'features/common';
 
 export const BiteList = ({ userHandle = '' }) => {
     const [offset, setOffset] = useState(0)

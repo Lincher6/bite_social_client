@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react'
 import { useStyles } from '../styles'
-import { useDayjs } from '../../../lib/hooks/useDayjs'
+import { useDayjs } from 'lib/hooks/useDayjs'
 import { Volume } from './Volume'
 import { useSelector } from 'react-redux'
 import { musicSelectors } from '../model'

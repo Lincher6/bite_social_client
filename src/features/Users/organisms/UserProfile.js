@@ -1,13 +1,10 @@
 import React, { useEffect } from 'react'
 import Paper from '@material-ui/core/Paper';
-import { useStyles } from "../../Profile/styles";
-import { Picture, FriendsList } from '../../Profile';
-import { Info } from '../../Profile';
-import { Album } from '../../Profile';
+import { useStyles } from "features/Profile/styles";
+import { Picture, FriendsList, Info, Album } from 'features/Profile';
 import { useSelector, useDispatch } from 'react-redux';
 import { usersSelectors, usersActions } from '../model';
-import { CircularProgress } from '@material-ui/core';
-import { ProfileSkeleton } from '../../common';
+import { ProfileSkeleton } from 'features/common';
 
 export const UserProfile = ({ userHandle }) => {
     const classes = useStyles()
@@ -18,7 +15,7 @@ export const UserProfile = ({ userHandle }) => {
 
     useEffect(() => {
         dispatch(usersActions.getUserProfile(userHandle))
-    }, [userHandle])
+    }, [userHandle, dispatch])
 
     return (
         <Paper className={classes.profile}>

@@ -3,7 +3,7 @@ import { useStyles } from "../styles";
 import Paper from '@material-ui/core/Paper';
 import { NavLink } from "react-router-dom";
 import Typography from "@material-ui/core/Typography";
-import { Button } from "../../common";
+import { Button } from "features/common";
 
 export const NoProfile = props => {
     const classes = useStyles()

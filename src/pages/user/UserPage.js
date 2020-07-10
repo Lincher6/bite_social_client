@@ -1,10 +1,10 @@
 import React, { useEffect } from 'react'
 import Grid from '@material-ui/core/Grid'
-import { BiteList } from '../../features/Bites'
+import { BiteList } from 'features/Bites'
+import { UserProfile } from 'features/Users'
+import { profileSelectors } from 'features/Profile'
 import { useParams, Redirect } from 'react-router-dom'
-import { UserProfile } from '../../features/Users'
 import { useSelector } from 'react-redux'
-import { profileSelectors } from '../../features/Profile'
 
 export const UserPage = () => {
     const params = useParams()

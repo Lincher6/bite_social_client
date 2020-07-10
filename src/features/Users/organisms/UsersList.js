@@ -2,10 +2,10 @@ import React, { useState, useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { usersActions, usersSelectors } from '../model'
 import { useStyles } from '../styles'
-import { LoadMore } from '../../common/LoadMore'
+import { LoadMore } from 'features/common/LoadMore'
 import { User } from './User'
-import { profileSelectors } from '../../Profile'
-import { UserSkeleton } from '../../common'
+import { profileSelectors } from 'features/Profile'
+import { UserSkeleton } from 'features/common'
 
 export const UsersList = (props) => {
     const classes = useStyles()

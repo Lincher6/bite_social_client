@@ -1,14 +1,13 @@
 import React, { Fragment } from 'react'
-import noTrack from '../../../ui/assets/no-track.png'
+import noTrack from 'ui/assets/no-track.png'
 import { useStyles } from '../styles';
-import playBtn from '../../../ui/assets/playBtn.png'
+import playBtn from 'ui/assets/playBtn.png'
 import { CircularProgress, IconButton } from '@material-ui/core';
 import LoopIcon from '@material-ui/icons/Loop';
 import MenuSharpIcon from '@material-ui/icons/MenuSharp';
 import ShuffleSharpIcon from '@material-ui/icons/ShuffleSharp';
 import SkipNextOutlinedIcon from '@material-ui/icons/SkipNextOutlined';
 import SkipPreviousOutlinedIcon from '@material-ui/icons/SkipPreviousOutlined';
-import { PlayerButton } from '../../Music/atoms/PlayerButton';
 
 export const PlayerSkeleton = (props) => {
     const classes = useStyles()

@@ -8,7 +8,7 @@ import { profileSelectors } from '../model';
 import { Edit } from '../molecules/Edit';
 import { Album } from '../molecules/Album';
 import { FriendsList } from '../molecules/FriendsList';
-import { ProfileSkeleton } from '../../common';
+import { ProfileSkeleton } from 'features/common';
 
 export const Profile = (props) => {
     const classes = useStyles()

@@ -1,4 +1,4 @@
-import React from 'react'
+/*import React from 'react'
 import Paper from '@material-ui/core/Paper';
 import { useStyles } from "../styles";
 import { useSelector } from "react-redux";
@@ -6,9 +6,9 @@ import { NoProfile } from '../molecules/NoProfile';
 import { Picture } from '../molecules/Picture';
 import { Info } from '../molecules/Info';
 import { Edit } from '../molecules/Edit';
-import { Logout } from "../../Authentication";
+import { Logout } from "features/Authentication";
 import { profileSelectors } from '../model';
-import { ProfileCardSkeleton } from '../../common';
+import { ProfileCardSkeleton } from 'features/common';
 
 
 export const ProfileCard = props => {
@@ -34,4 +34,4 @@ export const ProfileCard = props => {
         </Paper>
     )
 
-}
+}*/

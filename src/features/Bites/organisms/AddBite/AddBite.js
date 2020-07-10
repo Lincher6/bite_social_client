@@ -3,13 +3,13 @@ import { useStyles } from "../../styles";
 import { useDispatch, useSelector } from "react-redux";
 import Add from "@material-ui/icons/Add";
 import Close from "@material-ui/icons/Close";
-import { EditButton } from "../../../common";
+import { EditButton } from "features/common";
 import Dialog from "@material-ui/core/Dialog";
 import DialogTitle from "@material-ui/core/DialogTitle";
 import DialogContent from "@material-ui/core/DialogContent";
 import { bitesActions } from "../../model";
 import { AddBiteForm } from "./AddBiteForm";
-import { uiSelectors } from "../../../Navigation";
+import { uiSelectors } from "features/Navigation";
 import { useHistory } from 'react-router-dom';
 
 export const AddBite = () => {

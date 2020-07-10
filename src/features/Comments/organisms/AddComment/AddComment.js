@@ -1,8 +1,8 @@
 import React, { useCallback } from 'react'
 import { useSelector, useDispatch } from 'react-redux'
-import { profileSelectors } from '../../../Profile'
-import { uiSelectors } from '../../../Navigation'
-import { bitesActions, bitesSelectors } from '../../../Bites'
+import { profileSelectors } from 'features/Profile'
+import { uiSelectors } from 'features/Navigation'
+import { bitesActions, bitesSelectors } from 'features/Bites'
 import { AddCommentForm } from './AddCommentFrom'
 
 export const AddComment = ({ biteId, focus }) => {

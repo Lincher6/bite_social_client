@@ -4,7 +4,7 @@ import { CircularProgress } from '@material-ui/core'
 import PeopleAltTwoToneIcon from '@material-ui/icons/PeopleAltTwoTone';
 import { useStyles } from '../styles'
 import { useSelector, useDispatch } from 'react-redux';
-import { usersSelectors, usersActions } from '../../Users';
+import { usersSelectors, usersActions } from 'features/Users';
 import { Friend } from './Friend';
 
 export const FriendsList = ({ friends = [] }) => {

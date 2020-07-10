@@ -1,9 +1,9 @@
 import React, { useCallback, useState } from 'react'
-import { EditButton, RedirectDialog } from "../../common";
+import { EditButton, RedirectDialog } from "features/common";
 import FavoriteBorder from "@material-ui/icons/FavoriteBorder";
 import Favorite from "@material-ui/icons/Favorite";
 import { useDispatch, useSelector } from "react-redux";
-import { profileSelectors } from "../../Profile";
+import { profileSelectors } from "features/Profile";
 import { bitesActions } from "../model";
 import IconButton from "@material-ui/core/IconButton";
 

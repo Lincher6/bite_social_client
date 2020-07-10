@@ -1,6 +1,5 @@
-import React, { Fragment, useEffect } from 'react'
-import { Grid } from '@material-ui/core'
-import { UsersList, SearchUsers } from '../../features/Users'
+import React, { useEffect } from 'react'
+import { UsersList, SearchUsers } from 'features/Users'
 import { useStyles } from './styles'
 
 export const UsersPage = (props) => {

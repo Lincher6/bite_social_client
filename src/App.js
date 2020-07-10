@@ -23,5 +23,4 @@ export const App = () => (
             </CssBaseline>
         </Provider>
     </ThemeProvider>
-
 )

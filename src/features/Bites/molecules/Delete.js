@@ -1,8 +1,8 @@
 import React, { useCallback, useState } from 'react'
-import { EditButton } from "../../common";
+import { EditButton } from "features/common";
 import { useDispatch, useSelector } from "react-redux";
 import { bitesActions } from "..";
-import { profileSelectors } from "../../Profile";
+import { profileSelectors } from "features/Profile";
 import DeleteIcon from '@material-ui/icons/DeleteForeverOutlined'
 import Dialog from "@material-ui/core/Dialog";
 import DialogTitle from "@material-ui/core/DialogTitle";

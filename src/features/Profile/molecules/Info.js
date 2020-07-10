@@ -4,7 +4,7 @@ import Typography from "@material-ui/core/Typography";
 import LocationOn from '@material-ui/icons/LocationOn';
 import LinkIcon from '@material-ui/icons/Link';
 import CalendarToday from '@material-ui/icons/CalendarToday';
-import { useDayjs } from '../../../lib/hooks/useDayjs';
+import { useDayjs } from 'lib/hooks/useDayjs';
 
 export const Info = ({ handle, bio, location, website, createdAt }) => {
     const classes = useStyles()

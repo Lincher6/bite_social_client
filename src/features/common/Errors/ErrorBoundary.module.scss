@@ -1,0 +1,45 @@
+.container {
+    padding-top: 80px;
+    width: 300px;
+    margin: 0 auto;
+    text-align: center;
+    span {
+        font-size: 4em;
+        font-weight: bold;
+        font-family: Geneva, Tahoma, sans-serif;
+    }
+    img {
+        width: 100px;
+        height: 100px;
+        object-fit: contain;
+    }
+    .title {
+        color: grey;
+        font-weight: bold;
+    }
+    .openBtn {
+        cursor: pointer;
+        color: var(--primary)
+    }
+    .stackTrace {
+        overflow: hidden;
+        height: 0px;
+    }
+    .open {
+        height: 100%;
+    }
+    .reload {
+        cursor: pointer;
+        width: 150px;
+        background-color: var(--primary);
+        font-size: 1.3em;
+        font-weight: bold;
+        vertical-align: middle;
+        padding: 5px;
+        color: black;
+        border-radius: 5px;
+        box-shadow: 0px 0px 2px 2px var(--primary);
+        margin: 0 auto;
+        margin-top: 60px;
+    }
+}

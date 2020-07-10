@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React from 'react'
 import { Dialog, Typography, DialogTitle, DialogActions, Button } from '@material-ui/core'
 import { useHistory } from 'react-router-dom'
 

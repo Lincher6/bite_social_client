@@ -2,8 +2,8 @@ import { useFormik } from "formik";
 import React from "react";
 import * as yup from 'yup'
 import { useStyles } from "../styles";
-import logo from '../../../ui/assets/titleLogo.png'
-import { Button, Typography } from "../../common";
+import logo from 'ui/assets/titleLogo.png'
+import { Button, Typography } from "features/common";
 import TextField from "@material-ui/core/TextField";
 import CircularProgress from '@material-ui/core/CircularProgress';
 import { NavLink } from 'react-router-dom'
