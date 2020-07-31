@@ -1,0 +1,39 @@
+.dialog {
+    padding: 10px;
+    margin: 10px;
+    display: flex;
+    align-items: center;
+    background-color: var(--paper);
+    border-radius: 5px;
+    font-size: 1.2em;
+    .image {
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        margin-right: 10px;
+    }
+    .container {
+        flex-grow: 1;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    .count {
+        height: 30px;
+        width: 30px;
+        padding: 5px;
+        border-radius: 50%;
+        background-color: firebrick;
+        text-align: center;
+    }
+    
+}
+
+.active .dialog {
+    color: var(--primary);
+    background-color: var(--lightPaper);
+}
+
+.messages {
+    height: 70vh;
+}

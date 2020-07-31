@@ -11,6 +11,7 @@ export const useStyles = makeStyles({
             marginBottom: 10,
         },
         '& .image': {
+            position: `relative`,
             boxShadow: `3px 3px 4px 1px var(--darkBackground)`,
             width: 185,
             minWidth: 185,
@@ -26,6 +27,16 @@ export const useStyles = makeStyles({
                 border: `none`,
                 boxShadow: `none`,
             },
+            '& .isOnline': {
+                position: "absolute",
+                right: `5%`,
+                bottom: `5%`,
+                height: 15,
+                width: 15,
+                backgroundColor: `var(--primary)`,
+                borderRadius: `50%`,
+                border: `2px solid white`
+            }
         },
         '& .content': {
             marginBottom: `35px !important`,

@@ -2,9 +2,9 @@ import React, { Fragment } from 'react'
 import { useStyles } from '../styles'
 import { Typography } from '@material-ui/core'
 import { NavLink } from 'react-router-dom'
-import { EditButton } from 'features/common'
+import { StartDialog } from 'features/common'
 import { Follow } from 'features/Users/molecules/Follow'
-import EmailOutlinedIcon from '@material-ui/icons/EmailOutlined';
+import { IsOnline } from 'features/common'
 
 export const Friend = ({ handle, imageUrl }) => {
     const classes = useStyles()
@@ -12,8 +12,9 @@ export const Friend = ({ handle, imageUrl }) => {
     return (
         <Fragment>
             <div className={classes.friend} >
-                <NavLink to={`/users/${handle}`}>
+                <NavLink to={`/users/${handle}`} className='friend-image-container'>
                     <img src={imageUrl} alt={'friend'} className='friend-image' />
+                    <IsOnline handle={handle} />
                 </NavLink>
                 <div className='friend-info'>
                     <div style={{ display: `flex`, alignItems: `center` }}>
@@ -22,9 +23,7 @@ export const Friend = ({ handle, imageUrl }) => {
                                 {handle}
                             </Typography>
                         </NavLink>
-                        <EditButton tip='написать'>
-                            <EmailOutlinedIcon color='secondary' />
-                        </EditButton>
+                        <StartDialog recipient={handle} />
                     </div>
 
                     <Follow userHandle={handle} />

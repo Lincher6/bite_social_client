@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react'
 import { UsersList, SearchUsers } from 'features/Users'
 import { useStyles } from './styles'
+import { ErrorBoundary } from 'features/common'
 
 export const UsersPage = (props) => {
 
@@ -13,10 +14,14 @@ export const UsersPage = (props) => {
     return (
         <div className={classes.grid}>
             <div className='list'>
-                <UsersList />
+                <ErrorBoundary>
+                    <UsersList />
+                </ErrorBoundary>
             </div>
             <div className='search'>
-                <SearchUsers />
+                <ErrorBoundary>
+                    <SearchUsers />
+                </ErrorBoundary>
             </div>
         </div>
     )

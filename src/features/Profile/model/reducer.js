@@ -1,15 +1,17 @@
-import { SET_AUTHENTICATED, SET_AUTHENTICATED_PROFILE, LOADING_PROFILE, LOGOUT, MARK_NOTIFICATIONS } from './types'
+import { SET_AUTHENTICATED, SET_AUTHENTICATED_PROFILE, LOADING_PROFILE, LOGOUT, MARK_NOTIFICATIONS, SET_IS_ONLINE } from './types'
 import { LIKE_BITE, UNLIKE_BITE } from "../../Bites";
 import { FOLLOW, UNFOLLOW } from '../../Users';
 
 const initialState = {
+    handle: null,
     authenticated: false,
     loadingProfile: false,
     credentials: {},
     likes: [],
     notifications: [],
     images: [],
-    friends: []
+    friends: [],
+    isOnline: false
 }
 
 export const reducer = (state = initialState, action) => {
@@ -21,14 +23,21 @@ export const reducer = (state = initialState, action) => {
 
         case SET_AUTHENTICATED_PROFILE: return {
             ...state,
+            handle: action.payload.credentials.handle,
             friends: action.payload.credentials.friends,
             authenticated: true,
             loadingProfile: false,
             ...action.payload
         }
 
+        case SET_IS_ONLINE: return {
+            ...state,
+            isOnline: action.payload
+        }
+
         case LOGOUT: return {
             ...state,
+            handle: null,
             authenticated: false,
             credentials: {},
         }

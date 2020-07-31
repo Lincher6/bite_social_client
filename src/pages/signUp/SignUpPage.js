@@ -5,6 +5,7 @@ import { uiSelectors, uiActions } from 'features/Navigation';
 import { profileActions } from 'features/Profile';
 import { useHistory } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
+import { ErrorBoundary } from 'features/common';
 
 export const SignUpPage = props => {
     const history = useHistory()
@@ -23,7 +24,13 @@ export const SignUpPage = props => {
         <Grid container>
             <Grid item sm />
             <Grid item sm>
-                <SignUp signUp={signUp} loginError={errors.error} loading={loading} />
+                <ErrorBoundary>
+                    <SignUp
+                        signUp={signUp}
+                        loginError={errors.error}
+                        loading={loading}
+                    />
+                </ErrorBoundary>
             </Grid>
             <Grid item sm />
         </Grid>

@@ -5,6 +5,7 @@ import { UserProfile } from 'features/Users'
 import { profileSelectors } from 'features/Profile'
 import { useParams, Redirect } from 'react-router-dom'
 import { useSelector } from 'react-redux'
+import { ErrorBoundary } from 'features/common'
 
 export const UserPage = () => {
     const params = useParams()
@@ -22,8 +23,10 @@ export const UserPage = () => {
     return (
         <Grid container justify='center'>
             <Grid item md={8} xs={12}>
-                <UserProfile userHandle={userHandle} />
-                <BiteList userHandle={userHandle} />
+                <ErrorBoundary>
+                    <UserProfile userHandle={userHandle} />
+                    <BiteList userHandle={userHandle} />
+                </ErrorBoundary>
             </Grid>
         </Grid>
     )

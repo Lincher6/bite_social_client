@@ -21,6 +21,16 @@ export const useStyles = makeStyles({
                 height: 60,
             },
         },
+        '& .isOnline': {
+            position: "absolute",
+            right: `12%`,
+            bottom: `12%`,
+            height: 15,
+            width: 15,
+            backgroundColor: `var(--primary)`,
+            borderRadius: `50%`,
+            border: `2px solid white`
+        },
         '& .header': {
             display: `flex`,
             alignItems: `flex-end`,

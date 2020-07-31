@@ -2,14 +2,14 @@ import React from 'react'
 import InfoIcon from '@material-ui/icons/Info';
 import { NavLink } from 'react-router-dom';
 
-export const Contacts = (props) => {
+export const Option = ({ Icon, link, title }) => {
     return (
-        <NavLink to='/contacts' className="item">
+        <NavLink to={link} className="item">
             <div>
-                Контакты
-                    </div>
+                {title}
+            </div>
             <div>
-                <InfoIcon />
+                <Icon />
             </div>
         </NavLink>
     )

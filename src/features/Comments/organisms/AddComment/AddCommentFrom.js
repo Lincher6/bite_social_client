@@ -1,7 +1,7 @@
 import { useFormik } from "formik";
 import React from "react";
 import * as yup from 'yup'
-import { useStyles } from "../../styles";
+import classes from "../../styles.module.scss";
 import TextField from "@material-ui/core/TextField";
 import { Button } from 'features/common'
 import CircularProgress from '@material-ui/core/CircularProgress';
@@ -9,7 +9,7 @@ import { Typography } from "@material-ui/core";
 
 
 export const AddCommentForm = ({ addComment, fetchError, loading, focus }) => {
-    const classes = useStyles()
+    //const classes = useStyles()
     const { handleSubmit, handleChange, handleBlur, values, errors, touched, resetForm } = useFormik({
         initialValues: {
             comment: ''
@@ -33,7 +33,7 @@ export const AddCommentForm = ({ addComment, fetchError, loading, focus }) => {
     return (
         <form onSubmit={handleSubmit} onKeyPress={handleKeyPress} className={classes.addCommentForm}>
             <TextField id='comment' name='comment' type='text' label='Оставьте комментарий'
-                className='textField'
+                className={classes.textField}
                 fullWidth
                 multiline
                 rowsMax={8}
@@ -51,12 +51,12 @@ export const AddCommentForm = ({ addComment, fetchError, loading, focus }) => {
                 type='submit'
                 variant='contained'
                 color='primary'
-                className='button'
+                className={classes.button}
                 disabled={loading}
             >
                 Отправить
                 {loading
-                    ? <CircularProgress className='formLoader' size={30} />
+                    ? <CircularProgress className={classes.formLoader} size={30} />
                     : null}
             </Button>
         </form>

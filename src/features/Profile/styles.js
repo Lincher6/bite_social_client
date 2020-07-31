@@ -39,7 +39,9 @@ export const useStyles = makeStyles({
             verticalAlign: 'middle'
         },
         '& a': {
-            color: 'var(--primary)'
+            '&:hover': {
+                color: 'var(--primary)',
+            }
         },
         '& hr': {
             border: 'none',
@@ -49,6 +51,9 @@ export const useStyles = makeStyles({
             '&:hover': {
                 cursor: 'pointer'
             }
+        },
+        '& .disabled': {
+            opacity: .5
         }
     },
 
@@ -133,6 +138,19 @@ export const useStyles = makeStyles({
     friend: {
         width: 250,
         display: `flex`,
+        '& .friend-image-container': {
+            position: `relative`,
+            '& .isOnline': {
+                position: "absolute",
+                right: `15%`,
+                bottom: `15%`,
+                height: 15,
+                width: 15,
+                backgroundColor: `var(--primary)`,
+                borderRadius: `50%`,
+                border: `2px solid white`
+            }
+        },
         '& .friend-image': {
             width: 70,
             height: 70,

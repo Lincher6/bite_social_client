@@ -21,10 +21,5 @@ export const UnauthenticatedNavigation = props => (
                 <Lock />
             </EditButton>
         </NavLink>
-        <NavLink to={'/signUp'}>
-            <EditButton tip={'Регистрация'}>
-                <LibraryBooks />
-            </EditButton>
-        </NavLink>
     </React.Fragment>
 )

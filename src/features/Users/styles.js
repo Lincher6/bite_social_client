@@ -29,6 +29,7 @@ export const useStyles = makeStyles({
             verticalAlign: 'middle'
         },
         '& .image': {
+            position: `relative`,
             borderRadius: `50% `,
             width: 100,
             minWidth: 100,
@@ -40,6 +41,16 @@ export const useStyles = makeStyles({
                 minWidth: 100,
                 height: 100,
             },
+            '& .isOnline': {
+                position: "absolute",
+                right: `7%`,
+                bottom: `7%`,
+                height: 15,
+                width: 15,
+                backgroundColor: `var(--primary)`,
+                borderRadius: `50%`,
+                border: `2px solid white`
+            }
         },
         '& .info': {
             verticalAlign: 'middle',

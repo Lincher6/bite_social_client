@@ -15,7 +15,7 @@ export const Controls = () => {
     const { setPlaying, setTrackIndex, setAudio, setTrack } = musicActions
 
     const playStopFlow = () => {
-        if (audio) {
+        if (audio && audio.readyState) {
             if (playing) {
                 audio.pause()
             } else {
@@ -79,6 +79,7 @@ export const Controls = () => {
             } else {
                 audio.pause()
             }
+            audio.preload = `auto`
             audio.addEventListener('ended', trackChanger)
         }
 
@@ -88,7 +89,7 @@ export const Controls = () => {
                 audio.removeEventListener('ended', trackChanger)
             }
         }
-    }, [audio, trackChanger, playing])
+    }, [audio, trackChanger])
 
     return (
         <div className={classes.controls}>

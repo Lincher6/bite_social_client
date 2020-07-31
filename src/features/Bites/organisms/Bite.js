@@ -8,7 +8,7 @@ import Typography from "@material-ui/core/Typography";
 import { NavLink } from "react-router-dom";
 import { Like } from "../molecules/Like";
 import { Comment } from "../molecules/Comment";
-import { ReadMore } from "features/common";
+import { ReadMore, IsOnline } from "features/common";
 import { Delete } from "../molecules/Delete";
 import { OpenBite } from '../molecules/OpenBite';
 import { useDayjs } from 'lib/hooks/useDayjs';
@@ -25,7 +25,9 @@ export const Bite = ({ imageUrl, userHandle, createdAt, body, likesCount, commen
                 component={NavLink}
                 to={`/users/${userHandle}`}
                 title='User image'
-            />
+            >
+                <IsOnline handle={userHandle} />
+            </CardMedia>
             <div>
                 <CardContent className='content'>
                     <Typography

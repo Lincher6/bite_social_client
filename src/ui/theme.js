@@ -119,7 +119,7 @@ darkTheme.typography.body1 = {
         fontSize: '0.9rem',
     },
     [darkTheme.breakpoints.down('xs')]: {
-        fontSize: '0.8rem',
+        fontSize: '0.9rem',
     },
 }
 
@@ -129,7 +129,7 @@ darkTheme.typography.body2 = {
         fontSize: '0.8rem',
     },
     [darkTheme.breakpoints.down('xs')]: {
-        fontSize: '0.7rem',
+        fontSize: '0.8rem',
     },
 }
 

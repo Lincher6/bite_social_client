@@ -1,13 +1,30 @@
-import React from 'react'
+import React, { useEffect, useState, useCallback } from 'react'
 import { useStyles } from '../styles'
-import { Typography } from '@material-ui/core'
+import { Typography, CircularProgress } from '@material-ui/core'
 import { Equalizer } from '../atoms/Equalizer/Equlizer'
 import { useSelector } from 'react-redux'
 import { musicSelectors } from '../model'
 
 export const TrackInfo = () => {
     const classes = useStyles()
-    const { track, playing } = useSelector(musicSelectors.music)
+    const [isLoaded, setIsLoaded] = useState(false)
+    const { track, playing, audio } = useSelector(musicSelectors.music)
+
+    const setLoaded = useCallback(() => {
+        setIsLoaded(true)
+    }, [])
+
+    useEffect(() => {
+        setIsLoaded(false)
+
+        if (audio.readyState === 4) {
+            setIsLoaded(true)
+        } else {
+            audio.addEventListener('canplay', setLoaded)
+        }
+
+        return () => audio.removeEventListener('canplay', setLoaded)
+    }, [audio])
 
     return (
         <div className={classes.trackInfo}>
@@ -22,9 +39,12 @@ export const TrackInfo = () => {
                 </Typography>
 
                 {
-                    playing
-                        ? <Equalizer />
-                        : null
+                    isLoaded
+                        ? playing && <Equalizer />
+                        : <div className='loading'>
+                            <CircularProgress size={50} />
+                        </div>
+
                 }
             </div>
         </div>

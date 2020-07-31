@@ -6,7 +6,7 @@ export const useStyles = makeStyles({
     musicPlayer: {
         overflow: `hidden`,
         width: 300,
-        height: 520,
+        height: 530,
         transition: `height .5s`,
         margin: `0 auto`,
     },
@@ -40,7 +40,7 @@ export const useStyles = makeStyles({
     },
 
     listOpen: {
-        height: 920,
+        height: 1030,
         transition: `height .5s`
     },
 
@@ -71,6 +71,13 @@ export const useStyles = makeStyles({
             },
 
         },
+        '& .loading': {
+            width: `100%`,
+            position: `absolute`,
+            marginTop: 120,
+            textAlign: `center`,
+            opacity: .5
+        }
     },
 
     progress: {
@@ -80,12 +87,14 @@ export const useStyles = makeStyles({
             height: 5,
             borderRadius: 3,
             background: `var(--darkNav)`,
-            marginBottom: 5
+            marginBottom: 5,
+            cursor: `pointer`
         },
         '& .fillBar': {
             height: 5,
             background: `var(--primary)`,
             borderRadius: 3,
+            transition: `width .2s ease-out`
         },
         '& .timer': {
             display: `flex`,
@@ -94,6 +103,7 @@ export const useStyles = makeStyles({
     },
 
     volume: {
+        marginTop: 10,
         display: `flex`,
         alignItems: 'center',
         justifyContent: 'center',

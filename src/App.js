@@ -6,7 +6,8 @@ import { theme, darkTheme } from "./ui/theme";
 import { Provider } from 'react-redux'
 import { store } from './lib/store'
 import { NavBar } from './features/Navigation';
-import { Routes } from './Routes';
+import { Routes } from 'Routes';
+
 
 export const App = () => (
     <ThemeProvider theme={darkTheme}>

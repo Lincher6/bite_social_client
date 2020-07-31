@@ -12,7 +12,6 @@ export const Picture = ({ variant = '', imageUrl, authorized = false }) => {
 
     const uploadImage = useCallback((event) => {
         dispatch(profileActions.uploadImage(event.target.files[0]))
-        console.log(event.target.files[0])
     }, [dispatch])
 
     return (

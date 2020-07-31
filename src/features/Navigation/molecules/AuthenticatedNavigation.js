@@ -2,7 +2,7 @@ import React from 'react'
 import { EditButton } from "features/common/EditButton";
 import { Home } from "@material-ui/icons";
 import { NavLink } from "react-router-dom";
-import { Logout } from "features/Settings/molecules/Logout";
+import ForumIcon from '@material-ui/icons/Forum';
 import { AddBite } from "features/Bites";
 import AccountCircleIcon from '@material-ui/icons/AccountCircle';
 import PeopleAltIcon from '@material-ui/icons/PeopleAlt';
@@ -14,6 +14,11 @@ export const AuthenticatedNavigation = props => (
         <NavLink to={'/'}>
             <EditButton tip={'Главная'}>
                 <Home />
+            </EditButton>
+        </NavLink>
+        <NavLink to={'/dialogs'}>
+            <EditButton tip={'Диалоги'}>
+                <ForumIcon />
             </EditButton>
         </NavLink>
         <NavLink to={'/profile'}>

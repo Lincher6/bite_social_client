@@ -3,9 +3,10 @@ import { Card, CardMedia, Typography } from '@material-ui/core'
 import LocationOn from '@material-ui/icons/LocationOn';
 import { useStyles } from '../styles'
 import { NavLink } from 'react-router-dom'
-import { EditButton } from 'features/common'
+import { EditButton, StartDialog } from 'features/common'
 import { Follow } from '../molecules/Follow';
 import { EmailOutlined } from '@material-ui/icons';
+import { IsOnline } from 'features/common/';
 
 export const User = ({ imageUrl, handle, bio, location, isMe }) => {
     const classes = useStyles()
@@ -18,7 +19,9 @@ export const User = ({ imageUrl, handle, bio, location, isMe }) => {
                 component={NavLink}
                 to={`/users/${handle}`}
                 title='User image'
-            />
+            >
+                <IsOnline handle={handle} />
+            </CardMedia>
 
             <div>
                 <Typography
@@ -43,9 +46,7 @@ export const User = ({ imageUrl, handle, bio, location, isMe }) => {
                     !isMe
                         ? <div className="actions">
                             <Follow userHandle={handle} />
-                            <EditButton tip='написать'>
-                                <EmailOutlined color='secondary' />
-                            </EditButton>
+                            <StartDialog recipient={handle} />
                         </div>
                         : null
                 }

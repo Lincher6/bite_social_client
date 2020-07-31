@@ -1,10 +1,12 @@
-import { SET_AUTHENTICATED, SET_AUTHENTICATED_PROFILE, LOADING_PROFILE, LOGOUT, MARK_NOTIFICATIONS } from './types'
+import firebase from 'firebase'
+import { SET_AUTHENTICATED, SET_AUTHENTICATED_PROFILE, LOADING_PROFILE, LOGOUT, MARK_NOTIFICATIONS, SET_IS_ONLINE } from './types'
 import { uiActions } from 'features/Navigation'
 import { authApi } from 'api/authApi'
 import { profileApi } from 'api/profileApi'
 import axios from 'axios'
 import imageCompression from 'browser-image-compression'
 import { tokenChecker } from "lib/hooks/useInitialization";
+import { firestore, database } from 'lib/firebase'
 
 const setAuthenticated_AC = payload => ({
     type: SET_AUTHENTICATED,
@@ -28,6 +30,10 @@ const logout_AC = () => ({
     type: LOGOUT,
 })
 
+export const setIsOnline = (payload) => ({
+    type: SET_IS_ONLINE, payload
+})
+
 export const login = (credentials, history) => async dispatch => {
     await authFlow(credentials, history, dispatch, 'login')
 }
@@ -36,7 +42,21 @@ export const signUp = (credentials, history) => async dispatch => {
     await authFlow(credentials, history, dispatch, 'signUp')
 }
 
-export const logout = () => async dispatch => {
+export const logout = () => async (dispatch, getState) => {
+
+    const handle = getState().profile.handle
+    if (handle) {
+        const firestoreRef = firestore.doc(`onlineUsers/${handle}`)
+        const databaseRef = database.ref(`users/${handle}`)
+        /*firestoreRef.set({
+            isOnline: false,
+            wasOnline: firebase.firestore.FieldValue.serverTimestamp()
+        })*/
+        databaseRef.set({
+            isOnline: false, wasOnline:
+                firebase.database.ServerValue.TIMESTAMP
+        })
+    }
     localStorage.removeItem('idToken')
     delete axios.defaults.headers.common['Authorization']
     dispatch(logout_AC())
@@ -96,6 +116,11 @@ const getAuthenticatedProfile = () => async dispatch => {
     dispatch(loadingProfile_AC())
     const profileData = await profileApi.getAuthenticatedProfile()
     if (profileData.resultCode === 0) {
+
+        if (profileData.data.credentials) {
+            presenseFlow(profileData.data.credentials.handle)
+        }
+
         dispatch(setAuthenticatedProfile_AC(profileData.data))
     } else {
         dispatch(uiActions.setErrors_AC({ error: profileData.error }))
@@ -117,3 +142,32 @@ const authFlow = async (credentials, history, dispatch, type) => {
         dispatch(uiActions.setErrors_AC({ error: tokenData.error }))
     }
 }
+
+const presenseFlow = (handle) => {
+    const firestoreRef = firestore.doc(`onlineUsers/${handle}`)
+    const databaseRef = database.ref(`users/${handle}`)
+
+    database.ref('.info/connected').on('value', function (snapshot) {
+        if (snapshot.val() === false) {
+            /*firestoreRef.set({
+                isOnline: false,
+                wasOnline: firebase.firestore.FieldValue.serverTimestamp()
+            })*/
+            return;
+        };
+
+        databaseRef.onDisconnect().set({
+            isOnline: false,
+            wasOnline: firebase.database.ServerValue.TIMESTAMP
+        }).then(function () {
+            /*firestoreRef.set({
+                isOnline: true,
+                wasOnline: firebase.firestore.FieldValue.serverTimestamp()
+            })*/
+            databaseRef.set({
+                isOnline: true,
+                wasOnline: firebase.database.ServerValue.TIMESTAMP
+            })
+        });
+    })
+} 

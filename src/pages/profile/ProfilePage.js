@@ -4,6 +4,7 @@ import { Profile, profileSelectors } from 'features/Profile'
 import { BiteList } from 'features/Bites'
 import { useSelector } from 'react-redux'
 import { Redirect } from 'react-router-dom'
+import { ErrorBoundary } from 'features/common'
 
 export const ProfilePage = () => {
     const authenticated = useSelector(profileSelectors.authenticated)
@@ -21,10 +22,14 @@ export const ProfilePage = () => {
     return (
         <Grid container justify='center'>
             <Grid item md={8} xs={12}>
-                <Profile />
-                {loadingProfile
-                    ? null
-                    : <BiteList userHandle={handle} />}
+                <ErrorBoundary>
+                    <Profile />
+                    {
+                        loadingProfile
+                            ? null
+                            : <BiteList userHandle={handle} />
+                    }
+                </ErrorBoundary>
             </Grid>
         </Grid>
     )
