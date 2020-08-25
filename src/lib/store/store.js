@@ -5,6 +5,7 @@ import { bitesReducer } from 'features/Bites'
 import { uiReducer } from 'features/Navigation'
 import { usersReducer } from 'features/Users'
 import { musicReducer } from 'features/Music'
+import { dialogsReducer } from 'features/Dialogs/model'
 
 const initialState = {}
 const middleware = [thunk]
@@ -14,7 +15,8 @@ const reducers = combineReducers({
     bites: bitesReducer,
     ui: uiReducer,
     users: usersReducer,
-    music: musicReducer
+    music: musicReducer,
+    dialogs: dialogsReducer
 })
 
 export const store = createStore(

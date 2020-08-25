@@ -3,13 +3,13 @@ import React from "react";
 import * as yup from 'yup'
 import Typography from "@material-ui/core/Typography";
 import TextField from "@material-ui/core/TextField";
-import { Button } from 'features/common'
-import CircularProgress from '@material-ui/core/CircularProgress';
-import { useStyles } from "../../styles";
+import { Button, EditButton, SendButton } from 'features/common'
+import classes from '../../styles.module.scss'
+import SendIcon from '@material-ui/icons/Send';
 
 
-export const AddBiteForm = ({ addMessage, fetchError }) => {
-    const { handleSubmit, handleChange, handleBlur, values, errors, touched } = useFormik({
+export const AddMessageForm = ({ addMessage, fetchError }) => {
+    const { handleSubmit, handleChange, handleBlur, values, errors, touched, resetForm } = useFormik({
         initialValues: {
             message: '',
         },
@@ -17,34 +17,34 @@ export const AddBiteForm = ({ addMessage, fetchError }) => {
             message: yup.string().max(500, 'Слишком много символов').required('обязательное поле'),
         }),
         onSubmit: values => {
-            addMessage({ body: values.biteText })
+            addMessage(values.message)
+            resetForm()
         }
     })
 
     return (
-        <form onSubmit={handleSubmit} >
+        <form onSubmit={handleSubmit} className={classes.sendForm}>
             <TextField id='message' name='message' type='text' label='Новое сообщение'
-                className='textField'
+                className={classes.textField}
                 fullWidth
-                multiline
                 rowsMax={18}
                 value={values.message}
                 onChange={handleChange}
                 onBlur={handleBlur}
                 helperText={touched.message && errors.message}
-                error={errors.message && touched.message}
             />
             {fetchError
                 ? <Typography variant='body2' color='error'>{fetchError}</Typography>
                 : null}
             <Button
-                className='button'
+                className={classes.btnBig}
                 type='submit'
                 variant='contained'
                 color='primary'
             >
                 Отправить
             </Button>
+            <SendButton />
         </form>
     )
 }

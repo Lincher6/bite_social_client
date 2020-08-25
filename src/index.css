@@ -12,6 +12,7 @@ body {
   --secondary: #ff3d00;
   --darkBackground: #0b1119;
   --darkNav: #20465e;
+  --lightNav: #2b5278;
   --paper: #17212b;
   --lightPaper: #1c2d3d;
   --orange: #e55600;
@@ -30,10 +31,17 @@ code {
   padding: 5px;
 }
 
+@media (max-width: 960px) {
+  .contentContainer {
+    margin: 70px auto 0 auto;
+  }
+}
+
 @media (max-width: 600px) {
   .contentContainer {
-  margin: 60px auto 0 auto;
-}
+    margin: 60px auto 0 auto;
+    padding: 0;
+  }
 }
 
 .form  {
@@ -62,9 +70,11 @@ hr {
   filter: drop-shadow( 0 0 1px var(--primary));
 }
 
-/* ScrillBar */
+/* ScrollBar */
 ::-webkit-scrollbar {
   width: 6px;
+  height: 6px;
+  opacity: .5;
 }
 ::-webkit-scrollbar-track {
   border-radius: 10px;
@@ -72,6 +82,9 @@ hr {
 ::-webkit-scrollbar-thumb {
   background: darkcyan;
   border-radius: 3px;
+}
+::-webkit-scrollbar-corner {
+  display: none;
 }
 
 @keyframes appear {

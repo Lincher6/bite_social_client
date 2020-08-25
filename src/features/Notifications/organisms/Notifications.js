@@ -4,7 +4,7 @@ import { Notifications as NotificationsIcon } from "@material-ui/icons";
 import { useSelector, useDispatch } from 'react-redux';
 import { profileSelectors, profileActions } from 'features/Profile';
 import { NotificationsList } from '../molecules/NotificationsList';
-import { useNotifications } from 'lib/hooks/useNotifications';
+import { useNotifications } from 'features/Notifications/lib/useNotifications';
 
 export const Notifications = (props) => {
     const [anchorEl, setAnchorEl] = useState(null)

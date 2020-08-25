@@ -12,7 +12,6 @@ export const TrackList = () => {
     const { tracks, trackIndex } = useSelector(musicSelectors.music)
     const { setTrackIndex } = musicActions
 
-
     return (
         <div className={classes.trackList}>
             {

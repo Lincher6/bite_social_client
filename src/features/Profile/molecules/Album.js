@@ -28,7 +28,17 @@ export const Album = ({ profileImages = [] }) => {
                 color='primary'
                 onClick={() => setOpen(true)}
             >
-                ФОТО&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{images.length}&nbsp;<PhotoLibraryTwoToneIcon />
+                <div style={{ display: `flex`, alignItems: `center` }}>
+                    <div style={{ marginRight: 5 }}>
+                        ФОТО
+                    </div>
+                    <PhotoLibraryTwoToneIcon />
+
+                    <div>
+
+                    </div>
+                </div>
+
             </Button>
 
             <Dialog open={open} onBackdropClick={() => setOpen(false)} >

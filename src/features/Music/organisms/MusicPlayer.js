@@ -22,7 +22,7 @@ export const MusicPlayer = (props) => {
     }, [dispatch])
 
     return (
-        <Paper className={`${classes.musicPlayer} ${listOpen ? classes.listOpen : ''}`}>
+        <Paper className={classes.musicPlayer}>
             {
                 !loadingTracks && audio
                     ? <Fragment>
@@ -30,7 +30,7 @@ export const MusicPlayer = (props) => {
                         <Progress />
                         <Controls />
                         <Playlist />
-                        <TrackList />
+                        {listOpen && <TrackList />}
                     </Fragment>
                     : <PlayerSkeleton />
             }

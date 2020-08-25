@@ -31,7 +31,12 @@ export const FriendsList = ({ friends = [] }) => {
                 color='primary'
                 onClick={handleOpen}
             >
-                ДРУЗЬЯ&nbsp;&nbsp;&nbsp;{friends.length}&nbsp;<PeopleAltTwoToneIcon />
+                <div style={{ display: `flex`, alignItems: `center` }}>
+                    <div style={{ marginRight: 5 }}>
+                        ДРУЗЬЯ
+                    </div>
+                    <PeopleAltTwoToneIcon />
+                </div>
             </Button>
 
             <Menu

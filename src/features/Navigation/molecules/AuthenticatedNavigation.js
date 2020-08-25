@@ -7,6 +7,7 @@ import { AddBite } from "features/Bites";
 import AccountCircleIcon from '@material-ui/icons/AccountCircle';
 import PeopleAltIcon from '@material-ui/icons/PeopleAlt';
 import { Notifications } from 'features/Notifications';
+import { DialogsNavIcon } from 'features/Dialogs';
 
 export const AuthenticatedNavigation = props => (
     <React.Fragment>
@@ -17,9 +18,7 @@ export const AuthenticatedNavigation = props => (
             </EditButton>
         </NavLink>
         <NavLink to={'/dialogs'}>
-            <EditButton tip={'Диалоги'}>
-                <ForumIcon />
-            </EditButton>
+            <DialogsNavIcon />
         </NavLink>
         <NavLink to={'/profile'}>
             <EditButton tip={'Пользователь'}>

@@ -76,6 +76,14 @@ export const darkTheme = createMuiTheme({
     },
 
     overrides: {
+        MuiPaper: {
+            rounded: {
+                [theme.breakpoints.down('xs')]: {
+                    padding: 5,
+                },
+            }
+        },
+
         MuiTooltip: {
             tooltip: {
                 fontSize: ".9em",
@@ -87,10 +95,22 @@ export const darkTheme = createMuiTheme({
 
         MuiIconButton: {
             root: {
+                padding: 10,
+                [theme.breakpoints.down('xs')]: {
+                    padding: 7,
+                },
                 '&:hover': {
                     backgroundColor: "inherit",
                     opacity: .7,
                 }
+            },
+        },
+
+        MuiCardContent: {
+            root: {
+                [theme.breakpoints.down('xs')]: {
+                    padding: 10,
+                },
             }
         },
 
@@ -138,6 +158,15 @@ darkTheme.typography.h5 = {
     fontWeight: 400,
     [darkTheme.breakpoints.down('xs')]: {
         fontSize: '1.2rem',
+        fontWeight: 400,
+    },
+}
+
+darkTheme.typography.h6 = {
+    fontSize: '1.3rem',
+    fontWeight: 400,
+    [darkTheme.breakpoints.down('xs')]: {
+        fontSize: '1.1rem',
         fontWeight: 400,
     },
 }

@@ -27,7 +27,7 @@ export const LoginForm = ({ login, loginError, loading }) => {
 
     return (
         <form onSubmit={handleSubmit} className={classes.form}>
-            <img src={logo} alt="goose" className={classes.logo} />
+            <img src={require('ui/assets/titleLogo.png')} alt="goose" className={classes.logo} />
             <Typography variant='h3' color='primary' className={classes.title}>Войти</Typography>
             <TextField id='email' name='email' type='email' label='Email'
                 className={classes.textField}

@@ -8,11 +8,11 @@ import { Follow } from '../molecules/Follow';
 import { EmailOutlined } from '@material-ui/icons';
 import { IsOnline } from 'features/common/';
 
-export const User = ({ imageUrl, handle, bio, location, isMe }) => {
+export const User = React.memo(({ imageUrl, handle, bio, location, isMe }) => {
     const classes = useStyles()
 
     return (
-        <Card className={classes.user}>
+        <Card className={classes.user} >
             <CardMedia
                 className='image'
                 image={imageUrl}
@@ -53,4 +53,4 @@ export const User = ({ imageUrl, handle, bio, location, isMe }) => {
             </div>
         </Card >
     )
-}
+})

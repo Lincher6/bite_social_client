@@ -1,11 +1,8 @@
 .comment {
     flex-wrap: nowrap !important;
     background-color: var(--darkBackground);
-    border-radius: 5px;
     padding: 10px;
-    border-bottom: 1px solid #263b57;
-    border-right: 1px solid #263b57;
-    margin-bottom: 15px;
+    margin-bottom: 2px;
     .image {
         width: 75px;
         height: 75px;
@@ -13,8 +10,8 @@
         border-radius: 50%;
         @media (max-width: 600px) {
             margin-right: 10px;
-            width: 60px;
-            height: 60px;
+            width: 50px;
+            height: 50px;
         }
     }
     .isOnline {
@@ -29,8 +26,11 @@
     }
     .header {
         display: flex;
-        align-items: flex-end;
+        align-items: center;
         flex-wrap: wrap;
+        @media (max-width: 600px) {
+            display: block;
+        }
     }
     .userHandle {
         margin-right: 10px;
@@ -39,15 +39,23 @@
         opacity: .6;
     }
     .body {
-        white-space: pre;
+        white-space: pre-line;
+        word-wrap: break-word;
     }
 }
 
 .addCommentForm {
     text-align: center;
-    .button {
+    position: relative;
+    .textField textarea {
+        padding-right: 40px;
+    }
+    .btnBig {
         position: relative !important;
         text-align: center;
+        @media screen and (max-width: 960px) {
+            display: none;            
+        }
     }
     .formLoader {
         position: absolute;

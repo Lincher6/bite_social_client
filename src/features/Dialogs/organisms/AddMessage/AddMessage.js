@@ -1,54 +1,36 @@
-
 import React, { useCallback, useState } from 'react'
-import { useStyles } from "../../styles";
 import { useDispatch, useSelector } from "react-redux";
-import Add from "@material-ui/icons/Add";
-import Close from "@material-ui/icons/Close";
-import { EditButton } from "features/common";
-import Dialog from "@material-ui/core/Dialog";
-import DialogTitle from "@material-ui/core/DialogTitle";
-import DialogContent from "@material-ui/core/DialogContent";
-import { bitesActions } from "../../model";
-import { AddBiteForm } from "./AddBiteForm";
 import { uiSelectors } from "features/Navigation";
-import { useHistory } from 'react-router-dom';
+import { AddMessageForm } from './AddMessageForm'
+import { useHistory, useParams } from 'react-router-dom';
+import { profileSelectors } from 'features/Profile';
+import { dialogsActions, dialogsSelectors } from 'features/Dialogs/model';
+import sound from 'ui/assets/BlobSound.ogg'
 
-export const AddBite = () => {
+export const AddMessage = () => {
     const dispatch = useDispatch()
-    const history = useHistory()
+    const { handle, imageUrl } = useSelector(profileSelectors.credentials)
+    const currentDialog = useParams().dialogId
 
-    const addBite = useCallback(async (bite) => {
-        dispatch(bitesActions.addBite(bite))
-        setOpen(false)
-    }, [dispatch])
-
-    const handleClick = () => {
-        setOpen(true)
-        history.push('/')
-    }
+    const addMessage = useCallback(async (message) => {
+        const recipient = currentDialog.replace(handle, '')
+        const newMessage = {
+            dialogId: currentDialog,
+            sender: handle,
+            senderImageUrl: imageUrl,
+            recipient,
+            body: message,
+            createdAt: new Date(),
+            read: false,
+            isSend: false
+        }
+        dispatch(dialogsActions.sendMessage(newMessage))
+        new Audio(sound).play()
+    }, [dispatch, handle, imageUrl, currentDialog])
 
     return (
         <React.Fragment>
-            <EditButton tip={'Добавить пост'} onClick={handleClick}>
-                <Add />
-            </EditButton>
-            <Dialog
-                open={open}
-                maxWidth={'sm'}
-                fullWidth
-                className={classes.addBite}
-                onBackdropClick={() => setOpen(false)}
-            >
-                <EditButton tip={'закрыть'} className={classes.close} onClick={() => setOpen(false)}>
-                    <Close opacity={.5} />
-                </EditButton>
-                <DialogTitle>
-                    Добавить новый пост
-                </DialogTitle>
-                <DialogContent>
-                    <AddBiteForm addBite={addBite} loading={loading} fetchError={errors.error} />
-                </DialogContent>
-            </Dialog>
+            <AddMessageForm addMessage={addMessage} loading={false} />
         </React.Fragment>
     )
 }

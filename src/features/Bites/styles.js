@@ -19,9 +19,9 @@ export const useStyles = makeStyles({
             objectFit: 'contain',
             [theme.breakpoints.down('xs')]: {
                 margin: 10,
-                width: 80,
-                minWidth: 80,
-                height: 80,
+                width: 60,
+                minWidth: 60,
+                height: 60,
                 borderRadius: `50%`,
                 objectFit: 'contain',
                 border: `none`,
@@ -63,6 +63,10 @@ export const useStyles = makeStyles({
     biteDetails: {
         wordWrap: "break-word",
         position: `relative`,
+        '&::-webkit-scrollbar': {
+            width: 0,
+            height: 0,
+        },
         '& .loader': {
             margin: 30,
             textAlign: `center`

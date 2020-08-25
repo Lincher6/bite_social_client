@@ -5,3 +5,4 @@ export const images = state => state.profile.images
 export const notifications = state => state.profile.notifications
 export const friends = state => state.profile.friends
 export const loadingProfile = state => state.profile.loadingProfile
+export const newMessages = state => state.profile.newMessages

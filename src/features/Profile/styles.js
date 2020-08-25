@@ -8,6 +8,9 @@ export const useStyles = makeStyles({
         textAlign: `center`,
         padding: 20,
         position: `relative`,
+        [theme.breakpoints.down('xs')]: {
+            padding: 5,
+        },
     },
 
     grid: {
@@ -100,10 +103,17 @@ export const useStyles = makeStyles({
         position: 'relative',
         marginBottom: 10,
         marginTop: -120,
+        [theme.breakpoints.down('xs')]: {
+            marginTop: -80,
+        },
         '& .profile-image': {
             border: `5px solid ivory`,
             width: '200px',
             height: '200px',
+            [theme.breakpoints.down('xs')]: {
+                width: '120px',
+                height: '120px',
+            },
             objectFit: 'cover',
             maxWidth: '100%',
             boxShadow: `0 15px 30px 0 rgba(0, 0, 0, .5)`,
@@ -118,6 +128,10 @@ export const useStyles = makeStyles({
             transition: `opacity .3s`,
             width: '200px',
             height: '200px',
+            [theme.breakpoints.down('xs')]: {
+                width: '120px',
+                height: '120px',
+            },
             objectFit: 'cover',
             maxWidth: '100%',
             position: 'absolute',

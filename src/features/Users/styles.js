@@ -1,5 +1,6 @@
 import { makeStyles } from "@material-ui/core/styles";
 import { theme } from '../../ui/theme'
+import { autoLogin } from "features/Profile/model/actions";
 
 export const useStyles = makeStyles({
     userProfile: {
@@ -19,12 +20,12 @@ export const useStyles = makeStyles({
 
     user: {
         padding: 10,
-        width: 230,
-        [theme.breakpoints.down('xs')]: {
-            width: 300,
-        },
+        width: 200,
         margin: 5,
         textAlign: `center`,
+        [theme.breakpoints.down('xs')]: {
+            width: `100%`,
+        },
         '& svg, span': {
             verticalAlign: 'middle'
         },
@@ -73,10 +74,23 @@ export const useStyles = makeStyles({
         right: 0
     },
 
+    searchUsers: {
+        [theme.breakpoints.down('sm')]: {
+            width: 400,
+            margin: `0 auto`,
+        },
+        [theme.breakpoints.down('xs')]: {
+            width: `100%`,
+        },
+    },
+
     saerchForm: {
-        width: 350,
+        display: `block`,
         textAlign: 'center',
         padding: 20,
+        [theme.breakpoints.down('xs')]: {
+            padding: 10,
+        },
         '& .field': {
             marginBottom: 20,
             position: `relative`,

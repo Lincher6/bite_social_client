@@ -8,6 +8,16 @@ export const useStyles = makeStyles({
         cursor: `pointer`
     },
 
+    sendButton: {
+        display: `none`,
+        [theme.breakpoints.down('sm')]: {
+            display: `block`,
+            position: `absolute`,
+            top: 5,
+            right: 0,
+        }
+    },
+
     biteSkeleton: {
         opacity: .5,
         display: `flex`,
@@ -371,5 +381,53 @@ export const useStyles = makeStyles({
             marginRight: -40,
             top: `20%`
         }
+    },
+
+    dialogsSkeleton: {
+        position: 'relative',
+        opacity: .5,
+        padding: `10px`,
+        marginBottom: `2px`,
+        display: `flex`,
+        alignItems: `center`,
+        backgroundColor: `var(--paper)`,
+        [theme.breakpoints.down('sm')]: {
+            backgroundColor: `transparent`,
+        },
+        fontSize: `1.2em`,
+        '& .image': {
+            width: `50px`,
+            height: `50px`,
+            borderRadius: `50%`,
+            marginRight: `10px`,
+            [theme.breakpoints.down('sm')]: {
+                width: `30px`,
+                height: `30px`,
+                marginRight: 0,
+            },
+        },
+        '& .container': {
+            height: 16,
+            width: 140,
+            background: `grey`,
+            display: `flex`,
+            justifyContent: `space-between`,
+            alignItems: `center`,
+            [theme.breakpoints.down('sm')]: {
+                display: `none`,
+            },
+        },
+        '& .preloader': {
+            position: `absolute`,
+            right: `50% `,
+            marginRight: -40,
+            top: `20%`,
+            [theme.breakpoints.down('sm')]: {
+                display: `none`
+            },
+        }
+
     }
+
+
 })

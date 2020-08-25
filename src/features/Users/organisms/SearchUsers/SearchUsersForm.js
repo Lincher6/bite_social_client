@@ -23,7 +23,7 @@ export const SearchUsersForm = ({ setSearchParams }) => {
     })
 
     return (
-        <Card>
+        <Card >
             <form onSubmit={handleSubmit} className={classes.saerchForm}>
                 <div className='field'>
                     <TextField id='handle' name='handle' type='text' label='Имя'
@@ -59,9 +59,8 @@ export const SearchUsersForm = ({ setSearchParams }) => {
                     color='primary'
                 >
                     <SearchIcon />Найти
-            </Button>
+                </Button>
             </form>
         </Card>
-
     )
 }

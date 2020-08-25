@@ -3,10 +3,10 @@ import Tooltip from "@material-ui/core/Tooltip"
 import IconButton from "@material-ui/core/IconButton"
 
 
-export const EditButton = ({children, onClick, tip, className}) => {
+export const EditButton = ({ children, onClick, tip, className, ...props }) => {
     return (
         <Tooltip placement='top' title={tip}>
-            <IconButton onClick={onClick} className={className}>
+            <IconButton onClick={onClick} className={className} {...props}>
                 {children}
             </IconButton>
         </Tooltip>

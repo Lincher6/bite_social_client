@@ -12,11 +12,10 @@ export const useStyles = makeStyles({
             },
             '& .search': {
                 gridArea: 'b',
-                maxWidth: 350,
-                margin: `0 auto`
             },
-            gridTemplateAreas: ` 'b b' 
-                                 'a a' `,
+            gridTemplateColumns: `1fr`,
+            gridTemplateAreas: ` 'b' 
+                                 'a' `,
         }
     }
 })

@@ -3,13 +3,12 @@ import React from "react";
 import * as yup from 'yup'
 import classes from "../../styles.module.scss";
 import TextField from "@material-ui/core/TextField";
-import { Button } from 'features/common'
+import { Button, SendButton } from 'features/common'
 import CircularProgress from '@material-ui/core/CircularProgress';
 import { Typography } from "@material-ui/core";
 
 
 export const AddCommentForm = ({ addComment, fetchError, loading, focus }) => {
-    //const classes = useStyles()
     const { handleSubmit, handleChange, handleBlur, values, errors, touched, resetForm } = useFormik({
         initialValues: {
             comment: ''
@@ -51,7 +50,7 @@ export const AddCommentForm = ({ addComment, fetchError, loading, focus }) => {
                 type='submit'
                 variant='contained'
                 color='primary'
-                className={classes.button}
+                className={classes.btnBig}
                 disabled={loading}
             >
                 Отправить
@@ -59,6 +58,7 @@ export const AddCommentForm = ({ addComment, fetchError, loading, focus }) => {
                     ? <CircularProgress className={classes.formLoader} size={30} />
                     : null}
             </Button>
+            <SendButton />
         </form>
     )
 }

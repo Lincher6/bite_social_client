@@ -11,7 +11,8 @@ const initialState = {
     notifications: [],
     images: [],
     friends: [],
-    isOnline: false
+    isOnline: false,
+    newMessages: 0
 }
 
 export const reducer = (state = initialState, action) => {

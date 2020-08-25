@@ -6,7 +6,6 @@ export const useStyles = makeStyles({
     musicPlayer: {
         overflow: `hidden`,
         width: 300,
-        height: 530,
         transition: `height .5s`,
         margin: `0 auto`,
     },
@@ -39,11 +38,6 @@ export const useStyles = makeStyles({
         },
     },
 
-    listOpen: {
-        height: 1030,
-        transition: `height .5s`
-    },
-
     trackInfo: {
         textAlign: `center`,
         position: `relative`,
@@ -61,8 +55,6 @@ export const useStyles = makeStyles({
             width: `100%`,
             top: 30,
             textAlign: `center`,
-            fontFamily: `Impact`,
-
             '& .artist': {
                 textShadow: `2px 2px 2px var(--primary)`
             },

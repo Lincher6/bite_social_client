@@ -1,12 +1,16 @@
 import { useState, useEffect } from "react"
 import { firestore } from "lib/firebase"
-import { useSelector } from "react-redux"
+import { useSelector, useDispatch } from "react-redux"
 import { profileSelectors } from "features/Profile"
+import { dialogsActions } from "features/Dialogs/model"
 
 
 export const useDialogs = () => {
     const [dialogs, setDialogs] = useState([])
+    const [loading, setLoading] = useState(true)
     const { handle } = useSelector(profileSelectors.credentials)
+    const dispatch = useDispatch()
+    dispatch(dialogsActions.setDialogs([]))
 
     useEffect(() => {
         if (handle) {
@@ -36,14 +40,15 @@ export const useDialogs = () => {
                         }
                     })
 
+                    dispatch(dialogsActions.setDialogs(dialogsData))
                     setDialogs(dialogsData)
+                    setLoading(false)
                 })
-
             return () => unsubscribe()
         }
 
 
     }, [handle])
 
-    return dialogs
+    return { dialogs, loading }
 }
