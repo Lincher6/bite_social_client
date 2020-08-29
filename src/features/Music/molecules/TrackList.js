@@ -31,14 +31,12 @@ export const TrackList = () => {
                                     className={currentTrack ? 'active' : ''}
                                     onClick={() => dispatch(setTrackIndex(index))}
                                 >
-                                    <Typography>{track.artist}</Typography>
+                                    <Typography>{track.artist.name}</Typography>
                                     <Typography style={{ opacity: .6 }}>{track.title}</Typography>
                                 </div>
 
                             </div>
                         </Fragment >
-
-
                     )
                 })
             }

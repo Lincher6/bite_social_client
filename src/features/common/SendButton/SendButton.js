@@ -7,7 +7,7 @@ export const SendButton = (props) => {
     const classes = useStyles()
 
     return (
-        <EditButton type='submit' className={classes.sendButton}>
+        <EditButton tip='send' type='submit' className={classes.sendButton}>
             <SendIcon color='primary' />
         </EditButton>
     )

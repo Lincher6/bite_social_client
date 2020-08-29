@@ -28,11 +28,11 @@ export const TrackInfo = () => {
 
     return (
         <div className={classes.trackInfo}>
-            <img src={track.cover} className='cover' alt="" />
+            <img src={track.album.cover_medium} className='cover' alt="" />
 
             <div className='artist-song'>
                 <Typography variant='h4' className='artist'>
-                    {track.artist}
+                    {track.artist.name}
                 </Typography>
                 <Typography variant='h6' className='song'>
                     {track.title}

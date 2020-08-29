@@ -1,7 +1,8 @@
+import { SignUpFromType } from '../types';
 import { useFormik } from "formik";
 import React from "react";
 import * as yup from 'yup'
-import { useStyles } from "../styles";
+import classes from "../styles.module.scss";
 import logo from 'ui/assets/titleLogo.png'
 import { Button, Typography } from "features/common";
 import TextField from "@material-ui/core/TextField";
@@ -9,8 +10,7 @@ import CircularProgress from '@material-ui/core/CircularProgress';
 import { NavLink } from 'react-router-dom'
 
 
-export const SignUpForm = ({ signUp, loginError, loading }) => {
-    const classes = useStyles()
+export const SignUpForm: React.FC<SignUpFromType> = ({ signUp, loginError, isLoading }) => {
     const { handleSubmit, handleChange, handleBlur, values, errors, touched } = useFormik({
         initialValues: {
             email: '',
@@ -30,17 +30,17 @@ export const SignUpForm = ({ signUp, loginError, loading }) => {
     })
 
     return (
-        <form onSubmit={handleSubmit} className={classes.form}>
+        <form onSubmit={handleSubmit} className={classes.form} >
             <img src={logo} alt="goose" className={classes.logo} />
-            <Typography variant='h3' color='primary' className={classes.title}>Регистрация</Typography>
-            <TextField id='email' name='email' type='email' label='Email'
+            <Typography variant='h3' color='primary' className={classes.title} > Регистрация </Typography>
+            < TextField id='email' name='email' type='email' label='Email'
                 className={classes.textField}
                 fullWidth
                 value={values.email}
                 onChange={handleChange}
                 onBlur={handleBlur}
                 helperText={touched.email && errors.email}
-                error={errors.email && touched.email}
+                error={!!(errors.email && touched.email)}
             />
             <TextField id='password' name='password' type='password' label='Пароль'
                 className={classes.textField}
@@ -49,7 +49,7 @@ export const SignUpForm = ({ signUp, loginError, loading }) => {
                 onChange={handleChange}
                 onBlur={handleBlur}
                 helperText={touched.password && errors.password}
-                error={errors.password && touched.password}
+                error={!!(errors.password && touched.password)}
             />
             <TextField id='confirmPassword' name='confirmPassword' type='password' label='Подтвердите пароль'
                 className={classes.textField}
@@ -58,7 +58,7 @@ export const SignUpForm = ({ signUp, loginError, loading }) => {
                 onChange={handleChange}
                 onBlur={handleBlur}
                 helperText={touched.confirmPassword && errors.confirmPassword}
-                error={errors.confirmPassword && touched.confirmPassword}
+                error={!!(errors.confirmPassword && touched.confirmPassword)}
             />
             <TextField id='handle' name='handle' type='text' label='Имя пользователя'
                 className={classes.textField}
@@ -67,25 +67,29 @@ export const SignUpForm = ({ signUp, loginError, loading }) => {
                 onChange={handleChange}
                 onBlur={handleBlur}
                 helperText={touched.handle && errors.handle}
-                error={errors.handle && touched.handle}
+                error={!!(errors.handle && touched.handle)}
             />
-            {loginError
-                ? <Typography variant='body2' color='error'>{loginError}</Typography>
-                : null}
+            {
+                loginError
+                    ? <Typography variant='body2' color='error'>{loginError}</Typography>
+                    : null
+            }
             <Button
                 type='submit'
                 variant='contained'
                 color='primary'
                 className={classes.button}
-                disabled={loading}
+                disabled={isLoading}
             >
                 Зарегистрироваться
-                {loading
-                    ? <CircularProgress className={classes.loader} size={30} />
-                    : null}
+                {
+                    isLoading
+                        ? <CircularProgress className={classes.loader} size={30} />
+                        : null
+                }
             </Button>
             <p>
-                Уже есть аккаунт? <NavLink to='/login' className={classes.link}><strong>Войти</strong></NavLink>
+                Уже есть аккаунт ? <NavLink to='/login' className={classes.link}> <strong>Войти </strong></NavLink>
             </p>
         </form>
     )

@@ -18,6 +18,17 @@ export const useStyles = makeStyles({
         }
     },
 
+    isOnline: {
+        position: "absolute",
+        right: `5%`,
+        bottom: `5%`,
+        height: 20,
+        width: 20,
+        backgroundColor: `var(--primary)`,
+        borderRadius: `50%`,
+        border: `4px solid var(--paper)`
+    },
+
     biteSkeleton: {
         opacity: .5,
         display: `flex`,

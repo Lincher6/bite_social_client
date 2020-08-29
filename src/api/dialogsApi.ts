@@ -1,7 +1,13 @@
+import { MessageType } from './types';
 import axios from 'axios'
 
 export const dialogsApi = {
-    startDialog: async (dialogId, userTwo, imageUrl, createdAt = new Date()) => {
+    startDialog: async (
+        dialogId: number,
+        userTwo: string,
+        imageUrl: string,
+        createdAt: Date = new Date()
+    ) => {
         try {
             let response = await axios.post(`/dialogs/${dialogId}`, { userTwo, imageUrl, createdAt })
             return { data: response.data, resultCode: 0 }
@@ -10,7 +16,7 @@ export const dialogsApi = {
         }
     },
 
-    sendMessage: async ({ dialogId, body, recipient, createdAt }) => {
+    sendMessage: async ({ dialogId, body, recipient, createdAt }: MessageType) => {
         try {
             let response = await axios.post(`/messages/${dialogId}`, { body, recipient, createdAt })
             return { data: response.data, resultCode: 0 }
@@ -19,7 +25,7 @@ export const dialogsApi = {
         }
     },
 
-    deleteDialog: async (dialogId) => {
+    deleteDialog: async (dialogId: number) => {
         try {
             let response = await axios.delete(`/dialogs/${dialogId}`)
             return { data: response.data, resultCode: 0 }
@@ -28,7 +34,7 @@ export const dialogsApi = {
         }
     },
 
-    deleteMessage: async (messageId) => {
+    deleteMessage: async (messageId: number) => {
         try {
             let response = await axios.delete(`/messages/${messageId}`)
             return { data: response.data, resultCode: 0 }
@@ -37,7 +43,7 @@ export const dialogsApi = {
         }
     },
 
-    markReadMessages: async (messagesCount, dialogId) => {
+    markReadMessages: async (messagesCount: number, dialogId: number) => {
         try {
             let response = await axios.post(`/markMessages`, { messagesCount, dialogId })
             return { data: response.data, resultCode: 0 }

@@ -1,16 +1,16 @@
 import { useFormik } from "formik";
 import React from "react";
 import * as yup from 'yup'
-import { useStyles } from "../styles";
+import classes from "../styles.module.scss";
 import logo from 'ui/assets/titleLogo.png'
 import TextField from "@material-ui/core/TextField";
 import CircularProgress from '@material-ui/core/CircularProgress';
 import { NavLink } from 'react-router-dom'
 import { Button, Typography } from "features/common";
+import { LoginFromType } from "../types";
 
 
-export const LoginForm = ({ login, loginError, loading }) => {
-    const classes = useStyles()
+export const LoginForm: React.FC<LoginFromType> = ({ login, loginError, isLoading }) => {
     const { handleSubmit, handleChange, handleBlur, values, errors, touched } = useFormik({
         initialValues: {
             email: '',
@@ -27,7 +27,7 @@ export const LoginForm = ({ login, loginError, loading }) => {
 
     return (
         <form onSubmit={handleSubmit} className={classes.form}>
-            <img src={require('ui/assets/titleLogo.png')} alt="goose" className={classes.logo} />
+            <img src={logo} alt="goose" className={classes.logo} />
             <Typography variant='h3' color='primary' className={classes.title}>Войти</Typography>
             <TextField id='email' name='email' type='email' label='Email'
                 className={classes.textField}
@@ -36,7 +36,7 @@ export const LoginForm = ({ login, loginError, loading }) => {
                 onChange={handleChange}
                 onBlur={handleBlur}
                 helperText={touched.email && errors.email}
-                error={errors.email && touched.email}
+                error={!!(errors.email && touched.email)}
             />
             <TextField id='password' name='password' type='password' label='Пароль'
                 className={classes.textField}
@@ -45,7 +45,7 @@ export const LoginForm = ({ login, loginError, loading }) => {
                 onChange={handleChange}
                 onBlur={handleBlur}
                 helperText={touched.password && errors.password}
-                error={errors.password && touched.password}
+                error={!!(errors.password && touched.password)}
             />
             {loginError
                 ? <Typography variant='body2' color='error'>{loginError}</Typography>
@@ -55,10 +55,10 @@ export const LoginForm = ({ login, loginError, loading }) => {
                 variant='contained'
                 className={classes.button}
                 color='primary'
-                disabled={loading}
+                disabled={isLoading}
             >
                 Войти
-                {loading
+                {isLoading
                     ? <CircularProgress className={classes.loader} size={30} />
                     : null}
             </Button>

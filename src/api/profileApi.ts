@@ -10,7 +10,7 @@ export const profileApi = {
         }
     },
 
-    uploadImage: async (image) => {
+    uploadImage: async (image: FormData) => {
         try {
             let response = await axios.post('/user/image', image)
             return { data: response.data, resultCode: 0 }
@@ -19,7 +19,7 @@ export const profileApi = {
         }
     },
 
-    getProfileImages: async (userHandle) => {
+    getProfileImages: async (userHandle: string) => {
         try {
             let response = await axios.get(`/user/${userHandle}/images`)
             return { data: response.data, resultCode: 0 }
@@ -28,7 +28,7 @@ export const profileApi = {
         }
     },
 
-    editProfileData: async (profileData) => {
+    editProfileData: async (profileData: any) => {
         try {
             let response = await axios.post('/user', profileData)
             return { data: response.data, resultCode: 0 }
@@ -37,7 +37,7 @@ export const profileApi = {
         }
     },
 
-    markNotifications: async (notificationsIds) => {
+    markNotifications: async (notificationsIds: Array<number>) => {
         try {
             let response = await axios.post('/notifications', notificationsIds)
             return { data: response.data, resultCode: 0 }

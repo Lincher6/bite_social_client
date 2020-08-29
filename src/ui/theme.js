@@ -76,14 +76,6 @@ export const darkTheme = createMuiTheme({
     },
 
     overrides: {
-        MuiPaper: {
-            rounded: {
-                [theme.breakpoints.down('xs')]: {
-                    padding: 5,
-                },
-            }
-        },
-
         MuiTooltip: {
             tooltip: {
                 fontSize: ".9em",

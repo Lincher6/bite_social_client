@@ -28,7 +28,7 @@ export const SignUpPage = props => {
                     <SignUp
                         signUp={signUp}
                         loginError={errors.error}
-                        loading={loading}
+                        isLoading={loading}
                     />
                 </ErrorBoundary>
             </Grid>

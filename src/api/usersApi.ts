@@ -1,7 +1,7 @@
 import axios from 'axios'
 
 export const usersApi = {
-    getUserProfile: async (userHandle) => {
+    getUserProfile: async (userHandle: string) => {
         try {
             let response = await axios.get(`/user/${userHandle}`)
             return { data: response.data, resultCode: 0 }
@@ -28,7 +28,7 @@ export const usersApi = {
         }
     },
 
-    follow: async (userHandle, follow = true) => {
+    follow: async (userHandle: string, follow = true) => {
         try {
             let response = await axios.post(`/user/${userHandle}/follow`, { follow })
             return { data: response.data, resultCode: 0 }

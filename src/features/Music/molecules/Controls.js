@@ -68,7 +68,7 @@ export const Controls = () => {
 
         if (tracks.length > 0) {
             dispatch(musicActions.setTrack(tracks[trackIndex]))
-            dispatch(setAudio(new Audio(tracks[trackIndex].link)))
+            dispatch(setAudio(new Audio(tracks[trackIndex].preview)))
         }
     }, [dispatch, trackIndex])
 

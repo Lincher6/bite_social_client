@@ -1,0 +1,31 @@
+@import 'ui/_variables';
+
+.title {
+    text-shadow: 1px 1px 2px black;
+}
+
+.form {
+    text-align: center;
+    padding: 10px;
+}
+
+.logo {
+    width: 300px;
+    height: 100px;
+}
+
+.textField {
+    margin: 10px auto !important;
+}
+
+.button {
+    margin-top: 25px !important;
+}
+
+.loader {
+    position: absolute;
+}
+
+.link {
+    color: $primary;
+}

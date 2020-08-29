@@ -1,7 +1,11 @@
 import axios from 'axios'
 
 export const bitesApi = {
-    getBites: async (offset, userHandle, biteFilter) => {
+    getBites: async (
+        offset: number,
+        userHandle: string,
+        biteFilter: Object
+    ) => {
         try {
             let response = await axios.get(`/bites`, { params: { offset, userHandle, biteFilter } })
             return { data: response.data, resultCode: 0 }
@@ -10,7 +14,7 @@ export const bitesApi = {
         }
     },
 
-    getBite: async (biteId) => {
+    getBite: async (biteId: number) => {
         try {
             let response = await axios.get(`/bites/${biteId}`)
             return { data: response.data, resultCode: 0 }
@@ -19,7 +23,7 @@ export const bitesApi = {
         }
     },
 
-    addBite: async bite => {
+    addBite: async (bite: any) => {
         try {
             let response = await axios.post('/bites', bite)
             return { data: response.data, resultCode: 0 }
@@ -28,7 +32,7 @@ export const bitesApi = {
         }
     },
 
-    addComment: async (biteId, comment) => {
+    addComment: async (biteId: number, comment: any) => {
         try {
             let response = await axios.post(`/bites/${biteId}/comment`, comment)
             return { data: response.data, resultCode: 0 }
@@ -37,7 +41,7 @@ export const bitesApi = {
         }
     },
 
-    likeBite: async (biteId) => {
+    likeBite: async (biteId: number) => {
         try {
             let response = await axios.post(`/bites/${biteId}/like`)
             return { data: response.data, resultCode: 0 }
@@ -46,7 +50,7 @@ export const bitesApi = {
         }
     },
 
-    unlikeBite: async (biteId) => {
+    unlikeBite: async (biteId: number) => {
         try {
             let response = await axios.delete(`/bites/${biteId}/like`)
             return { data: response.data, resultCode: 0 }
@@ -55,7 +59,7 @@ export const bitesApi = {
         }
     },
 
-    deleteBite: async (biteId) => {
+    deleteBite: async (biteId: number) => {
         try {
             let response = await axios.delete(`/bites/${biteId}`)
             return { data: response.data, resultCode: 0 }

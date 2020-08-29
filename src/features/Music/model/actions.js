@@ -60,10 +60,10 @@ export const getTracks = () => async dispatch => {
     dispatch(loadingTracks_AC())
     const tracksData = await musicApi.getTracks()
     if (tracksData.resultCode === 0) {
-        const tracks = tracksData.data
+        const tracks = tracksData.data.tracks.data
         if (tracks.length > 0) {
             dispatch(setTrack(tracks[0]))
-            dispatch(setAudio(new Audio(tracks[0].link)))
+            dispatch(setAudio(new Audio(tracks[0].preview)))
         }
         dispatch(setTracks_AC(tracks))
         dispatch(uiActions.clearErrors_AC())

@@ -29,7 +29,7 @@ export const LoginPage = props => {
                     <Login
                         login={login}
                         loginError={errors.error}
-                        loading={loading}
+                        isLoading={loading}
                     />
                 </ErrorBoundary>
             </Grid>

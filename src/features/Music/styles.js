@@ -56,10 +56,12 @@ export const useStyles = makeStyles({
             top: 30,
             textAlign: `center`,
             '& .artist': {
-                textShadow: `2px 2px 2px var(--primary)`
+                textShadow: `2px 2px 2px var(--primary)`,
+                wordWrap: `break-word`
             },
             '& .song': {
-                textShadow: `2px 2px 2px var(--secondary)`
+                textShadow: `2px 2px 2px var(--secondary)`,
+                wordWrap: `break-word`
             },
 
         },

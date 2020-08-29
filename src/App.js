@@ -2,7 +2,7 @@ import React from 'react';
 import { BrowserRouter as Router } from 'react-router-dom'
 import { ThemeProvider } from '@material-ui/core/styles'
 import CssBaseline from "@material-ui/core/CssBaseline";
-import { theme, darkTheme } from "./ui/theme";
+import { darkTheme } from "./ui/theme";
 import { Provider } from 'react-redux'
 import { store } from './lib/store'
 import { NavBar } from './features/Navigation';

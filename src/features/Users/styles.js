@@ -50,7 +50,7 @@ export const useStyles = makeStyles({
                 width: 15,
                 backgroundColor: `var(--primary)`,
                 borderRadius: `50%`,
-                border: `2px solid white`
+                border: `2px solid var(--paper)`
             }
         },
         '& .info': {
