@@ -5,11 +5,10 @@ import Typography from "@material-ui/core/Typography";
 import TextField from "@material-ui/core/TextField";
 import { Button } from 'features/common'
 import CircularProgress from '@material-ui/core/CircularProgress';
-import { useStyles } from "../../styles";
+import classes from '../../styles.module.scss'
 
 
 export const AddBiteForm = ({ addBite, fetchError, loading }) => {
-    const classes = useStyles()
     const { handleSubmit, handleChange, handleBlur, values, errors, touched } = useFormik({
         initialValues: {
             biteText: '',
@@ -25,7 +24,7 @@ export const AddBiteForm = ({ addBite, fetchError, loading }) => {
     return (
         <form onSubmit={handleSubmit} className={classes.addBiteForm}>
             <TextField id='biteText' name='biteText' type='text' label='Новый пост'
-                className='textField'
+                className={classes.textField}
                 fullWidth
                 multiline
                 rowsMax={18}
@@ -39,7 +38,7 @@ export const AddBiteForm = ({ addBite, fetchError, loading }) => {
                 ? <Typography variant='body2' color='error'>{fetchError}</Typography>
                 : null}
             <Button
-                className='button'
+                className={classes.button}
                 type='submit'
                 variant='contained'
                 color='primary'
@@ -47,7 +46,7 @@ export const AddBiteForm = ({ addBite, fetchError, loading }) => {
             >
                 Опубликовать
                 {loading
-                    ? <CircularProgress size={30} className='loader' />
+                    ? <CircularProgress size={30} className={classes.loader} />
                     : null}
             </Button>
         </form>

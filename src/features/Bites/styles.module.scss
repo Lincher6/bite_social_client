@@ -1,0 +1,142 @@
+@import 'ui/_variables.scss';
+
+.bite {
+    position: relative;
+    text-align: left;
+    display: flex;
+    margin-bottom: 20px;
+    @media (max-width: $xs) {
+        margin-bottom: 10px;
+    }
+    .image {
+        position: relative;
+        box-shadow: 3px 3px 4px 1px $background;
+        width: 185px;
+        min-width: 185px;
+        height: 185px;
+        object-fit: contain;
+        @media (max-width: $xs) {
+            margin: 10px;
+            width: 60px;
+            min-width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            object-fit: contain;
+            border: none;
+            box-shadow: none;
+        }
+        .isOnline {
+            position: absolute;
+            right: 5%;
+            bottom: 5%;
+            height: 15px;
+            width: 15px;
+            background-color: $primary;
+            border-radius: 50%;
+            border: 2px solid white;
+        }
+    }
+    .content {
+        margin-bottom: 35px !important;
+        width: 100%;
+        .body {
+            word-wrap: break-word;
+        }
+        .date {
+            opacity: .6;
+        }
+    }
+    .actions {
+        position: absolute;
+        bottom: -8px;
+        right: 0;
+    }
+    .delete {
+        position: absolute;
+        top: -10px;
+        right: -10px
+    }
+}
+
+.biteDetails {
+    word-wrap: break-word;
+    position: relative;
+    ::-webkit-scrollbar {
+        width: 0;
+        height: 0;
+    }
+    .loader {
+        margin: 30px;
+        text-align: center;
+    }
+    .imageWrapper {
+        text-align: center;
+        margin-bottom: 10px;
+        .image {
+            width: 180px;
+            min-width: 180px;
+            height: 180px;
+            border-radius: 50%;
+            object-fit: cover;
+            @media (max-width: $xs) {
+                width: 120px;
+                min-width: 120px;
+                height: 120px
+            }
+        }
+    }
+    .userHandle {
+        margin-bottom: 10px;
+        text-align: center;
+        color: $primary;
+    }
+    .date {
+        margin-bottom: 7px;
+        opacity: .6;
+    }
+    .actions {
+        margin-left: -10px;
+    }
+    .comments {
+        .title {
+            text-align: center;
+            margin-bottom: 15px !important;
+        }
+    }
+}
+
+.list {
+    text-align: center;
+}
+
+.addBite {
+    position: relative;
+}
+
+.close {
+    position: absolute !important;
+    top: 0;
+    right: 0;
+}
+
+.addBiteForm {
+    text-align: center;
+    .testField {
+        margin-bottom: 20px;
+    }
+    .button {
+        text-align: center;
+    }
+    .loader {
+        position: absolute;
+    }
+}
+
+.formControl {
+    margin-bottom: 10px;
+    min-width: 220px;
+}
+
+.selectEmpty {
+    text-align: center;
+}

@@ -1,5 +1,5 @@
 import React from 'react'
-import { useStyles } from "../styles";
+import classes from '../styles.module.scss'
 import Card from '@material-ui/core/Card';
 import CardContent from '@material-ui/core/CardContent';
 import CardMedia from '@material-ui/core/CardMedia';
@@ -14,13 +14,12 @@ import { OpenBite } from '../molecules/OpenBite';
 import { useDayjs } from 'lib/hooks/useDayjs';
 
 export const Bite = ({ imageUrl, userHandle, createdAt, body, likesCount, commentsCount, biteId }) => {
-    const classes = useStyles()
     const { dayjs } = useDayjs()
 
     return (
         <Card className={classes.bite}>
             <CardMedia
-                className='image'
+                className={classes.image}
                 image={imageUrl}
                 component={NavLink}
                 to={`/users/${userHandle}`}
@@ -29,7 +28,7 @@ export const Bite = ({ imageUrl, userHandle, createdAt, body, likesCount, commen
                 <IsOnline handle={userHandle} />
             </CardMedia>
             <div>
-                <CardContent className='content'>
+                <CardContent className={classes.content}>
                     <Typography
                         variant='h5'
                         component={NavLink}
@@ -39,16 +38,16 @@ export const Bite = ({ imageUrl, userHandle, createdAt, body, likesCount, commen
                     <Typography
                         variant='body2'
                         color='textSecondary'
-                        className='date'
+                        className={classes.date}
                     >{dayjs(createdAt).fromNow()}</Typography>
-                    <ReadMore text={body} className='body' />
+                    <ReadMore text={body} className={classes.body} />
                 </CardContent>
-                <CardActions className='actions'>
+                <CardActions className={classes.actions}>
                     <Like likesCount={likesCount} biteId={biteId} />
                     <Comment commentsCount={commentsCount} biteId={biteId} />
                     <OpenBite biteId={biteId} />
                 </CardActions>
-                <CardActions className='delete'>
+                <CardActions className={classes.delete}>
                     <Delete biteId={biteId} userHandle={userHandle} />
                 </CardActions>
             </div>

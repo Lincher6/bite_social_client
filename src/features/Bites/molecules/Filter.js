@@ -1,11 +1,10 @@
 import React, { useState } from 'react'
-import { useStyles } from '../styles'
+import classes from '../styles.module.scss'
 import { FormControl, InputLabel, Select, MenuItem } from '@material-ui/core'
 import { useDispatch } from 'react-redux'
 import { bitesActions } from '../model'
 
 export const Filter = (props) => {
-    const classes = useStyles()
     const dispatch = useDispatch()
 
     const handleChange = (event) => {

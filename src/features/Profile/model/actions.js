@@ -1,4 +1,3 @@
-import firebase from 'firebase'
 import { SET_AUTHENTICATED, SET_AUTHENTICATED_PROFILE, LOADING_PROFILE, LOGOUT, MARK_NOTIFICATIONS, SET_IS_ONLINE } from './types'
 import { uiActions } from 'features/Navigation'
 import { authApi } from 'api/authApi'
@@ -6,7 +5,7 @@ import { profileApi } from 'api/profileApi'
 import axios from 'axios'
 import imageCompression from 'browser-image-compression'
 import { tokenChecker } from "lib/hooks/useInitialization";
-import { firestore, database } from 'lib/firebase'
+import { fb, firestore, database } from 'lib/firebase'
 
 const setAuthenticated_AC = payload => ({
     type: SET_AUTHENTICATED,
@@ -54,7 +53,7 @@ export const logout = () => async (dispatch, getState) => {
         })*/
         databaseRef.set({
             isOnline: false, wasOnline:
-                firebase.database.ServerValue.TIMESTAMP
+                fb.database.ServerValue.TIMESTAMP
         })
     }
     localStorage.removeItem('idToken')
@@ -158,7 +157,7 @@ const presenseFlow = (handle) => {
 
         databaseRef.onDisconnect().set({
             isOnline: false,
-            wasOnline: firebase.database.ServerValue.TIMESTAMP
+            wasOnline: fb.database.ServerValue.TIMESTAMP
         }).then(function () {
             /*firestoreRef.set({
                 isOnline: true,
@@ -166,7 +165,7 @@ const presenseFlow = (handle) => {
             })*/
             databaseRef.set({
                 isOnline: true,
-                wasOnline: firebase.database.ServerValue.TIMESTAMP
+                wasOnline: fb.database.ServerValue.TIMESTAMP
             })
         });
     })

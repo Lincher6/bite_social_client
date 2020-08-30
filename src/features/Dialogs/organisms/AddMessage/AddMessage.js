@@ -1,10 +1,9 @@
-import React, { useCallback, useState } from 'react'
+import React, { useCallback } from 'react'
 import { useDispatch, useSelector } from "react-redux";
-import { uiSelectors } from "features/Navigation";
 import { AddMessageForm } from './AddMessageForm'
-import { useHistory, useParams } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
 import { profileSelectors } from 'features/Profile';
-import { dialogsActions, dialogsSelectors } from 'features/Dialogs/model';
+import { dialogsActions, } from 'features/Dialogs/model';
 import sound from 'ui/assets/BlobSound.ogg'
 
 export const AddMessage = () => {
@@ -20,7 +19,7 @@ export const AddMessage = () => {
             senderImageUrl: imageUrl,
             recipient,
             body: message,
-            createdAt: new Date(),
+            createdAt: new Date().toISOString(),
             read: false,
             isSend: false
         }

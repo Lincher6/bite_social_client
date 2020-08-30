@@ -1,4 +1,5 @@
 import React, { useCallback, useState } from 'react'
+import classes from '../styles.module.scss'
 import { EditButton, RedirectDialog } from "features/common";
 import FavoriteBorder from "@material-ui/icons/FavoriteBorder";
 import Favorite from "@material-ui/icons/Favorite";
@@ -25,7 +26,7 @@ export const Like = ({ likesCount, biteId }) => {
         return (
             <React.Fragment>
                 <EditButton tip={'нравится'} onClick={() => setOpen(true)}>
-                    <FavoriteBorder color='primary' className='icon' />
+                    <FavoriteBorder color='primary' className={classes.icon} />
                 </EditButton>
                 {likesCount}
 
@@ -38,7 +39,7 @@ export const Like = ({ likesCount, biteId }) => {
         return (
             <React.Fragment>
                 <IconButton onClick={unlike}>
-                    <Favorite color='primary' className='icon' />
+                    <Favorite color='primary' className={classes.icon} />
                 </IconButton>
                 {likesCount}
             </React.Fragment>

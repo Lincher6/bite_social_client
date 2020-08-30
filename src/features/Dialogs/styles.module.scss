@@ -107,6 +107,7 @@
 }
 
 .message {
+    animation: popup .3s;
     position: relative;
     display: flex;
     width: 70%;
@@ -135,6 +136,9 @@
         border-radius: 5px;
         padding: 5px 10px 5px 10px;
         text-shadow: -1px 1px 1px black;
+        &:hover {
+            opacity: .8;
+        }
         .info {
             width: 100%;
             margin-top: 5px;
@@ -247,4 +251,9 @@
             display: none;
         }
     }
+}
+
+@keyframes popup {
+    from {transform: translate(0, 100px);}
+    to {transform: translate(0, 0);}
 }

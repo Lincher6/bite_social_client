@@ -13,3 +13,30 @@ export const CLEAR_BITES = 'CLEAR_BITES'
 
 export const PAGE_SIZE = 10
 
+export type ActionType = {
+    type: string
+    payload: any
+}
+
+export type BiteType = {
+    biteId: number | number
+    comments: Array<any>
+    commentsCount: number
+    likesCount: number
+    imageUrl: string,
+    userHandle: string,
+    createdAt: Date,
+    body: string,
+}
+
+export type BitesStateType = {
+    bites: Array<BiteType>
+    bite: BiteType
+    biteFilter: string
+    haveMoreBites: boolean
+    loadingBites: boolean
+    loadingComment: boolean
+    offset: number
+}
+
+

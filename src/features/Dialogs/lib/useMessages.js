@@ -33,7 +33,7 @@ export const useMessages = () => {
                         const newMessage = {
                             id: doc.id,
                             body: message.body,
-                            createdAt: message.createdAt,
+                            createdAt: message.createdAt.toDate().toISOString(),
                             read: message.read,
                             recipient: message.recipient,
                             sender: message.sender,

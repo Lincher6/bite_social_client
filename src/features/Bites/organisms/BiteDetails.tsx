@@ -1,5 +1,5 @@
 import React, { useEffect, Fragment } from 'react'
-import { useStyles } from '../styles'
+import classes from '../styles.module.scss'
 import { DialogContent, Typography, Dialog } from '@material-ui/core'
 import Close from "@material-ui/icons/Close";
 import { bitesSelectors, bitesActions } from '../model'
@@ -12,9 +12,9 @@ import { useDayjs } from 'lib/hooks/useDayjs';
 import { AddComment } from 'features/Comments';
 import CommentIcon from "@material-ui/icons/Comment";
 import { CommentList } from 'features/Comments';
+import { BiteDetailsType } from '../types';
 
-export const BiteDetails = ({ biteId, open, setOpen, focus }) => {
-    const classes = useStyles()
+export const BiteDetails: React.FC<BiteDetailsType> = ({ biteId, open, setOpen, focus }) => {
     const { dayjs, options } = useDayjs()
     const bite = useSelector(bitesSelectors.bite)
     const { loading } = useSelector(uiSelectors.ui)
@@ -34,24 +34,24 @@ export const BiteDetails = ({ biteId, open, setOpen, focus }) => {
                     loading
                         ? <BiteDetailsSkeleton />
                         : <Fragment>
-                            <div className='image-wrapper'>
-                                <img src={bite.imageUrl} alt='user' className='image' />
+                            <div className={classes.imageWrapper}>
+                                <img src={bite.imageUrl} alt='user' className={classes.image} />
                             </div>
                             <NavLink to={`/users/${bite.userHandle}`}>
-                                <Typography variant='h5' className='userHandle'>
+                                <Typography variant='h5' className={classes.userHandle}>
                                     {bite.userHandle}
                                 </Typography>
                             </NavLink>
-                            <Typography variant='body2' className='date'>
+                            <Typography variant='body2' className={classes.DialogContent}>
                                 {dayjs(bite.createdAt).format(options.long)}
                             </Typography>
-                            <Typography variant='body1' className='body'>
+                            <Typography variant='body1' className={classes.body}>
                                 {bite.body}
                             </Typography>
-                            <div className='actions'>
+                            <div className={classes.actions}>
                                 <Like biteId={biteId} likesCount={bite.likesCount} />
                                 <EditButton tip='комментарии'>
-                                    <CommentIcon color='primary' className='icon' />
+                                    <CommentIcon color='primary' className={classes.icon} />
                                 </EditButton>
                                 {bite.commentsCount}
 
@@ -59,11 +59,10 @@ export const BiteDetails = ({ biteId, open, setOpen, focus }) => {
 
 
                             <AddComment biteId={bite.biteId} focus={focus} />
-                            <div className='comments'>
-                                <Typography variant='h5' className='title'>
+                            <div className={classes.comments}>
+                                <Typography variant='h5' className={classes.title}>
                                     Комментарии
-                            </Typography>
-
+                                </Typography>
                             </div>
                             <CommentList comments={bite.comments || []} />
 

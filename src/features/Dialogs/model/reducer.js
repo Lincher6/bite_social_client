@@ -1,5 +1,4 @@
 import { SET_DIALOGS, SET_CURRENT_DIALOG, SET_MESSAGES, ADD_MESSAGE } from './types'
-import { uiActions } from 'features/Navigation'
 
 const initialState = {
     dialogs: [],

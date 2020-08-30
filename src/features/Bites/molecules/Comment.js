@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import classes from '../styles.module.scss'
 import { EditButton } from "features/common";
 import CommentIcon from "@material-ui/icons/Comment";
 import { BiteDetails } from '../organisms/BiteDetails'
@@ -9,7 +10,7 @@ export const Comment = ({ commentsCount, biteId }) => {
     return (
         <React.Fragment>
             <EditButton tip={'комментарии'} onClick={() => setOpen(true)}>
-                <CommentIcon color='primary' className='icon' />
+                <CommentIcon color='primary' className={classes.icon} />
             </EditButton>
             {commentsCount}
 

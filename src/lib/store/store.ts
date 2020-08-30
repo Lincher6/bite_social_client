@@ -27,3 +27,7 @@ export const store = createStore(
         //window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
     )
 )
+
+type ReducersType = typeof reducers
+export type StateType = ReturnType<ReducersType>
+export type AppDispatch = typeof store.dispatch

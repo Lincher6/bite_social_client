@@ -27,14 +27,14 @@ export const MessageList = (props) => {
                     messages.length > 0
                         ? messages.map((message, index) => {
                             return (
-                                <Message key={index} isMine={handle === message.sender} {...message} />
+                                <Message key={message.createdAt} isMine={handle === message.sender} {...message} />
                             )
                         })
                         : loading
                             ? <CircularProgress className={classes.preloader} size={100} />
                             : <Typography variant='h5' color='secondary' className={classes.noMessages}>
                                 Нет сообщений
-                        </Typography>
+                            </Typography>
 
                 }
             </div>

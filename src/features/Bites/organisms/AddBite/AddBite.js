@@ -1,5 +1,5 @@
 import React, { useCallback, useState } from 'react'
-import { useStyles } from "../../styles";
+import classes from '../../styles.module.scss'
 import { useDispatch, useSelector } from "react-redux";
 import Add from "@material-ui/icons/Add";
 import Close from "@material-ui/icons/Close";
@@ -16,7 +16,6 @@ export const AddBite = () => {
     const [open, setOpen] = useState(false)
     const { loading, errors } = useSelector(uiSelectors.ui)
     const dispatch = useDispatch()
-    const classes = useStyles()
     const history = useHistory()
 
     const addBite = useCallback(async (bite) => {

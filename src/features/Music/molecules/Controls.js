@@ -12,7 +12,7 @@ export const Controls = () => {
     const classes = useStyles();
     const dispatch = useDispatch()
     const { playing, audio, random, tracks, trackIndex, looped } = useSelector(musicSelectors.music)
-    const { setPlaying, setTrackIndex, setAudio, setTrack } = musicActions
+    const { setPlaying, setTrackIndex, setAudio } = musicActions
 
     const playStopFlow = () => {
         if (audio && audio.readyState) {

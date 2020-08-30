@@ -1,14 +1,14 @@
 import React, { useEffect, useState } from 'react'
 import { Bite } from "./Bite";
-import { useStyles } from "../styles";
+import classes from "../styles.module.scss";
 import { useSelector, useDispatch } from "react-redux";
 import { bitesSelectors, bitesActions } from "../model";
 import { LoadMore } from 'features/common/LoadMore';
 import { BiteSkeleton } from 'features/common';
+import { BiteType } from '../model/types';
 
 export const BiteList = ({ userHandle = '' }) => {
     const [offset, setOffset] = useState(0)
-    const classes = useStyles()
     const dispatch = useDispatch()
     const { bites, loadingBites, haveMoreBites } = useSelector(bitesSelectors.bitesData)
 
@@ -26,7 +26,7 @@ export const BiteList = ({ userHandle = '' }) => {
 
     return (
         <div className={classes.list}>
-            {bites.map(bite => {
+            {bites.map((bite: BiteType) => {
                 return (
                     <Bite
                         key={bite.biteId}
