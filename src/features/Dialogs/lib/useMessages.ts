@@ -1,3 +1,4 @@
+import { MessageType } from './../model/types';
 import { useState, useEffect } from "react"
 import { firestore } from "lib/firebase"
 import { useParams } from "react-router-dom"
@@ -8,7 +9,7 @@ import { dialogsApi } from "api/dialogsApi"
 
 
 export const useMessages = () => {
-    const params = useParams()
+    const params: any = useParams()
     const [loading, setLoading] = useState(true)
     const { handle } = useSelector(profileSelectors.credentials)
     const dispatch = useDispatch()
@@ -30,7 +31,7 @@ export const useMessages = () => {
                             unreadMessagesCount++
                         }
 
-                        const newMessage = {
+                        const newMessage: MessageType = {
                             id: doc.id,
                             body: message.body,
                             createdAt: message.createdAt.toDate().toISOString(),
@@ -57,7 +58,7 @@ export const useMessages = () => {
         }
 
 
-    }, [params.dialogId, handle])
+    }, [dispatch, params.dialogId, handle])
 
     return loading
 }

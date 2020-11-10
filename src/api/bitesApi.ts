@@ -10,7 +10,10 @@ export const bitesApi = {
             let response = await axios.get(`/bites`, { params: { offset, userHandle, biteFilter } })
             return { data: response.data, resultCode: 0 }
         } catch (e) {
-            return { error: e.response.data.error, resultCode: 1 }
+            return {
+                error: e.response ? e.response.data.error : e,
+                resultCode: 1
+            }
         }
     },
 
@@ -19,7 +22,10 @@ export const bitesApi = {
             let response = await axios.get(`/bites/${biteId}`)
             return { data: response.data, resultCode: 0 }
         } catch (e) {
-            return { error: e.response.data.error, resultCode: 1 }
+            return {
+                error: e.response ? e.response.data.error : e,
+                resultCode: 1
+            }
         }
     },
 
@@ -28,7 +34,10 @@ export const bitesApi = {
             let response = await axios.post('/bites', bite)
             return { data: response.data, resultCode: 0 }
         } catch (e) {
-            return { error: e.response.data.error, resultCode: 1 }
+            return {
+                error: e.response ? e.response.data.error : e,
+                resultCode: 1
+            }
         }
     },
 
@@ -37,7 +46,10 @@ export const bitesApi = {
             let response = await axios.post(`/bites/${biteId}/comment`, comment)
             return { data: response.data, resultCode: 0 }
         } catch (e) {
-            return { error: e.response.data.error, resultCode: 1 }
+            return {
+                error: e.response ? e.response.data.error : e,
+                resultCode: 1
+            }
         }
     },
 
@@ -46,7 +58,10 @@ export const bitesApi = {
             let response = await axios.post(`/bites/${biteId}/like`)
             return { data: response.data, resultCode: 0 }
         } catch (e) {
-            return { error: e.response.data.error, resultCode: 1 }
+            return {
+                error: e.response ? e.response.data.error : e,
+                resultCode: 1
+            }
         }
     },
 
@@ -55,7 +70,10 @@ export const bitesApi = {
             let response = await axios.delete(`/bites/${biteId}/like`)
             return { data: response.data, resultCode: 0 }
         } catch (e) {
-            return { error: e.response.data.error, resultCode: 1 }
+            return {
+                error: e.response ? e.response.data.error : e,
+                resultCode: 1
+            }
         }
     },
 
@@ -64,7 +82,10 @@ export const bitesApi = {
             let response = await axios.delete(`/bites/${biteId}`)
             return { data: response.data, resultCode: 0 }
         } catch (e) {
-            return { error: e.response.data.error, resultCode: 1 }
+            return {
+                error: e.response ? e.response.data.error : e,
+                resultCode: 1
+            }
         }
     }
 }

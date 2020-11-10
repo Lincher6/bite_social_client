@@ -34,21 +34,27 @@ export const BiteDetails: React.FC<BiteDetailsType> = ({ biteId, open, setOpen, 
                     loading
                         ? <BiteDetailsSkeleton />
                         : <Fragment>
+
                             <div className={classes.imageWrapper}>
                                 <img src={bite.imageUrl} alt='user' className={classes.image} />
                             </div>
+
                             <NavLink to={`/users/${bite.userHandle}`}>
                                 <Typography variant='h5' className={classes.userHandle}>
                                     {bite.userHandle}
                                 </Typography>
                             </NavLink>
+
                             <Typography variant='body2' className={classes.DialogContent}>
                                 {dayjs(bite.createdAt).format(options.long)}
                             </Typography>
+
                             <Typography variant='body1' className={classes.body}>
                                 {bite.body}
                             </Typography>
+
                             <div className={classes.actions}>
+
                                 <Like biteId={biteId} likesCount={bite.likesCount} />
                                 <EditButton tip='комментарии'>
                                     <CommentIcon color='primary' className={classes.icon} />
@@ -59,16 +65,19 @@ export const BiteDetails: React.FC<BiteDetailsType> = ({ biteId, open, setOpen, 
 
 
                             <AddComment biteId={bite.biteId} focus={focus} />
+
                             <div className={classes.comments}>
                                 <Typography variant='h5' className={classes.title}>
                                     Комментарии
                                 </Typography>
                             </div>
+
                             <CommentList comments={bite.comments || []} />
 
                             <EditButton tip={'закрыть'} className={classes.close} onClick={() => setOpen(false)}>
                                 <Close opacity={.5} />
                             </EditButton>
+
                         </Fragment>
                 }
             </DialogContent >

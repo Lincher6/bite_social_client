@@ -4,17 +4,18 @@ import { AddMessageForm } from './AddMessageForm'
 import { useParams } from 'react-router-dom';
 import { profileSelectors } from 'features/Profile';
 import { dialogsActions, } from 'features/Dialogs/model';
-import sound from 'ui/assets/BlobSound.ogg'
+
+const sound = require('ui/assets/BlobSound.ogg')
 
 export const AddMessage = () => {
     const dispatch = useDispatch()
     const { handle, imageUrl } = useSelector(profileSelectors.credentials)
-    const currentDialog = useParams().dialogId
+    const currentDialog = useParams<any>().dialogId
 
     const addMessage = useCallback(async (message) => {
         const recipient = currentDialog.replace(handle, '')
         const newMessage = {
-            dialogId: currentDialog,
+            id: currentDialog,
             sender: handle,
             senderImageUrl: imageUrl,
             recipient,
@@ -29,7 +30,7 @@ export const AddMessage = () => {
 
     return (
         <React.Fragment>
-            <AddMessageForm addMessage={addMessage} loading={false} />
+            <AddMessageForm addMessage={addMessage} />
         </React.Fragment>
     )
 }

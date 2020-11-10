@@ -1,4 +1,4 @@
-import { MessageType } from './types';
+import { MessageType } from './../features/Dialogs/model/types';
 import axios from 'axios'
 
 export const dialogsApi = {
@@ -12,13 +12,16 @@ export const dialogsApi = {
             let response = await axios.post(`/dialogs/${dialogId}`, { userTwo, imageUrl, createdAt })
             return { data: response.data, resultCode: 0 }
         } catch (e) {
-            return { error: e.response.data.error, resultCode: 1 }
+            return {
+                error: e.response ? e.response.data.error : e,
+                resultCode: 1
+            }
         }
     },
 
-    sendMessage: async ({ dialogId, body, recipient, createdAt }: MessageType) => {
+    sendMessage: async ({ id, body, recipient, createdAt }: MessageType) => {
         try {
-            let response = await axios.post(`/messages/${dialogId}`, { body, recipient, createdAt })
+            let response = await axios.post(`/messages/${id}`, { body, recipient, createdAt })
             return { data: response.data, resultCode: 0 }
         } catch (e) {
             return { error: e.response ? e.response.data.error : 'CORS', resultCode: 1 }
@@ -34,7 +37,7 @@ export const dialogsApi = {
         }
     },
 
-    deleteMessage: async (messageId: number) => {
+    deleteMessage: async (messageId: number | string) => {
         try {
             let response = await axios.delete(`/messages/${messageId}`)
             return { data: response.data, resultCode: 0 }

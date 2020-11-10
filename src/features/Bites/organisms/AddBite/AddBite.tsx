@@ -30,9 +30,11 @@ export const AddBite = () => {
 
     return (
         <React.Fragment>
+
             <EditButton tip={'Добавить пост'} onClick={handleClick}>
                 <Add />
             </EditButton>
+
             <Dialog
                 open={open}
                 maxWidth={'sm'}
@@ -43,12 +45,15 @@ export const AddBite = () => {
                 <EditButton tip={'закрыть'} className={classes.close} onClick={() => setOpen(false)}>
                     <Close opacity={.5} />
                 </EditButton>
+
                 <DialogTitle>
                     Добавить новый пост
                 </DialogTitle>
+
                 <DialogContent>
                     <AddBiteForm addBite={addBite} loading={loading} fetchError={errors.error} />
                 </DialogContent>
+
             </Dialog>
         </React.Fragment>
     )

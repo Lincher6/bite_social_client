@@ -12,12 +12,14 @@ import { ReadMore, IsOnline } from "features/common";
 import { Delete } from "../molecules/Delete";
 import { OpenBite } from '../molecules/OpenBite';
 import { useDayjs } from 'lib/hooks/useDayjs';
+import { BiteType } from '../model/types';
 
-export const Bite = ({ imageUrl, userHandle, createdAt, body, likesCount, commentsCount, biteId }) => {
+export const Bite: React.FC<BiteType> = ({ imageUrl, userHandle, createdAt, body, likesCount, commentsCount, biteId }) => {
     const { dayjs } = useDayjs()
 
     return (
         <Card className={classes.bite}>
+
             <CardMedia
                 className={classes.image}
                 image={imageUrl}
@@ -27,6 +29,7 @@ export const Bite = ({ imageUrl, userHandle, createdAt, body, likesCount, commen
             >
                 <IsOnline handle={userHandle} />
             </CardMedia>
+
             <div>
                 <CardContent className={classes.content}>
                     <Typography
@@ -34,19 +37,23 @@ export const Bite = ({ imageUrl, userHandle, createdAt, body, likesCount, commen
                         component={NavLink}
                         to={`/users/${userHandle}`}
                         color='secondary'
-                    >{userHandle}</Typography>
+                    >{userHandle}
+                    </Typography>
                     <Typography
                         variant='body2'
                         color='textSecondary'
                         className={classes.date}
-                    >{dayjs(createdAt).fromNow()}</Typography>
+                    >{dayjs(createdAt).fromNow()}
+                    </Typography>
                     <ReadMore text={body} className={classes.body} />
                 </CardContent>
+
                 <CardActions className={classes.actions}>
                     <Like likesCount={likesCount} biteId={biteId} />
                     <Comment commentsCount={commentsCount} biteId={biteId} />
                     <OpenBite biteId={biteId} />
                 </CardActions>
+
                 <CardActions className={classes.delete}>
                     <Delete biteId={biteId} userHandle={userHandle} />
                 </CardActions>

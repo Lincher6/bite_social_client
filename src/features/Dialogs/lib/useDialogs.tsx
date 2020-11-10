@@ -3,10 +3,11 @@ import { firestore } from "lib/firebase"
 import { useSelector, useDispatch } from "react-redux"
 import { profileSelectors } from "features/Profile"
 import { dialogsActions } from "features/Dialogs/model"
+import { DialogType } from "../model/types"
 
 
 export const useDialogs = () => {
-    const [dialogs, setDialogs] = useState([])
+    const [dialogs, setDialogs] = useState<Array<DialogType>>([])
     const [loading, setLoading] = useState(true)
     const { handle } = useSelector(profileSelectors.credentials)
     const dispatch = useDispatch()
@@ -29,7 +30,7 @@ export const useDialogs = () => {
                                 newMessages: doc.data().userOneNewMessages,
                             }
                         }
-                        if (doc.data().userTwo === handle) {
+                        else {
                             return {
                                 id: doc.id,
                                 recipient: doc.data().userOne,
@@ -48,7 +49,7 @@ export const useDialogs = () => {
         }
 
 
-    }, [handle])
+    }, [dispatch, handle])
 
     return { dialogs, loading }
 }

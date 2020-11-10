@@ -9,8 +9,9 @@ import DialogTitle from "@material-ui/core/DialogTitle";
 import DialogActions from "@material-ui/core/DialogActions";
 import Button from "@material-ui/core/Button";
 import Typography from "@material-ui/core/Typography";
+import { DeleteType } from '../types';
 
-export const Delete = ({ biteId, userHandle }) => {
+export const Delete: React.FC<DeleteType> = ({ biteId, userHandle }) => {
     const [open, setOpen] = useState(false)
     const { handle } = useSelector(profileSelectors.credentials)
     const authenticated = useSelector(profileSelectors.authenticated)
@@ -26,6 +27,7 @@ export const Delete = ({ biteId, userHandle }) => {
 
     return (
         <React.Fragment>
+
             <EditButton tip={'удалить'} onClick={() => setOpen(true)}>
                 <DeleteIcon opacity={.4} />
             </EditButton>
@@ -39,14 +41,19 @@ export const Delete = ({ biteId, userHandle }) => {
                 <DialogTitle>
                     Вы хотите удалить этот пост?
                 </DialogTitle>
+
                 <DialogActions>
+
                     <Button color='secondary' onClick={deleteBite}>
                         <Typography>Подтвердить</Typography>
                     </Button>
+
                     <Button color='primary' onClick={() => setOpen(false)}>
                         <Typography>Отмена</Typography>
                     </Button>
+
                 </DialogActions>
+
             </Dialog>
         </React.Fragment>
     )

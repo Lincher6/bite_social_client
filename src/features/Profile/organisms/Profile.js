@@ -34,7 +34,6 @@ export const Profile = (props) => {
                     </div>
                 </div>
             }
-
         </Paper >
     )
 }

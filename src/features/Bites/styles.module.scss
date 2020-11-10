@@ -140,3 +140,128 @@
 .selectEmpty {
     text-align: center;
 }
+
+.biteSkeleton {
+    opacity: .5;
+    display: flex;
+    position: relative;
+    text-align: left;
+    margin-bottom: 20px;
+    .image {
+        box-shadow: 3px 3px 4px 1px $background;
+        width: 185px;
+        min-width: 185px;
+        height: 185px;
+        object-fit: contain;
+        @media (max-width: $xs) {
+            margin: 10px;
+            width: 80px;
+            min-width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            object-fit: contain;
+            border: none;
+            box-shadow: none
+        }
+    }
+    .content {
+        flex-grow: 1;
+        width: 100%;
+        padding: 10px;
+        div {
+            margin-bottom: 10px;
+        }
+        .handle {
+            width: 30%;
+            height: 20px;
+            background-color: $orange
+        }
+        .halfBody {
+            width: 50%;
+            height: 15px;
+            background-color: darkGrey
+        }
+        .body {
+            width: 90%px;
+            height: 15px;
+            background-color: darkGrey;
+        }
+        .date {
+            width: 30%;
+            height: 12px;
+            background-color: grey;
+        }
+        .actionsLine {
+            margin-top: 20px;
+            width: 150px;
+            margin-right: 0;
+            margin-left: auto;
+            height: 20px;
+            background-color: $primary;
+        }
+    }
+    .preloader {
+        opacity: 1 !important;
+        position: absolute;
+        right: 50%;
+        margin-right: -40px;
+        top: 30%;
+    }
+}
+
+.biteDeatilsSkeleton {
+    opacity: .5;
+    div {
+        margin-bottom: 10px;
+    }
+    .imageWrapper {
+        text-align: center;
+        .image {
+            width: 180px;
+            min-width: 180px;
+            height: 180px;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+    }
+    .handle {
+        margin: 0 auto;
+        width: 100px;
+        height: 20px;
+        background-color: $primary;
+    }
+    .date {
+        opacity: .6;
+        width: 100px;
+        height: 12px;
+        background-color: darkGrey;
+    }
+    .body {
+        width: 90%;
+        height: 15px;
+        background-color: grey
+    }
+    .halfBody {
+        width: 50%;
+        height: 15px;
+        background-color: grey;
+    }
+    .buttons {
+        width: 100px;
+        height: 18px;
+        background-color: $primary;
+    }
+    .comments {
+        .title {
+            text-align: center;
+            margin-bottom: 15px !important;
+        }
+    }
+    .preloader {
+        opacity: 1 !important;
+        position: absolute;
+        right: 50%;
+        margin-right: -40px;
+        top: 60%;
+    }
+}

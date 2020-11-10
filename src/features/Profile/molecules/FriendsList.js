@@ -30,6 +30,7 @@ export const FriendsList = ({ friends = [] }) => {
                 variant='outlined'
                 color='primary'
                 onClick={handleOpen}
+                disabled={friends.length === 0}
             >
                 <div style={{ display: `flex`, alignItems: `center` }}>
                     <div style={{ marginRight: 5 }}>

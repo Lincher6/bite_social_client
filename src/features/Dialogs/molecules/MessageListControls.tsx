@@ -9,7 +9,7 @@ import { dialogsApi } from 'api/dialogsApi';
 import { useHistory } from 'react-router-dom';
 import { Dialog, DialogTitle, DialogActions, Button, Typography } from '@material-ui/core';
 
-export const MessageListControls = ({ area }) => {
+export const MessageListControls = ({ area }: any) => {
     const dialogId = useSelector(dialogsSelectors.currentDialog)
     const history = useHistory()
     const [open, setOpen] = useState(false)

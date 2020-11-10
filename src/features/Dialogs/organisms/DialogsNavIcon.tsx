@@ -3,9 +3,10 @@ import { EditButton } from 'features/common'
 import ForumIcon from '@material-ui/icons/Forum';
 import { Badge } from '@material-ui/core';
 import { useNewMessages } from 'features/Profile/lib/useNewMessages';
-import sound from 'ui/assets/messageNotification.wav'
 
-export const DialogsNavIcon = (props) => {
+const sound = require('ui/assets/messageNotification.wav')
+
+export const DialogsNavIcon = () => {
     const [currentCount, setCurrentCount] = useState(0)
     const newMessages = useNewMessages()
 

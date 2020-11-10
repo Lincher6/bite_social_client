@@ -3,12 +3,12 @@ import React from "react";
 import * as yup from 'yup'
 import Typography from "@material-ui/core/Typography";
 import TextField from "@material-ui/core/TextField";
-import { Button, EditButton, SendButton } from 'features/common'
+import { Button, SendButton } from 'features/common'
 import classes from '../../styles.module.scss'
-import SendIcon from '@material-ui/icons/Send';
+import { AddMessageFormType } from "features/Dialogs/types";
 
 
-export const AddMessageForm = ({ addMessage, fetchError }) => {
+export const AddMessageForm: React.FC<AddMessageFormType> = ({ addMessage, fetchError }) => {
     const { handleSubmit, handleChange, handleBlur, values, errors, touched, resetForm } = useFormik({
         initialValues: {
             message: '',

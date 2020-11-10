@@ -1,12 +1,12 @@
-import { SET_DIALOGS, SET_CURRENT_DIALOG, SET_MESSAGES, ADD_MESSAGE } from './types'
+import { SET_DIALOGS, SET_CURRENT_DIALOG, SET_MESSAGES, ADD_MESSAGE, DialogsStateType, ActionType } from './types'
 
-const initialState = {
+const initialState: DialogsStateType = {
     dialogs: [],
     currentDialog: '',
     messages: []
 }
 
-export const reducer = (state = initialState, action) => {
+export const reducer = (state = initialState, action: ActionType) => {
     switch (action.type) {
         case SET_DIALOGS: return {
             ...state,
