@@ -6,7 +6,10 @@ export const usersApi = {
             let response = await axios.get(`/user/${userHandle}`)
             return { data: response.data, resultCode: 0 }
         } catch (e) {
-            return { error: e.response.data.error, resultCode: 1 }
+            return {
+                error: e.response ? e.response.data.error : e,
+                resultCode: 1
+            }
         }
     },
 
@@ -15,7 +18,10 @@ export const usersApi = {
             let response = await axios.post(`/users`, { offset, searchParams })
             return { data: response.data, resultCode: 0 }
         } catch (e) {
-            return { error: e.response.data.error, resultCode: 1 }
+            return {
+                error: e.response ? e.response.data.error : e,
+                resultCode: 1
+            }
         }
     },
 
@@ -24,7 +30,10 @@ export const usersApi = {
             let response = await axios.post(`/users`, { offset, userHandles })
             return { data: response.data, resultCode: 0 }
         } catch (e) {
-            return { error: e.response.data.error, resultCode: 1 }
+            return {
+                error: e.response ? e.response.data.error : e,
+                resultCode: 1
+            }
         }
     },
 
@@ -33,7 +42,10 @@ export const usersApi = {
             let response = await axios.post(`/user/${userHandle}/follow`, { follow })
             return { data: response.data, resultCode: 0 }
         } catch (e) {
-            return { error: e.response.data.error, resultCode: 1 }
+            return {
+                error: e.response ? e.response.data.error : e,
+                resultCode: 1
+            }
         }
     }
 }

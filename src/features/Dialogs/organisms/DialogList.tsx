@@ -1,4 +1,4 @@
-import React, { Fragment, useState, useEffect } from 'react'
+import React, { useState, useEffect } from 'react'
 import { useDialogs } from 'features/Dialogs/lib/useDialogs'
 import { Dialog } from '../molecules/Dialog'
 import { useHistory, NavLink } from 'react-router-dom'
@@ -7,7 +7,7 @@ import { DialogsSkeleton, EditButton } from 'features/common'
 import { Button } from '@material-ui/core'
 import AddCircleOutlineIcon from '@material-ui/icons/AddCircleOutline';
 
-export const DialogList = (props) => {
+export const DialogList = () => {
     const [initiated, setInitiated] = useState(false)
     const { dialogs, loading } = useDialogs()
     const history = useHistory()

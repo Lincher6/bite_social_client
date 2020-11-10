@@ -6,7 +6,10 @@ export const profileApi = {
             let response = await axios.get('/user')
             return { data: response.data, resultCode: 0 }
         } catch (e) {
-            return { error: e.response.data.error, resultCode: 1 }
+            return {
+                error: e.response ? e.response.data.error : e,
+                resultCode: 1
+            }
         }
     },
 
@@ -15,7 +18,10 @@ export const profileApi = {
             let response = await axios.post('/user/image', image)
             return { data: response.data, resultCode: 0 }
         } catch (e) {
-            return { error: e.response.data.error, resultCode: 1 }
+            return {
+                error: e.response ? e.response.data.error : e,
+                resultCode: 1
+            }
         }
     },
 
@@ -24,7 +30,10 @@ export const profileApi = {
             let response = await axios.get(`/user/${userHandle}/images`)
             return { data: response.data, resultCode: 0 }
         } catch (e) {
-            return { error: e.response.data.error, resultCode: 1 }
+            return {
+                error: e.response ? e.response.data.error : e,
+                resultCode: 1
+            }
         }
     },
 
@@ -33,7 +42,10 @@ export const profileApi = {
             let response = await axios.post('/user', profileData)
             return { data: response.data, resultCode: 0 }
         } catch (e) {
-            return { error: e.response.data.error, resultCode: 1 }
+            return {
+                error: e.response ? e.response.data.error : e,
+                resultCode: 1
+            }
         }
     },
 
@@ -42,7 +54,10 @@ export const profileApi = {
             let response = await axios.post('/notifications', notificationsIds)
             return { data: response.data, resultCode: 0 }
         } catch (e) {
-            return { error: e.response.data.error, resultCode: 1 }
+            return {
+                error: e.response ? e.response.data.error : e,
+                resultCode: 1
+            }
         }
     }
 }

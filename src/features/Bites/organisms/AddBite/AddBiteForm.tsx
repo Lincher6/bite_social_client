@@ -6,9 +6,10 @@ import TextField from "@material-ui/core/TextField";
 import { Button } from 'features/common'
 import CircularProgress from '@material-ui/core/CircularProgress';
 import classes from '../../styles.module.scss'
+import { AddBiteFormType } from "features/Bites/types";
 
 
-export const AddBiteForm = ({ addBite, fetchError, loading }) => {
+export const AddBiteForm: React.FC<AddBiteFormType> = ({ addBite, fetchError, loading }) => {
     const { handleSubmit, handleChange, handleBlur, values, errors, touched } = useFormik({
         initialValues: {
             biteText: '',
@@ -32,7 +33,7 @@ export const AddBiteForm = ({ addBite, fetchError, loading }) => {
                 onChange={handleChange}
                 onBlur={handleBlur}
                 helperText={touched.biteText && errors.biteText}
-                error={errors.biteText && touched.biteText}
+                error={!!(errors.biteText && touched.biteText)}
             />
             {fetchError
                 ? <Typography variant='body2' color='error'>{fetchError}</Typography>

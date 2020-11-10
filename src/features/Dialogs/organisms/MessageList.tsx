@@ -7,16 +7,19 @@ import { useSelector, useDispatch } from 'react-redux'
 import { profileSelectors } from 'features/Profile'
 import { dialogsSelectors, dialogsActions } from '../model'
 import { MessageListControls } from '../molecules/MessageListControls'
+import { MessageType } from '../model/types'
 
-export const MessageList = (props) => {
+export const MessageList = () => {
     const { handle } = useSelector(profileSelectors.credentials)
     const dispatch = useDispatch()
     const loading = useMessages()
     const messages = useSelector(dialogsSelectors.messages)
-    const area = useRef(null)
+    const area = useRef<any>(null)
 
     useEffect(() => {
-        return () => dispatch(dialogsActions.setMessages([]))
+        return () => {
+            dispatch(dialogsActions.setMessages([]))
+        }
     }, [dispatch])
 
     return (
@@ -25,7 +28,7 @@ export const MessageList = (props) => {
                 {messages.length > 0 && !loading && <MessageListControls area={area} />}
                 {
                     messages.length > 0
-                        ? messages.map((message, index) => {
+                        ? messages.map((message: MessageType) => {
                             return (
                                 <Message key={message.createdAt} isMine={handle === message.sender} {...message} />
                             )

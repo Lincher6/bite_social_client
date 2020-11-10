@@ -7,20 +7,21 @@ import { useDispatch, useSelector } from "react-redux";
 import { profileSelectors } from "features/Profile";
 import { bitesActions } from "../model";
 import IconButton from "@material-ui/core/IconButton";
+import { LikeType } from '../types';
 
-export const Like = ({ likesCount, biteId }) => {
+export const Like: React.FC<LikeType> = ({ likesCount, biteId }) => {
     const [open, setOpen] = useState(false)
     const { authenticated, likes } = useSelector(profileSelectors.profile)
-    const liked = likes && likes.find(like => like.biteId === biteId)
+    const liked = likes && likes.find((like: LikeType) => like.biteId === biteId)
     const dispatch = useDispatch()
 
     const like = useCallback(() => {
         dispatch(bitesActions.likeBite(biteId))
-    }, [])
+    }, [dispatch, biteId])
 
     const unlike = useCallback(() => {
         dispatch(bitesActions.unlikeBite(biteId))
-    }, [])
+    }, [dispatch, biteId])
 
     if (!authenticated) {
         return (

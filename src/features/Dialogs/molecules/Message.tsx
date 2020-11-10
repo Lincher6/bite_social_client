@@ -6,8 +6,9 @@ import noImg from 'ui/assets/no-avatar.png'
 import { useDayjs } from 'lib/hooks/useDayjs'
 import { MessageStatus } from './MessageStatus'
 import { DeleteMessage } from './DeleteMessage'
+import { MessageType } from '../model/types'
 
-export const Message = React.memo(({ recipient, sender, senderImageUrl = noImg, body, createdAt, read, isMine, isSend = true, id }) => {
+export const Message: React.FC<MessageType> = React.memo(({ recipient, sender, senderImageUrl = noImg, body, createdAt, read, isMine, isSend = true, id }) => {
     const { dayjs, options } = useDayjs()
 
     return (

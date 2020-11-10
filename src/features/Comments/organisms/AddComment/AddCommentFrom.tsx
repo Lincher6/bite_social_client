@@ -6,9 +6,10 @@ import TextField from "@material-ui/core/TextField";
 import { Button, SendButton } from 'features/common'
 import CircularProgress from '@material-ui/core/CircularProgress';
 import { Typography } from "@material-ui/core";
+import { AddCommentFormType } from "features/Comments/types";
 
 
-export const AddCommentForm = ({ addComment, fetchError, loading, focus }) => {
+export const AddCommentForm: React.FC<AddCommentFormType> = ({ addComment, fetchError, loading, focus }) => {
     const { handleSubmit, handleChange, handleBlur, values, errors, touched, resetForm } = useFormik({
         initialValues: {
             comment: ''
@@ -22,7 +23,7 @@ export const AddCommentForm = ({ addComment, fetchError, loading, focus }) => {
         }
     })
 
-    const handleKeyPress = e => {
+    const handleKeyPress = (e: React.KeyboardEvent<EventTarget>) => {
         if (e.key === 'Enter' && !e.shiftKey) {
             e.preventDefault()
             handleSubmit()
@@ -40,7 +41,7 @@ export const AddCommentForm = ({ addComment, fetchError, loading, focus }) => {
                 onChange={handleChange}
                 onBlur={handleBlur}
                 helperText={touched.comment && errors.comment}
-                error={errors.comment && touched.comment}
+                error={!!(errors.comment && touched.comment)}
                 autoFocus={focus}
             />
             {fetchError

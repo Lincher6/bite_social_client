@@ -4,7 +4,7 @@ import classes from '../styles.module.scss'
 import { Tooltip } from '@material-ui/core';
 import { dialogsApi } from 'api/dialogsApi';
 
-export const DeleteMessage = ({ id }) => {
+export const DeleteMessage = ({ id }: { id: number | string }) => {
 
     const deleteMessage = useCallback(() => {
         dialogsApi.deleteMessage(id)

@@ -3,7 +3,7 @@ import Typography from "@material-ui/core/Typography";
 import { useStyles } from "../styles";
 
 
-export const ReadMore = ({ text, maxCharacters = 200 }) => {
+export const ReadMore = ({ text, maxCharacters = 200, ...props }) => {
     const classes = useStyles()
     const [collapsed, setCollapsed] = useState(true)
 

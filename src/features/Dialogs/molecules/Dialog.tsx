@@ -1,11 +1,12 @@
 import React from 'react'
-import { Card, Typography, Badge } from '@material-ui/core'
+import { Typography } from '@material-ui/core'
 import classes from '../styles.module.scss'
 import { NavLink } from 'react-router-dom'
 import { useDayjs } from 'lib/hooks/useDayjs'
+import { DialogType } from '../model/types'
 
-export const Dialog = React.memo(({ recipient, recipientImageUrl, newMessages, id, activeAt }) => {
-    const { dayjs, options } = useDayjs()
+export const Dialog: React.FC<DialogType> = React.memo(({ recipient, recipientImageUrl, newMessages, id, activeAt }) => {
+    const { dayjs } = useDayjs()
 
     return (
         <NavLink to={`/dialogs/${id}`} activeClassName={classes.active}>

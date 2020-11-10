@@ -3,8 +3,9 @@ import { Tooltip } from '@material-ui/core'
 import AccessTimeIcon from '@material-ui/icons/AccessTime';
 import CheckIcon from '@material-ui/icons/Check';
 import DoneAllIcon from '@material-ui/icons/DoneAll';
+import { MessageStatusType } from '../types';
 
-export const MessageStatus = ({ isSend, isRead = false }) => {
+export const MessageStatus: React.FC<MessageStatusType> = ({ isSend, isRead = false }) => {
     if (isSend) {
         if (isRead) {
             return (

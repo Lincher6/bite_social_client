@@ -1,8 +1,9 @@
 import React, { Fragment } from 'react'
 import { Comment } from './Comment'
 import { Typography } from '@material-ui/core'
+import { CommentListType } from '../types'
 
-export const CommentList = ({ comments }) => {
+export const CommentList: React.FC<CommentListType> = ({ comments }) => {
 
     if (comments.length === 0) {
         return (
